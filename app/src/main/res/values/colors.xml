@@ -6,4 +6,5 @@
     <color name="background_black">#000000</color>
     <color name="icon_bg_white">#FDF6E3</color>
     <color name="red_delete">#FF0000</color>
+    <color name="cyan_recover">#00BCD4</color>
 </resources>
