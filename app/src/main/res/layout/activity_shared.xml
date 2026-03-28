@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_black"
+    tools:context=".SharedActivity">
+
+    <!-- Barra de Navegación Superior -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@color/blue_app"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:elevation="4dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btnSettingsTop"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/icon_bg_white"
+            android:padding="8dp"
+            android:src="@drawable/ic_person"
+            app:tint="@color/blue_app" />
+
+        <ImageView
+            android:id="@+id/btnHomeTop"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/icon_bg_white"
+            android:padding="8dp"
+            android:src="@drawable/ic_home"
+            app:tint="@color/blue_app" />
+
+        <ImageView
+            android:id="@+id/btnSharedTop"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/icon_bg_white"
+            android:padding="8dp"
+            android:src="@drawable/ic_handshake"
+            app:tint="@color/blue_app" />
+
+        <ImageView
+            android:id="@+id/btnLoginTop"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@color/icon_bg_white"
+            android:padding="8dp"
+            android:src="@drawable/ic_group"
+            app:tint="@color/blue_app" />
+    </LinearLayout>
+
+    <!-- Barra lateral izquierda (Blanca) -->
+    <LinearLayout
+        android:id="@+id/leftSidebar"
+        android:layout_width="70dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBar">
+
+        <ImageView
+            android:id="@+id/btnUserLeft"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/ic_person"
+            app:tint="@color/cyan_recover" />
+
+        <!-- Espaciador para empujar los iconos hacia abajo -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/btnAddLeft"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/circle_blue"
+            android:padding="12dp"
+            android:src="@android:drawable/ic_input_add"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/btnSettingsLeft"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/circle_blue"
+            android:padding="12dp"
+            android:src="@android:drawable/ic_menu_manage"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/btnTrashLeft"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/icon_bg_white"
+            android:padding="8dp"
+            android:src="@android:drawable/ic_menu_delete"
+            app:tint="@color/blue_app" />
+    </LinearLayout>
+
+    <!-- Barra lateral derecha (Decorativa) -->
+    <View
+        android:id="@+id/sideBarDecor"
+        android:layout_width="4dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/blue_app"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBar" />
+
+    <!-- Barra de Búsqueda -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/searchBar"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/search_bar_background"
+        app:layout_constraintEnd_toStartOf="@+id/sideBarDecor"
+        app:layout_constraintStart_toEndOf="@id/leftSidebar"
+        app:layout_constraintTop_toBottomOf="@id/topBar">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:hint="Buscar..."
+            android:paddingStart="16dp"
+            android:textColor="@color/black"
+            android:textColorHint="#999999"
+            app:layout_constraintEnd_toStartOf="@+id/searchIcon"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/searchIcon"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginEnd="8dp"
+            android:padding="4dp"
+            android:src="@android:drawable/ic_menu_search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/blue_app" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Nombre del Entorno (Alineado a la izquierda) -->
+    <TextView
+        android:id="@+id/tvEnvironmentName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Entorno compartido"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/leftSidebar"
+        app:layout_constraintTop_toBottomOf="@id/searchBar" />
+
+    <!-- Área de Scroll para las Carpetas -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/sideBarDecor"
+        app:layout_constraintStart_toEndOf="@id/leftSidebar"
+        app:layout_constraintTop_toBottomOf="@id/tvEnvironmentName">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:padding="8dp">
+
+            <!-- Carpeta 1 (A la izquierda) -->
+            <LinearLayout
+                android:id="@+id/itemFolder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/ic_folder"
+                    app:tint="@color/icon_bg_white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Carpeta"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_columnSpan="2" />
+        </GridLayout>
+    </ScrollView>
+
+    <!-- Botón Añadir (Fijo abajo) -->
+    <ImageView
+        android:id="@+id/btnAdd"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/circle_blue"
+        android:padding="20dp"
+        android:src="@android:drawable/ic_input_add"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/leftSidebar"
+        app:tint="@color/icon_bg_white" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

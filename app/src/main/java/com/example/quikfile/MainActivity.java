@@ -1,5 +1,6 @@
 package com.example.quikfile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -22,28 +23,23 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        // Configuración de botones de la barra superior
-        findViewById(R.id.btnSettings).setOnClickListener(v ->
-                Toast.makeText(this, "Navegando a Ajustes", Toast.LENGTH_SHORT).show());
+        // Navegación a Papelera
+        findViewById(R.id.itemTrash).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, TrashActivity.class);
+            startActivity(intent);
+        });
 
-        findViewById(R.id.btnHome).setOnClickListener(v ->
-                Toast.makeText(this, "Ya estás en la Página Principal", Toast.LENGTH_SHORT).show());
+        // Navegación a Entorno Compartido
+        findViewById(R.id.btnShared).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, SharedActivity.class);
+            startActivity(intent);
+        });
 
-        findViewById(R.id.btnShared).setOnClickListener(v ->
-                Toast.makeText(this, "Abriendo Entorno Compartido", Toast.LENGTH_SHORT).show());
-
-        findViewById(R.id.btnLogin).setOnClickListener(v ->
-                Toast.makeText(this, "Navegando a Inicio de Sesión", Toast.LENGTH_SHORT).show());
-
-        // Configuración de elementos centrales
-        findViewById(R.id.itemFolder).setOnClickListener(v ->
-                Toast.makeText(this, "Entrando en carpeta...", Toast.LENGTH_SHORT).show());
-
-        findViewById(R.id.itemTrash).setOnClickListener(v ->
-                Toast.makeText(this, "Abriendo papelera", Toast.LENGTH_SHORT).show());
-
-        // Botón Añadir
-        findViewById(R.id.btnAdd).setOnClickListener(v ->
-                Toast.makeText(this, "Opción Añadir", Toast.LENGTH_SHORT).show());
+        // Otros botones (Placeholder)
+        findViewById(R.id.btnSettings).setOnClickListener(v -> Toast.makeText(this, "Ajustes", Toast.LENGTH_SHORT).show());
+        findViewById(R.id.btnHome).setOnClickListener(v -> Toast.makeText(this, "Inicio", Toast.LENGTH_SHORT).show());
+        findViewById(R.id.btnLogin).setOnClickListener(v -> Toast.makeText(this, "Grupo", Toast.LENGTH_SHORT).show());
+        findViewById(R.id.itemFolder).setOnClickListener(v -> Toast.makeText(this, "Carpeta", Toast.LENGTH_SHORT).show());
+        findViewById(R.id.btnAdd).setOnClickListener(v -> Toast.makeText(this, "Añadir", Toast.LENGTH_SHORT).show());
     }
 }
