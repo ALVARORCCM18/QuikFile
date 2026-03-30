@@ -81,10 +81,10 @@
 
             <CheckBox
                 android:id="@+id/cbSelectAll"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:button="@null"
-                android:background="@drawable/checkbox_selector" />
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/checkbox_selector"
+                android:button="@null" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -105,10 +105,10 @@
 
             <CheckBox
                 android:id="@+id/cbFile1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:button="@null"
-                android:background="@drawable/checkbox_selector" />
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/checkbox_selector"
+                android:button="@null" />
 
             <TextView
                 android:layout_width="wrap_content"
