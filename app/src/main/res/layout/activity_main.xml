@@ -130,6 +130,7 @@
 
         <!-- GridLayout: Organiza las carpetas en una cuadrícula de 2 columnas -->
         <GridLayout
+            android:id="@+id/folderGrid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:columnCount="2"
@@ -189,6 +190,7 @@
 
             <!-- Espaciador final para que el botón flotante no tape el contenido -->
             <View
+                android:id="@+id/gridSpacer"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:layout_columnSpan="2" />

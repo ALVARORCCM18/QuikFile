@@ -37,6 +37,10 @@
             android:name=".SharedActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".AddActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>
