@@ -24,8 +24,9 @@ public class SharedActivity extends AppCompatActivity {
         findViewById(R.id.btnSharedTop).setOnClickListener(v -> 
             Toast.makeText(this, "Ya estás en Entorno Compartido", Toast.LENGTH_SHORT).show());
 
-        findViewById(R.id.btnLoginTop).setOnClickListener(v -> 
-            Toast.makeText(this, "Login / Grupos", Toast.LENGTH_SHORT).show());
+        findViewById(R.id.btnLoginTop).setOnClickListener(v -> {
+            startActivity(new Intent(this, LoginActivity.class));
+        });
 
         // --- Funcionalidades Barra Lateral Izquierda ---
         findViewById(R.id.btnUserLeft).setOnClickListener(v -> 

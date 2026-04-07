@@ -48,6 +48,12 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent); // Inicia la actividad de Entorno Compartido
         });
 
+        // Configura el clic en el botón de "Login" (grupos)
+        findViewById(R.id.btnLogin).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent); // Inicia la actividad de Login
+        });
+
         // --- MENSAJES INFORMATIVOS (TOASTS) ---
         // Los Toasts son pequeños mensajes flotantes que aparecen y desaparecen solos
 
@@ -56,9 +62,6 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.btnHome).setOnClickListener(v -> 
             Toast.makeText(this, "Ya estás en Inicio", Toast.LENGTH_SHORT).show());
-
-        findViewById(R.id.btnLogin).setOnClickListener(v -> 
-            Toast.makeText(this, "Acceso a Grupos / Login", Toast.LENGTH_SHORT).show());
 
         findViewById(R.id.itemFolder).setOnClickListener(v -> 
             Toast.makeText(this, "Abriendo Carpeta Personal", Toast.LENGTH_SHORT).show());

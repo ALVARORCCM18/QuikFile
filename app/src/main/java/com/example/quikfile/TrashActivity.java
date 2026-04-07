@@ -35,8 +35,11 @@ public class TrashActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        findViewById(R.id.btnLogin).setOnClickListener(v -> 
-            Toast.makeText(this, "Inicio de Sesión / Grupos", Toast.LENGTH_SHORT).show());
+        // El icono de grupos nos lleva al Login
+        findViewById(R.id.btnLogin).setOnClickListener(v -> {
+            Intent intent = new Intent(TrashActivity.this, LoginActivity.class);
+            startActivity(intent);
+        });
 
         // --- LÓGICA DE SELECCIÓN DE ARCHIVOS ---
 
