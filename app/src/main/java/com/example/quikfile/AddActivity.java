@@ -13,8 +13,9 @@ public class AddActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add);
 
         // --- NAVEGACIÓN BARRA SUPERIOR ---
-        findViewById(R.id.btnSettings).setOnClickListener(v -> 
-            Toast.makeText(this, "Ajustes", Toast.LENGTH_SHORT).show());
+        findViewById(R.id.btnSettings).setOnClickListener(v -> {
+            startActivity(new Intent(this, SettingsActivity.class));
+        });
 
         findViewById(R.id.btnHome).setOnClickListener(v -> {
             Intent intent = new Intent(this, MainActivity.class);

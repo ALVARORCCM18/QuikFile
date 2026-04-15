@@ -82,8 +82,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // --- OTROS BOTONES ---
-        findViewById(R.id.btnSettings).setOnClickListener(v -> 
-            Toast.makeText(this, "Abriendo Ajustes", Toast.LENGTH_SHORT).show());
+        findViewById(R.id.btnSettings).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+            startActivity(intent);
+        });
 
         findViewById(R.id.btnHome).setOnClickListener(v -> 
             Toast.makeText(this, "Ya estás en Inicio", Toast.LENGTH_SHORT).show());
