@@ -2,6 +2,8 @@ package com.example.quikfile;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,6 +31,26 @@ public class SettingsActivity extends AppCompatActivity {
         findViewById(R.id.btnLoginTop).setOnClickListener(v -> {
             startActivity(new Intent(this, LoginActivity.class));
         });
+
+        // --- Campo Nombre (Permitir escribir) ---
+        EditText etName = findViewById(R.id.etName);
+        findViewById(R.id.btnEditName).setOnClickListener(v -> {
+            etName.requestFocus();
+            InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            if (imm != null) {
+                imm.showSoftInput(etName, InputMethodManager.SHOW_IMPLICIT);
+            }
+        });
+
+        // --- Opciones con Mensajes (Toasts) ---
+        findViewById(R.id.btnAccountSettings).setOnClickListener(v -> 
+            Toast.makeText(this, "Abriendo Ajustes de cuenta...", Toast.LENGTH_SHORT).show());
+
+        findViewById(R.id.btnChangePlan).setOnClickListener(v -> 
+            Toast.makeText(this, "Cargando planes de pago...", Toast.LENGTH_SHORT).show());
+
+        findViewById(R.id.btnAppReports).setOnClickListener(v -> 
+            Toast.makeText(this, "Generando reporte de aplicación...", Toast.LENGTH_SHORT).show());
 
         // --- Botón Atrás ---
         findViewById(R.id.btnBack).setOnClickListener(v -> finish());

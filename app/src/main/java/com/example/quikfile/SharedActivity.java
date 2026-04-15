@@ -67,8 +67,9 @@ public class SharedActivity extends AppCompatActivity {
             addActivityLauncher.launch(intent);
         });
 
-        findViewById(R.id.btnSettingsLeft).setOnClickListener(v -> 
-            Toast.makeText(this, "Configuración del entorno", Toast.LENGTH_SHORT).show());
+        findViewById(R.id.btnSettingsLeft).setOnClickListener(v -> {
+            startActivity(new Intent(this, SharedSettingsActivity.class));
+        });
 
         findViewById(R.id.btnTrashLeft).setOnClickListener(v -> {
             startActivity(new Intent(this, TrashActivity.class));
