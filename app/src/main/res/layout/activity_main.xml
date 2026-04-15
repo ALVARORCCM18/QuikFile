@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- ConstraintLayout: Es el contenedor principal. Permite posicionar elementos unos respecto a otros (arriba de, a la derecha de, etc.) -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,7 +8,6 @@
     android:background="@color/background_black"
     tools:context=".MainActivity">
 
-    <!-- Barra de Navegación Superior: Un contenedor horizontal para los botones principales -->
     <LinearLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
@@ -22,7 +20,6 @@
         android:elevation="4dp"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- Botón Ajustes: Icono de persona sobre fondo crema -->
         <ImageView
             android:id="@+id/btnSettings"
             android:layout_width="60dp"
@@ -33,7 +30,6 @@
             android:src="@drawable/ic_person"
             app:tint="@color/blue_app" />
 
-        <!-- Botón Inicio: Icono de casa -->
         <ImageView
             android:id="@+id/btnHome"
             android:layout_width="60dp"
@@ -44,7 +40,6 @@
             android:src="@drawable/ic_home"
             app:tint="@color/blue_app" />
 
-        <!-- Botón Compartido: Icono de manos entrelazadas -->
         <ImageView
             android:id="@+id/btnShared"
             android:layout_width="60dp"
@@ -55,7 +50,6 @@
             android:src="@drawable/ic_handshake"
             app:tint="@color/blue_app" />
 
-        <!-- Botón Grupo: Icono de 3 personas -->
         <ImageView
             android:id="@+id/btnLogin"
             android:layout_width="60dp"
@@ -66,18 +60,15 @@
             app:tint="@color/blue_app" />
     </LinearLayout>
 
-    <!-- Barra de Búsqueda: Contenedor con fondo blanco y bordes redondeados -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/searchBar"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_margin="16dp"
         android:background="@drawable/search_bar_background"
-        app:layout_constraintEnd_toStartOf="@+id/sideBar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/topBar">
 
-        <!-- Campo de texto para escribir la búsqueda -->
         <EditText
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -89,7 +80,6 @@
             app:layout_constraintEnd_toStartOf="@+id/searchIcon"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <!-- Icono de lupa de búsqueda -->
         <ImageView
             android:id="@+id/searchIcon"
             android:layout_width="45dp"
@@ -103,32 +93,19 @@
             app:tint="@color/blue_app" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- Barra lateral azul decorativa en el borde derecho -->
-    <View
-        android:id="@+id/sideBar"
-        android:layout_width="4dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/blue_app"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topBar" />
-
-    <!-- Área de Scroll: Permite deslizar el contenido si hay muchos elementos -->
     <ScrollView
         android:id="@+id/contentScrollView"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="20dp"
         android:scrollbars="vertical"
         android:fadeScrollbars="false"
         android:scrollbarThumbVertical="@color/blue_app"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/sideBar"
+        app:layout_constraintBottom_toTopOf="@id/btnAdd"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/searchBar">
 
-        <!-- GridLayout: Organiza las carpetas en una cuadrícula de 2 columnas -->
         <GridLayout
             android:id="@+id/folderGrid"
             android:layout_width="match_parent"
@@ -136,7 +113,6 @@
             android:columnCount="2"
             android:padding="8dp">
 
-            <!-- Carpeta Principal -->
             <LinearLayout
                 android:id="@+id/itemFolder"
                 android:layout_width="0dp"
@@ -162,7 +138,6 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <!-- Papelera -->
             <LinearLayout
                 android:id="@+id/itemTrash"
                 android:layout_width="0dp"
@@ -188,17 +163,15 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <!-- Espaciador final para que el botón flotante no tape el contenido -->
             <View
                 android:id="@+id/gridSpacer"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_columnSpan="2" />
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1" />
 
         </GridLayout>
     </ScrollView>
 
-    <!-- Botón Añadir: Fijo en la parte inferior, siempre por encima de lo demás -->
     <ImageView
         android:id="@+id/btnAdd"
         android:layout_width="110dp"
