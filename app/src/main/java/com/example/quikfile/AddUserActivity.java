@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
+// Esta pantalla sirve para meter a nuevos usuarios en un grupo o entorno
 public class AddUserActivity extends AppCompatActivity {
 
     private boolean isOptionsVisible = false;
@@ -23,13 +24,17 @@ public class AddUserActivity extends AppCompatActivity {
         TextView tvSelectedType = findViewById(R.id.tvSelectedType);
         ImageView ivArrow = findViewById(R.id.ivArrow);
 
-        // Lógica del selector
+        // --- MANEJO DEL SELECTOR DE ROL ---
+        
+        // Cuando pulsas el selector, abrimos o cerramos las opciones
         findViewById(R.id.selectorHeader).setOnClickListener(v -> {
             isOptionsVisible = !isOptionsVisible;
             optionsLayout.setVisibility(isOptionsVisible ? View.VISIBLE : View.GONE);
+            // Cambio la flecha de arriba/abajo segun este abierto o no
             ivArrow.setImageResource(isOptionsVisible ? android.R.drawable.arrow_up_float : android.R.drawable.arrow_down_float);
         });
 
+        // Si eligen Administrador
         findViewById(R.id.optionAdmin).setOnClickListener(v -> {
             selectedType = "Administrador";
             tvSelectedType.setText(selectedType);
@@ -37,6 +42,7 @@ public class AddUserActivity extends AppCompatActivity {
             isOptionsVisible = false;
         });
 
+        // Si eligen Miembro
         findViewById(R.id.optionMember).setOnClickListener(v -> {
             selectedType = "Miembro";
             tvSelectedType.setText(selectedType);
@@ -44,14 +50,15 @@ public class AddUserActivity extends AppCompatActivity {
             isOptionsVisible = false;
         });
 
-        // Confirmar añadir
+        // --- BOTON DE CONFIRMAR ---
+        
         findViewById(R.id.btnAddUserConfirm).setOnClickListener(v -> {
             if (selectedType.isEmpty()) {
                 Toast.makeText(this, "Selecciona un tipo de usuario", Toast.LENGTH_SHORT).show();
                 return;
             }
             
-            // Mensaje informativo
+            // Si ha elegido rol, guardamos (simulado)
             Toast.makeText(this, "Usuario añadido correctamente", Toast.LENGTH_SHORT).show();
 
             Intent resultIntent = new Intent();
@@ -60,7 +67,8 @@ public class AddUserActivity extends AppCompatActivity {
             finish();
         });
 
-        // Navegación top bar
+        // --- NAVEGACION ---
+
         findViewById(R.id.btnHomeTop).setOnClickListener(v -> {
             startActivity(new Intent(this, MainActivity.class));
             finish();

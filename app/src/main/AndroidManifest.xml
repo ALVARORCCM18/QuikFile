@@ -85,6 +85,30 @@
             android:name=".CancellationActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".FolderContentActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".FileDetailActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".FileReportActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".FileShareActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".FilePreviewActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".FileVersionHistoryActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

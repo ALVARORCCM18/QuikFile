@@ -75,12 +75,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/topBar">
 
-        <ImageView
-            android:id="@+id/btnUserLeft"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:src="@drawable/ic_person"
-            app:tint="@color/cyan_recover" />
+        <!-- Contenedor para los iconos de usuario -->
+        <LinearLayout
+            android:id="@+id/userIconsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:id="@+id/btnUserLeft"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/ic_person"
+                app:tint="@color/cyan_recover" />
+        </LinearLayout>
 
         <!-- Espaciador para empujar los iconos hacia abajo -->
         <View
@@ -93,10 +102,10 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginBottom="12dp"
-            android:background="@drawable/circle_blue"
+            android:background="@drawable/circle_cyan"
             android:padding="12dp"
             android:src="@android:drawable/ic_input_add"
-            app:tint="@color/white" />
+            app:tint="@color/black" />
 
         <ImageView
             android:id="@+id/btnSettingsLeft"

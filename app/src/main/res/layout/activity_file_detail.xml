@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_black"
+    tools:context=".FileDetailActivity">
+
+    <!-- Barra de Navegación Superior -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@color/blue_app"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btnSettingsTop"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/icon_bg_white"
+            android:padding="8dp"
+            android:src="@drawable/ic_person"
+            app:tint="@color/blue_app" />
+
+        <ImageView
+            android:id="@+id/btnHomeTop"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/icon_bg_white"
+            android:padding="8dp"
+            android:src="@drawable/ic_home"
+            app:tint="@color/blue_app" />
+
+        <ImageView
+            android:id="@+id/btnSharedTop"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/icon_bg_white"
+            android:padding="8dp"
+            android:src="@drawable/ic_handshake"
+            app:tint="@color/blue_app" />
+
+        <ImageView
+            android:id="@+id/btnLoginTop"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@color/icon_bg_white"
+            android:padding="8dp"
+            android:src="@drawable/ic_group"
+            app:tint="@color/blue_app" />
+    </LinearLayout>
+
+    <!-- Encabezado del Fichero -->
+    <LinearLayout
+        android:id="@+id/fileHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        app:layout_constraintTop_toBottomOf="@id/topBar">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_file"
+            app:tint="@color/white" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/search_bar_background"
+            android:backgroundTint="@color/background_black"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <EditText
+                android:id="@+id/etFileName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:text="Fichero"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/btnEditName"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/circle_cyan"
+                android:padding="8dp"
+                android:src="@drawable/ic_edit"
+                app:tint="@color/black" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Información del Fichero con Scroll -->
+    <ScrollView
+        android:id="@+id/fileInfoScroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:scrollbarThumbVertical="@color/cyan_recover"
+        android:fadeScrollbars="false"
+        app:layout_constraintBottom_toTopOf="@id/bottomArea"
+        app:layout_constraintTop_toBottomOf="@id/fileHeader">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tamaño: 2.5 MB"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Formato: PDF"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Extensión: .pdf"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Descripción:"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Documento de prueba extenso para verificar la funcionalidad de scroll en esta vista de detalles. Se pueden añadir más comentarios aquí.\n\nLínea extra 1\nLínea extra 2\nLínea extra 3\nLínea extra 4\nLínea extra 5\nLínea extra 6\nÚltima línea de prueba."
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Área Inferior y Menú Circular -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomArea"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Botón Atrás -->
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="40dp"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tint="@color/cyan_recover" />
+
+        <!-- Iconos del Menú Circular (Inicialmente en el centro) -->
+        <ImageView
+            android:id="@+id/btnDownload"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/circle_cyan"
+            android:backgroundTint="@color/white"
+            android:elevation="4dp"
+            android:padding="12dp"
+            android:src="@android:drawable/stat_sys_download"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/btnMenu"
+            app:layout_constraintEnd_toEndOf="@id/btnMenu"
+            app:layout_constraintStart_toStartOf="@id/btnMenu"
+            app:layout_constraintTop_toTopOf="@id/btnMenu"
+            app:tint="@color/cyan_recover" />
+
+        <ImageView
+            android:id="@+id/btnDelete"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/circle_cyan"
+            android:backgroundTint="@color/white"
+            android:elevation="4dp"
+            android:padding="12dp"
+            android:src="@android:drawable/ic_menu_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/btnMenu"
+            app:layout_constraintEnd_toEndOf="@id/btnMenu"
+            app:layout_constraintStart_toStartOf="@id/btnMenu"
+            app:layout_constraintTop_toTopOf="@id/btnMenu"
+            app:tint="@color/cyan_recover" />
+
+        <ImageView
+            android:id="@+id/btnReport"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/circle_cyan"
+            android:backgroundTint="@color/white"
+            android:elevation="4dp"
+            android:padding="12dp"
+            android:src="@android:drawable/stat_sys_warning"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/btnMenu"
+            app:layout_constraintEnd_toEndOf="@id/btnMenu"
+            app:layout_constraintStart_toStartOf="@id/btnMenu"
+            app:layout_constraintTop_toTopOf="@id/btnMenu"
+            app:tint="@color/black" />
+
+        <ImageView
+            android:id="@+id/btnPreview"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/circle_cyan"
+            android:backgroundTint="@color/white"
+            android:elevation="4dp"
+            android:padding="12dp"
+            android:src="@android:drawable/ic_menu_view"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/btnMenu"
+            app:layout_constraintEnd_toEndOf="@id/btnMenu"
+            app:layout_constraintStart_toStartOf="@id/btnMenu"
+            app:layout_constraintTop_toTopOf="@id/btnMenu"
+            app:tint="@color/cyan_recover" />
+
+        <ImageView
+            android:id="@+id/btnShare"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/circle_cyan"
+            android:backgroundTint="@color/white"
+            android:elevation="4dp"
+            android:padding="12dp"
+            android:src="@android:drawable/ic_menu_send"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/btnMenu"
+            app:layout_constraintEnd_toEndOf="@id/btnMenu"
+            app:layout_constraintStart_toStartOf="@id/btnMenu"
+            app:layout_constraintTop_toTopOf="@id/btnMenu"
+            app:tint="@color/cyan_recover" />
+
+        <!-- Botón Central (3 rallas) -->
+        <ImageView
+            android:id="@+id/btnMenu"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/circle_cyan"
+            android:padding="25dp"
+            android:src="@android:drawable/ic_menu_sort_by_size"
+            android:elevation="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tint="@color/white" />
+
+        <!-- Botón Cerrar (X) -->
+        <ImageView
+            android:id="@+id/btnCloseMenu"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/circle_cyan"
+            android:padding="15dp"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:visibility="gone"
+            android:elevation="9dp"
+            app:layout_constraintBottom_toBottomOf="@id/btnMenu"
+            app:layout_constraintEnd_toEndOf="@id/btnMenu"
+            app:layout_constraintStart_toStartOf="@id/btnMenu"
+            app:layout_constraintTop_toTopOf="@id/btnMenu"
+            app:tint="@color/white" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

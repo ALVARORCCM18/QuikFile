@@ -8,6 +8,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
+// Pantalla de acceso. Lo primero que ves si no has entrado antes.
 public class LoginActivity extends AppCompatActivity {
 
     @Override
@@ -20,21 +21,23 @@ public class LoginActivity extends AppCompatActivity {
         Button btnLoginAction = findViewById(R.id.btnLoginAction);
         TextView btnGoToRegister = findViewById(R.id.btnGoToRegister);
 
-        // Al pulsar Iniciar Sesión, vamos a la MainActivity (Simulado)
+        // Cuando el usuario le da a entrar
         btnLoginAction.setOnClickListener(v -> {
             String user = etUsername.getText().toString();
             String pass = etPassword.getText().toString();
 
+            // Compruebo que no deje los campos vacios
             if (!user.isEmpty() && !pass.isEmpty()) {
+                // Si todo ok, para dentro (a la pantalla principal)
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
-                finish();
+                finish(); // Quito el login del historial para que no vuelva atras al salir
             } else {
                 Toast.makeText(this, "Por favor, rellena todos los campos", Toast.LENGTH_SHORT).show();
             }
         });
 
-        // Al pulsar "Resgistrate", vamos a la pantalla de Registro
+        // Por si no tiene cuenta todavia
         btnGoToRegister.setOnClickListener(v -> {
             Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
             startActivity(intent);
