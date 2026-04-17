@@ -49,6 +49,42 @@
             android:name=".SharedSettingsActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".AddUserActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".AccountSettingsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".AppReportsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".PaymentPlanActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".SubscriptionActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".PaymentInfoActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".SubscriptionSuccessActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".RenewalActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".CancellationActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>
