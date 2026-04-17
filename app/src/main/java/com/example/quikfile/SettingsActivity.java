@@ -42,15 +42,18 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
-        // --- Opciones con Mensajes (Toasts) ---
-        findViewById(R.id.btnAccountSettings).setOnClickListener(v -> 
-            Toast.makeText(this, "Abriendo Ajustes de cuenta...", Toast.LENGTH_SHORT).show());
+        // --- Opciones con Navegación/Mensajes ---
+        findViewById(R.id.btnAccountSettings).setOnClickListener(v -> {
+            startActivity(new Intent(this, AccountSettingsActivity.class));
+        });
 
-        findViewById(R.id.btnChangePlan).setOnClickListener(v -> 
-            Toast.makeText(this, "Cargando planes de pago...", Toast.LENGTH_SHORT).show());
+        findViewById(R.id.btnChangePlan).setOnClickListener(v -> {
+            startActivity(new Intent(this, PaymentPlanActivity.class));
+        });
 
-        findViewById(R.id.btnAppReports).setOnClickListener(v -> 
-            Toast.makeText(this, "Generando reporte de aplicación...", Toast.LENGTH_SHORT).show());
+        findViewById(R.id.btnAppReports).setOnClickListener(v -> {
+            startActivity(new Intent(this, AppReportsActivity.class));
+        });
 
         // --- Botón Atrás ---
         findViewById(R.id.btnBack).setOnClickListener(v -> finish());

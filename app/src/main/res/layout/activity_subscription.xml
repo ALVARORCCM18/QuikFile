@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_black"
+    tools:context=".SubscriptionActivity">
+
+    <!-- Barra de Navegación Superior -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@color/blue_app"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:elevation="4dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btnSettingsTop"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/icon_bg_white"
+            android:padding="8dp"
+            android:src="@drawable/ic_person"
+            app:tint="@color/blue_app" />
+
+        <ImageView
+            android:id="@+id/btnHomeTop"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/icon_bg_white"
+            android:padding="8dp"
+            android:src="@drawable/ic_home"
+            app:tint="@color/blue_app" />
+
+        <ImageView
+            android:id="@+id/btnSharedTop"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/icon_bg_white"
+            android:padding="8dp"
+            android:src="@drawable/ic_handshake"
+            app:tint="@color/blue_app" />
+
+        <ImageView
+            android:id="@+id/btnLoginTop"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@color/icon_bg_white"
+            android:padding="8dp"
+            android:src="@drawable/ic_group"
+            app:tint="@color/blue_app" />
+    </LinearLayout>
+
+    <!-- Tarjeta de Subscripción -->
+    <LinearLayout
+        android:id="@+id/subscriptionCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/search_bar_background"
+        android:backgroundTint="@color/cyan_recover"
+        android:orientation="vertical"
+        android:padding="2dp"
+        app:layout_constraintTop_toBottomOf="@id/topBar">
+
+        <!-- Cabecera Blanca -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/search_bar_background"
+            android:backgroundTint="@color/white"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SUBSCRIPCIÓN"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MENSUAL"
+                android:textColor="@color/black"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Contenido Negro con bordes cian (simulado por el padding del padre) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background_black"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="El plan premium te da acceso a:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="El entorno compartido"
+                android:textColor="@color/cyan_recover"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Más espacio"
+                android:textColor="@color/cyan_recover"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="El historial de versiones"
+                android:textColor="@color/cyan_recover"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Parte Inferior: Precio y Botón -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background_black"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginTop="2dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="POR SOLO"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3.99€ AL MES"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/btnSubscribeAction"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="#111111"
+                android:padding="12dp"
+                android:src="@drawable/ic_arrow_forward"
+                app:tint="@color/cyan_recover" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Botón Atrás -->
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="32dp"
+        android:padding="12dp"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@color/cyan_recover" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_black"
+    tools:context=".AddUserActivity">
+
+    <!-- Barra de Navegación Superior -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@color/blue_app"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btnSettingsTop"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/icon_bg_white"
+            android:padding="8dp"
+            android:src="@drawable/ic_person"
+            app:tint="@color/blue_app" />
+
+        <ImageView
+            android:id="@+id/btnHomeTop"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/icon_bg_white"
+            android:padding="8dp"
+            android:src="@drawable/ic_home"
+            app:tint="@color/blue_app" />
+
+        <ImageView
+            android:id="@+id/btnSharedTop"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/icon_bg_white"
+            android:padding="8dp"
+            android:src="@drawable/ic_handshake"
+            app:tint="@color/blue_app" />
+
+        <ImageView
+            android:id="@+id/btnLoginTop"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@color/icon_bg_white"
+            android:padding="8dp"
+            android:src="@drawable/ic_group"
+            app:tint="@color/blue_app" />
+    </LinearLayout>
+
+    <!-- EditText Correo -->
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/search_bar_background"
+        android:hint="Introduce correo electronico"
+        android:inputType="textEmailAddress"
+        android:paddingStart="16dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/topBar" />
+
+    <!-- Selector de Tipo de Usuario -->
+    <LinearLayout
+        android:id="@+id/typeSelectorContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/etEmail">
+
+        <!-- Cabecera del Selector -->
+        <LinearLayout
+            android:id="@+id/selectorHeader"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/search_bar_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="8dp"
+            android:paddingEnd="16dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@android:drawable/ic_menu_agenda"
+                app:tint="@color/blue_app" />
+
+            <TextView
+                android:id="@+id/tvSelectedType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="12dp"
+                android:text="Selecciona tipo..."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/ivArrow"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@android:drawable/arrow_down_float"
+                app:tint="@color/cyan_recover" />
+        </LinearLayout>
+
+        <!-- Opciones desplegables (Ocultas por defecto) -->
+        <LinearLayout
+            android:id="@+id/optionsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/search_bar_background"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/optionAdmin"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp">
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_person"
+                    app:tint="@color/cyan_recover" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="12dp"
+                    android:text="Administrador"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#EEEEEE"/>
+
+            <LinearLayout
+                android:id="@+id/optionMember"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp">
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_person"
+                    app:tint="@color/cyan_recover" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="12dp"
+                    android:text="Miembro"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Botón Añadir -->
+    <Button
+        android:id="@+id/btnAddUserConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="@color/cyan_recover"
+        android:text="Añadir usuario"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/typeSelectorContainer" />
+
+    <!-- Botón Atrás -->
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="32dp"
+        android:padding="12dp"
+        android:src="@android:drawable/ic_menu_revert"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@color/cyan_recover" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

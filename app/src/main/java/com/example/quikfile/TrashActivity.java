@@ -48,10 +48,12 @@ public class TrashActivity extends AppCompatActivity {
         CheckBox cbFile1 = findViewById(R.id.cbFile1);
 
         // Cuando el usuario marca o desmarca "Seleccionar todo"
-        cbSelectAll.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            // Ponemos el archivo 1 en el mismo estado (marcado o no) que el de "todos"
-            cbFile1.setChecked(isChecked);
-        });
+        if (cbSelectAll != null && cbFile1 != null) {
+            cbSelectAll.setOnCheckedChangeListener((buttonView, isChecked) -> {
+                // Ponemos el archivo 1 en el mismo estado (marcado o no) que el de "todos"
+                cbFile1.setChecked(isChecked);
+            });
+        }
 
         // --- BOTONES DE LA PARTE INFERIOR ---
 
@@ -62,7 +64,7 @@ public class TrashActivity extends AppCompatActivity {
 
         // Botón Eliminar: Verifica si hay algo seleccionado antes de actuar
         findViewById(R.id.btnDelete).setOnClickListener(v -> {
-            if (cbFile1.isChecked()) {
+            if (cbFile1 != null && cbFile1.isChecked()) {
                 Toast.makeText(this, "Ficheros eliminados permanentemente", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(this, "Selecciona algún fichero para eliminar", Toast.LENGTH_SHORT).show();
@@ -71,7 +73,7 @@ public class TrashActivity extends AppCompatActivity {
 
         // Botón Recuperar: Verifica si hay algo seleccionado antes de actuar
         findViewById(R.id.btnRecover).setOnClickListener(v -> {
-            if (cbFile1.isChecked()) {
+            if (cbFile1 != null && cbFile1.isChecked()) {
                 Toast.makeText(this, "Ficheros recuperados con éxito", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(this, "Selecciona algún fichero para recuperar", Toast.LENGTH_SHORT).show();
