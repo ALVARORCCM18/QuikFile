@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_black"
+    tools:context=".FileShareActivity">
+
+    <!-- Barra de Navegación Superior -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@color/blue_app"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btnSettingsTop"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/icon_bg_white"
+            android:padding="8dp"
+            android:src="@drawable/ic_person"
+            app:tint="@color/blue_app" />
+
+        <ImageView
+            android:id="@+id/btnHomeTop"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/icon_bg_white"
+            android:padding="8dp"
+            android:src="@drawable/ic_home"
+            app:tint="@color/blue_app" />
+
+        <ImageView
+            android:id="@+id/btnSharedTop"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/icon_bg_white"
+            android:padding="8dp"
+            android:src="@drawable/ic_handshake"
+            app:tint="@color/blue_app" />
+
+        <ImageView
+            android:id="@+id/btnLoginTop"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@color/icon_bg_white"
+            android:padding="8dp"
+            android:src="@drawable/ic_group"
+            app:tint="@color/blue_app" />
+    </LinearLayout>
+
+    <!-- Encabezado de Compartir -->
+    <LinearLayout
+        android:id="@+id/shareHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/cancellation_box_border"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        app:layout_constraintTop_toBottomOf="@id/topBar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/white_rounded_background"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="Compartiendo:"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvFileName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingStart="12dp"
+            android:text="&quot;Fichero&quot;"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginEnd="8dp"
+            android:src="@android:drawable/ic_menu_send"
+            app:tint="@color/cyan_recover" />
+    </LinearLayout>
+
+    <!-- Buscador de Correo -->
+    <LinearLayout
+        android:id="@+id/emailContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/cancellation_box_border"
+        android:padding="4dp"
+        app:layout_constraintTop_toBottomOf="@id/shareHeader">
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/white_rounded_background"
+            android:hint="Introduce correo electrónico"
+            android:textColorHint="#888888"
+            android:padding="12dp"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="4dp"
+            android:padding="8dp"
+            android:src="@android:drawable/ic_menu_search"
+            app:tint="@color/cyan_recover" />
+    </LinearLayout>
+
+    <!-- Selector de Permisos -->
+    <LinearLayout
+        android:id="@+id/permissionsSelector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/emailContainer">
+
+        <!-- Fila principal del selector -->
+        <LinearLayout
+            android:id="@+id/btnPermissionsToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cancellation_box_border"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/white_rounded_background"
+                android:padding="12dp"
+                android:src="@android:drawable/ic_menu_manage"
+                app:tint="@color/cyan_recover" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="@color/cyan_recover" />
+
+            <TextView
+                android:id="@+id/tvCurrentPermission"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="16dp"
+                android:text="Seleccionar"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/ivDropdownArrow"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="8dp"
+                android:src="@android:drawable/arrow_down_float"
+                app:tint="@color/cyan_recover" />
+        </LinearLayout>
+
+        <!-- Opciones desplegables -->
+        <LinearLayout
+            android:id="@+id/optionsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:background="@drawable/cancellation_box_border"
+            android:orientation="vertical"
+            android:padding="4dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/optionEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_rounded_background"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:layout_marginBottom="2dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_edit"
+                    app:tint="@color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Editar"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/optionRead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_rounded_background"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@android:drawable/ic_menu_view"
+                    app:tint="@color/cyan_recover" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Leer"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Botones Inferiores -->
+    <LinearLayout
+        android:id="@+id/bottomActions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@color/cyan_recover" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btnSubmitShare"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:backgroundTint="@color/cyan_recover"
+            android:text="COMPARTIR"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

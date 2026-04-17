@@ -6,10 +6,7 @@ import android.widget.CheckBox;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-/**
- * Pantalla de la Papelera.
- * Aquí el usuario puede ver archivos eliminados, seleccionarlos y decidir si borrarlos para siempre o recuperarlos.
- */
+// Esta es la pantalla de la papelera, donde van a parar las cosas que borramos por error
 public class TrashActivity extends AppCompatActivity {
 
     @Override
@@ -17,61 +14,62 @@ public class TrashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trash);
 
-        // --- NAVEGACIÓN BARRA SUPERIOR ---
+        // --- LOS ICONOS DE ARRIBA (ACCESOS RAPIDOS) ---
 
+        // Abrir ajustes
         findViewById(R.id.btnSettings).setOnClickListener(v -> 
             Toast.makeText(this, "Ajustes de Usuario", Toast.LENGTH_SHORT).show());
         
-        // El icono de la casa nos devuelve a la pantalla de inicio
+        // Volver a la pantalla principal
         findViewById(R.id.btnHome).setOnClickListener(v -> {
             Intent intent = new Intent(TrashActivity.this, MainActivity.class);
             startActivity(intent);
-            finish(); // Cierra esta pantalla para que no quede en el historial de "atrás"
+            finish(); // Cerramos esta para que no se quede abierta por debajo
         });
 
-        // El icono de las manos nos lleva al entorno compartido
+        // Ir a la zona compartida
         findViewById(R.id.btnShared).setOnClickListener(v -> {
             Intent intent = new Intent(TrashActivity.this, SharedActivity.class);
             startActivity(intent);
         });
 
-        // El icono de grupos nos lleva al Login
+        // Ir al login
         findViewById(R.id.btnLogin).setOnClickListener(v -> {
             Intent intent = new Intent(TrashActivity.this, LoginActivity.class);
             startActivity(intent);
         });
 
-        // --- LÓGICA DE SELECCIÓN DE ARCHIVOS ---
+        // --- MANEJO DE LOS ARCHIVOS BORRADOS ---
 
-        // Referencias a los cuadraditos de selección (Checkboxes)
+        // Cojo los checkboxes para saber que quiere recuperar o borrar el usuario
         CheckBox cbSelectAll = findViewById(R.id.cbSelectAll);
         CheckBox cbFile1 = findViewById(R.id.cbFile1);
 
-        // Cuando el usuario marca o desmarca "Seleccionar todo"
+        // Si marcas "Seleccionar todo", marcamos tambien el archivo individual
         if (cbSelectAll != null && cbFile1 != null) {
             cbSelectAll.setOnCheckedChangeListener((buttonView, isChecked) -> {
-                // Ponemos el archivo 1 en el mismo estado (marcado o no) que el de "todos"
                 cbFile1.setChecked(isChecked);
             });
         }
 
-        // --- BOTONES DE LA PARTE INFERIOR ---
+        // --- ACCIONES DE LA PARTE DE ABAJO ---
 
-        // Botón de la flecha: simplemente simula el botón "atrás" del teléfono
+        // Flecha para ir atras
         findViewById(R.id.btnBack).setOnClickListener(v -> {
-            onBackPressed();
+            finish();
         });
 
-        // Botón Eliminar: Verifica si hay algo seleccionado antes de actuar
+        // Borrar definitivamente lo seleccionado
         findViewById(R.id.btnDelete).setOnClickListener(v -> {
             if (cbFile1 != null && cbFile1.isChecked()) {
                 Toast.makeText(this, "Ficheros eliminados permanentemente", Toast.LENGTH_LONG).show();
+                // Aqui faltaria quitarlo de la lista visualmente
             } else {
                 Toast.makeText(this, "Selecciona algún fichero para eliminar", Toast.LENGTH_SHORT).show();
             }
         });
 
-        // Botón Recuperar: Verifica si hay algo seleccionado antes de actuar
+        // Sacar de la papelera lo seleccionado
         findViewById(R.id.btnRecover).setOnClickListener(v -> {
             if (cbFile1 != null && cbFile1.isChecked()) {
                 Toast.makeText(this, "Ficheros recuperados con éxito", Toast.LENGTH_LONG).show();

@@ -14,11 +14,13 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+// Esta es la zona para los archivos que compartimos con otros usuarios
 public class SharedActivity extends AppCompatActivity {
 
     private GridLayout folderGrid;
+    private LinearLayout userIconsContainer;
 
-    // Lanzador para recibir el resultado de la pantalla de añadir
+    // Lanzador para cuando añadimos algo nuevo en esta zona
     private final ActivityResultLauncher<Intent> addActivityLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
@@ -27,7 +29,7 @@ public class SharedActivity extends AppCompatActivity {
                     if ("FOLDER".equals(type)) {
                         addNewItem("Nueva Carpeta Compartida", R.drawable.ic_folder);
                     } else if ("FILE".equals(type)) {
-                        addNewItem("Nuevo Fichero Compartido", android.R.drawable.ic_menu_edit);
+                        addNewItem("Nuevo Fichero Compartido", R.drawable.ic_file);
                     }
                 }
             }
@@ -39,8 +41,10 @@ public class SharedActivity extends AppCompatActivity {
         setContentView(R.layout.activity_shared);
 
         folderGrid = findViewById(R.id.folderGridShared);
+        userIconsContainer = findViewById(R.id.userIconsContainer);
 
-        // --- Navegación Barra Superior ---
+        // --- BOTONES DE LA BARRA DE ARRIBA ---
+        
         findViewById(R.id.btnSettingsTop).setOnClickListener(v -> {
             startActivity(new Intent(this, SettingsActivity.class));
         });
@@ -57,14 +61,15 @@ public class SharedActivity extends AppCompatActivity {
             startActivity(new Intent(this, LoginActivity.class));
         });
 
-        // --- Funcionalidades Barra Lateral Izquierda ---
+        // --- ICONOS DE LA BARRA LATERAL (LA DE LA IZQUIERDA) ---
+        
         findViewById(R.id.btnUserLeft).setOnClickListener(v -> {
             startActivity(new Intent(this, SettingsActivity.class));
         });
 
+        // Este es para añadir un nuevo icono de persona a la lista de la izquierda
         findViewById(R.id.btnAddLeft).setOnClickListener(v -> {
-            Intent intent = new Intent(SharedActivity.this, AddActivity.class);
-            addActivityLauncher.launch(intent);
+            addNewSharedEnvironmentIcon();
         });
 
         findViewById(R.id.btnSettingsLeft).setOnClickListener(v -> {
@@ -75,9 +80,9 @@ public class SharedActivity extends AppCompatActivity {
             startActivity(new Intent(this, TrashActivity.class));
         });
 
-        // --- Funcionalidades Contenido Central ---
-        findViewById(R.id.itemFolder).setOnClickListener(v -> 
-            Toast.makeText(this, "Abriendo carpeta compartida...", Toast.LENGTH_SHORT).show());
+        // --- PARTE CENTRAL (ARCHIVOS Y CARPETAS) ---
+        
+        findViewById(R.id.itemFolder).setOnClickListener(v -> openFolder("Carpeta"));
 
         findViewById(R.id.btnAdd).setOnClickListener(v -> {
             Intent intent = new Intent(SharedActivity.this, AddActivity.class);
@@ -85,9 +90,39 @@ public class SharedActivity extends AppCompatActivity {
         });
     }
 
-    /**
-     * Añade visualmente un nuevo elemento (carpeta o fichero) al GridLayout compartido.
-     */
+    // Entrar en una carpeta compartida
+    private void openFolder(String name) {
+        Intent intent = new Intent(this, FolderContentActivity.class);
+        intent.putExtra("folderName", name);
+        startActivity(intent);
+    }
+
+    // Ver detalles de un archivo compartido
+    private void openFileDetail(String name) {
+        Intent intent = new Intent(this, FileDetailActivity.class);
+        intent.putExtra("fileName", name);
+        startActivity(intent);
+    }
+
+    // Metodo para meter otra "persona" en el menu lateral
+    private void addNewSharedEnvironmentIcon() {
+        ImageView newEnvironment = new ImageView(this);
+        int size = (int) (55 * getResources().getDisplayMetrics().density);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(size, size);
+        params.topMargin = (int) (8 * getResources().getDisplayMetrics().density);
+        newEnvironment.setPadding(4, 4, 4, 4);
+        newEnvironment.setLayoutParams(params);
+        newEnvironment.setImageResource(R.drawable.ic_person);
+        newEnvironment.setColorFilter(ContextCompat.getColor(this, R.color.cyan_recover));
+        
+        newEnvironment.setOnClickListener(v -> 
+            Toast.makeText(this, "Cambiando a otro entorno compartido...", Toast.LENGTH_SHORT).show());
+            
+        userIconsContainer.addView(newEnvironment);
+        Toast.makeText(this, "Nuevo entorno compartido añadido", Toast.LENGTH_SHORT).show();
+    }
+
+    // Para pintar una carpeta o archivo nuevo en el grid central
     private void addNewItem(String name, int iconRes) {
         LinearLayout newItem = new LinearLayout(this);
         GridLayout.LayoutParams params = new GridLayout.LayoutParams();
@@ -123,8 +158,16 @@ public class SharedActivity extends AppCompatActivity {
         text.setLayoutParams(textParams);
         newItem.addView(text);
 
-        newItem.setOnClickListener(v -> Toast.makeText(this, "Abriendo " + name, Toast.LENGTH_SHORT).show());
+        // Al pulsar, abro la carpeta o el detalle segun lo que sea
+        newItem.setOnClickListener(v -> {
+            if (iconRes == R.drawable.ic_folder) {
+                openFolder(name);
+            } else {
+                openFileDetail(name);
+            }
+        });
 
+        // Lo pongo antes del espacio vacio para que no se desordene
         int index = folderGrid.indexOfChild(findViewById(R.id.gridSpacerShared));
         folderGrid.addView(newItem, index);
         
