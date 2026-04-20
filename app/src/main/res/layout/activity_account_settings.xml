@@ -183,6 +183,6 @@
         android:src="@android:drawable/ic_menu_revert"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:tint="@color/blue_app_recover" />
+        app:tint="@color/blue_app" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
