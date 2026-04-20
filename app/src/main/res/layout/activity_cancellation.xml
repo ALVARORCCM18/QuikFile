@@ -12,7 +12,7 @@
         android:id="@+id/topBar"
         android:layout_width="match_parent"
         android:layout_height="90dp"
-        android:background="@color/cyan_recover"
+        android:background="@color/blue_app"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingStart="12dp"
@@ -28,7 +28,7 @@
             android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_person"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
 
         <ImageView
             android:id="@+id/btnHomeTop"
@@ -38,7 +38,7 @@
             android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_home"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
 
         <ImageView
             android:id="@+id/btnSharedTop"
@@ -48,7 +48,7 @@
             android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_handshake"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
 
         <ImageView
             android:id="@+id/btnLoginTop"
@@ -57,7 +57,7 @@
             android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_group"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
     </LinearLayout>
 
     <!-- Cuadro de Cancelación -->
@@ -106,7 +106,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Perderás tus beneficios premium"
-            android:textColor="@color/cyan_recover"
+            android:textColor="@color/blue_app"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvYourQuota" />
@@ -120,7 +120,7 @@
             android:src="@drawable/ic_sad_face"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -141,7 +141,7 @@
             android:layout_marginEnd="40dp"
             android:padding="12dp"
             android:src="@drawable/ic_arrow_back"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
 
         <ImageView
             android:id="@+id/btnConfirmCancel"
@@ -149,7 +149,7 @@
             android:layout_height="120dp"
             android:padding="12dp"
             android:src="@drawable/ic_arrow_forward"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

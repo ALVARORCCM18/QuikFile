@@ -24,7 +24,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_person"
             app:tint="@color/blue_app" />
@@ -34,7 +34,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_home"
             app:tint="@color/blue_app" />
@@ -44,7 +44,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_handshake"
             app:tint="@color/blue_app" />
@@ -53,7 +53,7 @@
             android:id="@+id/btnLoginTop"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_group"
             app:tint="@color/blue_app" />
@@ -97,7 +97,7 @@
             android:layout_height="45dp"
             android:layout_marginEnd="4dp"
             android:src="@android:drawable/stat_sys_warning"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
     </LinearLayout>
 
     <!-- Motivo del Reporte -->
@@ -119,7 +119,7 @@
             android:background="@drawable/white_rounded_background"
             android:padding="12dp"
             android:hint="Introduce el motivo del reporte"
-            android:textColorHint="#888888"
+            android:textColorHint="@color/black"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:gravity="center" />
@@ -143,7 +143,7 @@
             android:background="@drawable/white_rounded_background"
             android:gravity="top"
             android:hint="Descripción detallada del reporte..."
-            android:textColorHint="#888888"
+            android:textColorHint="@color/blue_app"
             android:padding="12dp"
             android:textColor="@color/black"
             android:textSize="18sp" />
@@ -166,7 +166,7 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:src="@drawable/ic_arrow_back"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
 
         <View
             android:layout_width="0dp"
@@ -177,7 +177,7 @@
             android:id="@+id/btnSubmitReport"
             android:layout_width="wrap_content"
             android:layout_height="70dp"
-            android:backgroundTint="@color/cyan_recover"
+            android:backgroundTint="@color/blue_app"
             android:text="REPORTAR"
             android:textColor="@color/white"
             android:textSize="24sp"

@@ -55,7 +55,7 @@
             android:id="@+id/btnLoginTop"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_group"
             app:tint="@color/blue_app" />
@@ -88,7 +88,7 @@
                 android:layout_width="55dp"
                 android:layout_height="55dp"
                 android:src="@drawable/ic_person"
-                app:tint="@color/cyan_recover" />
+                app:tint="@color/blue_app" />
         </LinearLayout>
 
         <!-- Espaciador para empujar los iconos hacia abajo -->
@@ -102,7 +102,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginBottom="12dp"
-            android:background="@drawable/circle_cyan"
+            android:background="@drawable/circle_blue"
             android:padding="12dp"
             android:src="@android:drawable/ic_input_add"
             app:tint="@color/black" />
@@ -121,7 +121,7 @@
             android:id="@+id/btnTrashLeft"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@android:drawable/ic_menu_delete"
             app:tint="@color/blue_app" />
@@ -145,7 +145,7 @@
             android:hint="Buscar..."
             android:paddingStart="16dp"
             android:textColor="@color/black"
-            android:textColorHint="#999999"
+            android:textColorHint="@color/blue_app"
             app:layout_constraintEnd_toStartOf="@+id/searchIcon"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -214,7 +214,7 @@
                     android:layout_width="90dp"
                     android:layout_height="90dp"
                     android:src="@drawable/ic_folder"
-                    app:tint="@color/icon_bg_white" />
+                    app:tint="@color/white" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -249,6 +249,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/leftSidebar"
-        app:tint="@color/icon_bg_white" />
+        app:tint="@color/white" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_black"
+    android:background="@color/black"
     tools:context=".SubscriptionSuccessActivity">
 
     <!-- Barra de Navegación Superior -->
@@ -12,7 +12,7 @@
         android:id="@+id/topBar"
         android:layout_width="match_parent"
         android:layout_height="90dp"
-        android:background="@color/cyan_recover"
+        android:background="@color/blue_app"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingStart="12dp"
@@ -28,7 +28,7 @@
             android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_person"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
 
         <ImageView
             android:id="@+id/btnHomeTop"
@@ -38,7 +38,7 @@
             android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_home"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
 
         <ImageView
             android:id="@+id/btnSharedTop"
@@ -48,7 +48,7 @@
             android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_handshake"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
 
         <ImageView
             android:id="@+id/btnLoginTop"
@@ -57,7 +57,7 @@
             android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_group"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
     </LinearLayout>
 
     <TextView
@@ -100,7 +100,7 @@
             android:layout_height="160dp"
             android:layout_gravity="bottom|center_horizontal"
             android:src="@drawable/ic_person"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
 
         <ImageView
             android:layout_width="80dp"
@@ -150,6 +150,6 @@
         android:src="@drawable/ic_arrow_back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:tint="@color/cyan_recover" />
+        app:tint="@color/blue_app" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

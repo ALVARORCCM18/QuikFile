@@ -24,7 +24,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_person"
             app:tint="@color/blue_app" />
@@ -34,7 +34,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_home"
             app:tint="@color/blue_app" />
@@ -44,7 +44,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_handshake"
             app:tint="@color/blue_app" />
@@ -53,7 +53,7 @@
             android:id="@+id/btnLoginTop"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_group"
             app:tint="@color/blue_app" />
@@ -118,7 +118,7 @@
         android:layout_marginTop="24dp"
         android:paddingStart="24dp"
         android:paddingEnd="24dp"
-        android:scrollbarThumbVertical="@color/cyan_recover"
+        android:scrollbarThumbVertical="@color/blue_app"
         android:fadeScrollbars="false"
         app:layout_constraintBottom_toTopOf="@id/bottomArea"
         app:layout_constraintTop_toBottomOf="@id/fileHeader">
@@ -188,7 +188,7 @@
             android:src="@drawable/ic_arrow_back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
 
         <!-- Iconos del Menú Circular (Inicialmente en el centro) -->
         <ImageView
@@ -205,7 +205,7 @@
             app:layout_constraintEnd_toEndOf="@id/btnMenu"
             app:layout_constraintStart_toStartOf="@id/btnMenu"
             app:layout_constraintTop_toTopOf="@id/btnMenu"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
 
         <ImageView
             android:id="@+id/btnDelete"
@@ -221,7 +221,7 @@
             app:layout_constraintEnd_toEndOf="@id/btnMenu"
             app:layout_constraintStart_toStartOf="@id/btnMenu"
             app:layout_constraintTop_toTopOf="@id/btnMenu"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
 
         <ImageView
             android:id="@+id/btnReport"
@@ -253,7 +253,7 @@
             app:layout_constraintEnd_toEndOf="@id/btnMenu"
             app:layout_constraintStart_toStartOf="@id/btnMenu"
             app:layout_constraintTop_toTopOf="@id/btnMenu"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
 
         <ImageView
             android:id="@+id/btnShare"
@@ -269,7 +269,7 @@
             app:layout_constraintEnd_toEndOf="@id/btnMenu"
             app:layout_constraintStart_toStartOf="@id/btnMenu"
             app:layout_constraintTop_toTopOf="@id/btnMenu"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
 
         <!-- Botón Central (3 rallas) -->
         <ImageView
