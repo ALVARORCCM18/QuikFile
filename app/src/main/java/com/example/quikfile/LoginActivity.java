@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
 
             // Compruebo que no deje los campos vacios
             if (!user.isEmpty() && !pass.isEmpty()) {
-                // Si todo ok, para dentro (a la pantalla principal)
+                // a la pantalla principal
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish(); // Quito el login del historial para que no vuelva atras al salir
