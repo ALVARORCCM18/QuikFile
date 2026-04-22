@@ -30,7 +30,7 @@ public class TrashManager {
         return trashedItems;
     }
 
-    // Para vaciarla del todo
+    // Para vaciarla
     public void clearTrash() {
         trashedItems.clear();
     }
