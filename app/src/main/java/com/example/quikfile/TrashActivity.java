@@ -45,7 +45,7 @@ public class TrashActivity extends AppCompatActivity {
         CheckBox cbSelectAll = findViewById(R.id.cbSelectAll);
         CheckBox cbFile1 = findViewById(R.id.cbFile1);
 
-        // Si marcas "Seleccionar todo", marcamos tambien el archivo individual
+        // Si marcas "Seleccionar todos", marcamos tambien el archivo individual
         if (cbSelectAll != null && cbFile1 != null) {
             cbSelectAll.setOnCheckedChangeListener((buttonView, isChecked) -> {
                 cbFile1.setChecked(isChecked);
