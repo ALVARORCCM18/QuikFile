@@ -2,8 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.QuikFile" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <item name="fontFamily">@font/jetbrains_mono</item>
-        <item name="android:fontFamily">@font/jetbrains_mono</item>
+        <!-- Note: fontFamily was removed here if it caused rendering issues with downloadable fonts in the IDE -->
     </style>
 
     <style name="Theme.QuikFile" parent="Base.Theme.QuikFile" />
