@@ -64,10 +64,10 @@ public class SharedActivity extends AppCompatActivity {
         // --- ICONOS DE LA BARRA LATERAL (LA DE LA IZQUIERDA) ---
         
         findViewById(R.id.btnUserLeft).setOnClickListener(v -> {
-            startActivity(new Intent(this, SettingsActivity.class));
+            Toast.makeText(this, "Ya estás en este entorno", Toast.LENGTH_SHORT).show();
         });
 
-        // Este es para añadir un nuevo icono de persona a la lista de la izquierda
+        // Este es para añadir un nuevo icono de entorno compartido a la lista de la izquierda
         findViewById(R.id.btnAddLeft).setOnClickListener(v -> {
             addNewSharedEnvironmentIcon();
         });
@@ -104,7 +104,7 @@ public class SharedActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    // Metodo para meter otra "persona" en el menu lateral
+    // Metodo para crear otros especios compartidos
     private void addNewSharedEnvironmentIcon() {
         ImageView newEnvironment = new ImageView(this);
         int size = (int) (55 * getResources().getDisplayMetrics().density);
@@ -112,8 +112,8 @@ public class SharedActivity extends AppCompatActivity {
         params.topMargin = (int) (8 * getResources().getDisplayMetrics().density);
         newEnvironment.setPadding(4, 4, 4, 4);
         newEnvironment.setLayoutParams(params);
-        newEnvironment.setImageResource(R.drawable.ic_person);
-        newEnvironment.setColorFilter(ContextCompat.getColor(this, R.color.cyan_recover));
+        newEnvironment.setImageResource(R.drawable.ic_shared_spaces);
+        newEnvironment.setColorFilter(ContextCompat.getColor(this, R.color.blue_app));
         
         newEnvironment.setOnClickListener(v -> 
             Toast.makeText(this, "Cambiando a otro entorno compartido...", Toast.LENGTH_SHORT).show());
@@ -142,7 +142,7 @@ public class SharedActivity extends AppCompatActivity {
         );
         icon.setLayoutParams(iconParams);
         icon.setImageResource(iconRes);
-        icon.setColorFilter(ContextCompat.getColor(this, R.color.icon_bg_white));
+        icon.setColorFilter(ContextCompat.getColor(this, R.color.white));
         newItem.addView(icon);
 
         TextView text = new TextView(this);

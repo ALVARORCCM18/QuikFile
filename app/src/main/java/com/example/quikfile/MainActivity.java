@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
         );
         icon.setLayoutParams(iconParams);
         icon.setImageResource(iconRes);
-        icon.setColorFilter(ContextCompat.getColor(this, R.color.icon_bg_white));
+        icon.setColorFilter(ContextCompat.getColor(this, R.color.white));
         newItem.addView(icon);
 
         // El nombre debajo del icono

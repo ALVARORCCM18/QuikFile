@@ -108,7 +108,7 @@ public class SharedSettingsActivity extends AppCompatActivity {
         ImageView icon = new ImageView(this);
         icon.setPadding(20, 20, 20, 20);
         icon.setImageResource(R.drawable.ic_person);
-        icon.setColorFilter(ContextCompat.getColor(this, R.color.cyan_recover));
+        icon.setColorFilter(ContextCompat.getColor(this, R.color.blue_app));
         frame.addView(icon);
 
         newUserLayout.addView(frame);

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_black"
+    android:background="@color/black"
     tools:context=".SettingsActivity">
 
     <!-- Barra de Navegación Superior (Estilo Index) -->
@@ -108,13 +108,13 @@
 
     <!-- Opciones de Ajustes -->
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/profileContainer">
+        app:layout_constraintTop_toBottomOf="@id/profileContainer"
+        tools:layout_editor_absoluteX="24dp">
 
         <!-- Campo Nombre -->
         <LinearLayout
@@ -153,12 +153,12 @@
             android:layout_height="56dp"
             android:layout_marginBottom="12dp"
             android:background="@drawable/search_bar_background"
+            android:clickable="true"
+            android:focusable="true"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:clickable="true"
-            android:focusable="true">
+            android:paddingEnd="16dp">
 
             <ImageView
                 android:layout_width="32dp"
@@ -182,12 +182,12 @@
             android:layout_height="56dp"
             android:layout_marginBottom="12dp"
             android:background="@drawable/search_bar_background"
+            android:clickable="true"
+            android:focusable="true"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:clickable="true"
-            android:focusable="true">
+            android:paddingEnd="16dp">
 
             <ImageView
                 android:layout_width="32dp"
@@ -211,13 +211,13 @@
             android:layout_height="56dp"
             android:layout_marginBottom="12dp"
             android:background="@drawable/search_bar_background"
+            android:clickable="true"
+            android:descendantFocusability="blocksDescendants"
+            android:focusable="true"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:descendantFocusability="blocksDescendants">
+            android:paddingEnd="16dp">
 
             <ImageView
                 android:layout_width="32dp"
@@ -247,5 +247,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:tint="@color/blue_app" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="150dp"
+        android:layout_height="134dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/spark_focused" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

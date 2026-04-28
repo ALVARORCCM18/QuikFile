@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_black"
+    android:background="@color/black"
     android:fitsSystemWindows="true"
     tools:context=".SharedActivity">
 
@@ -26,7 +26,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_person"
             app:tint="@color/blue_app" />
@@ -36,7 +36,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_home"
             app:tint="@color/blue_app" />
@@ -46,7 +46,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_handshake"
             app:tint="@color/blue_app" />
@@ -87,7 +87,7 @@
                 android:id="@+id/btnUserLeft"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
-                android:src="@drawable/ic_person"
+                android:src="@drawable/ic_shared_spaces"
                 app:tint="@color/blue_app" />
         </LinearLayout>
 
@@ -105,7 +105,7 @@
             android:background="@drawable/circle_blue"
             android:padding="12dp"
             android:src="@android:drawable/ic_input_add"
-            app:tint="@color/black" />
+            app:tint="@color/white" />
 
         <ImageView
             android:id="@+id/btnSettingsLeft"

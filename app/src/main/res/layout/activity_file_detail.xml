@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_black"
+    android:background="@color/black"
     tools:context=".FileDetailActivity">
 
     <!-- Barra de Navegación Superior -->
@@ -83,7 +83,7 @@
             android:layout_marginStart="16dp"
             android:layout_weight="1"
             android:background="@drawable/search_bar_background"
-            android:backgroundTint="@color/background_black"
+            android:backgroundTint="@color/black"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:padding="8dp">

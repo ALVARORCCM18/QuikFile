@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_black"
+    android:background="@color/black"
     tools:context=".AppReportsActivity">
 
     <!-- Barra de Navegación Superior (Estilo Index) -->
@@ -133,7 +133,7 @@
         android:src="@android:drawable/ic_menu_revert"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:tint="@color/cyan_recover" />
+        app:tint="@color/blue_app" />
 
     <!-- Botón REPORTAR -->
     <Button

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_black"
+    android:background="@color/black"
     tools:context=".AccountSettingsActivity">
 
     <!-- Barra de Navegación Superior (Estilo Index) -->
@@ -184,5 +184,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:tint="@color/blue_app" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="179dp"
+        android:layout_height="216dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/spark_sitting_up" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
