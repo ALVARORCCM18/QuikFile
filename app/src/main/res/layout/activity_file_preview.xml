@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_black"
+    android:background="@color/black"
     tools:context=".FilePreviewActivity">
 
     <!-- Barra de Navegación Superior -->
@@ -24,7 +24,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_person"
             app:tint="@color/blue_app" />
@@ -34,7 +34,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_home"
             app:tint="@color/blue_app" />
@@ -44,7 +44,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_handshake"
             app:tint="@color/blue_app" />
@@ -53,7 +53,7 @@
             android:id="@+id/btnLoginTop"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_group"
             app:tint="@color/blue_app" />
@@ -97,7 +97,7 @@
             android:background="@drawable/white_rounded_background"
             android:padding="12dp"
             android:src="@android:drawable/ic_menu_view"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
     </LinearLayout>
 
     <!-- Contenido del Fichero (Solo Lectura) -->
@@ -108,7 +108,7 @@
         android:layout_margin="24dp"
         android:scrollbars="vertical"
         android:fadeScrollbars="false"
-        android:scrollbarThumbVertical="@color/cyan_recover"
+        android:scrollbarThumbVertical="@color/blue_app"
         android:scrollbarSize="4dp"
         app:layout_constraintBottom_toTopOf="@id/bottomActions"
         app:layout_constraintTop_toBottomOf="@id/headerContainer">
@@ -140,7 +140,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
 
         <ImageView
             android:id="@+id/btnHistory"

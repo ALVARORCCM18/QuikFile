@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_black"
+    android:background="@color/black"
     tools:context=".FileShareActivity">
 
     <!-- Barra de Navegación Superior -->
@@ -24,7 +24,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_person"
             app:tint="@color/blue_app" />
@@ -34,7 +34,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_home"
             app:tint="@color/blue_app" />
@@ -44,7 +44,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_handshake"
             app:tint="@color/blue_app" />
@@ -53,7 +53,7 @@
             android:id="@+id/btnLoginTop"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_group"
             app:tint="@color/blue_app" />
@@ -97,7 +97,7 @@
             android:layout_height="45dp"
             android:layout_marginEnd="8dp"
             android:src="@android:drawable/ic_menu_send"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
     </LinearLayout>
 
     <!-- Buscador de Correo -->
@@ -128,7 +128,7 @@
             android:layout_marginStart="4dp"
             android:padding="8dp"
             android:src="@android:drawable/ic_menu_search"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
     </LinearLayout>
 
     <!-- Selector de Permisos -->
@@ -156,14 +156,14 @@
                 android:background="@drawable/white_rounded_background"
                 android:padding="12dp"
                 android:src="@android:drawable/ic_menu_manage"
-                app:tint="@color/cyan_recover" />
+                app:tint="@color/blue_app" />
 
             <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="4dp"
-                android:background="@color/cyan_recover" />
+                android:background="@color/blue_app" />
 
             <TextView
                 android:id="@+id/tvCurrentPermission"
@@ -181,7 +181,7 @@
                 android:layout_height="40dp"
                 android:layout_marginEnd="8dp"
                 android:src="@android:drawable/arrow_down_float"
-                app:tint="@color/cyan_recover" />
+                app:tint="@color/blue_app" />
         </LinearLayout>
 
         <!-- Opciones desplegables -->
@@ -233,7 +233,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@android:drawable/ic_menu_view"
-                    app:tint="@color/cyan_recover" />
+                    app:tint="@color/blue_app" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -263,7 +263,7 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:src="@drawable/ic_arrow_back"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
 
         <View
             android:layout_width="0dp"
@@ -274,7 +274,7 @@
             android:id="@+id/btnSubmitShare"
             android:layout_width="wrap_content"
             android:layout_height="70dp"
-            android:backgroundTint="@color/cyan_recover"
+            android:backgroundTint="@color/blue_app"
             android:text="COMPARTIR"
             android:textColor="@color/white"
             android:textSize="24sp"

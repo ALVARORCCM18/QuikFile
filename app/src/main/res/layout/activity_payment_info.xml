@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_black"
+    android:background="@color/black"
     tools:context=".PaymentInfoActivity">
 
     <!-- Barra de Navegación Superior -->
@@ -12,7 +12,7 @@
         android:id="@+id/topBar"
         android:layout_width="match_parent"
         android:layout_height="90dp"
-        android:background="@color/cyan_recover"
+        android:background="@color/blue_app"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingStart="12dp"
@@ -28,7 +28,7 @@
             android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_person"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
 
         <ImageView
             android:id="@+id/btnHomeTop"
@@ -38,7 +38,7 @@
             android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_home"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
 
         <ImageView
             android:id="@+id/btnSharedTop"
@@ -48,7 +48,7 @@
             android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_handshake"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
 
         <ImageView
             android:id="@+id/btnLoginTop"
@@ -57,7 +57,7 @@
             android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_group"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
     </LinearLayout>
 
     <ScrollView
@@ -225,7 +225,7 @@
             android:layout_marginEnd="40dp"
             android:padding="12dp"
             android:src="@drawable/ic_arrow_back"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
 
         <ImageView
             android:id="@+id/btnForward"
@@ -233,7 +233,7 @@
             android:layout_height="120dp"
             android:padding="12dp"
             android:src="@drawable/ic_arrow_forward"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

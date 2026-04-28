@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_black"
+    android:background="@color/black"
     tools:context=".FileVersionHistoryActivity">
 
     <!-- Barra de Navegación Superior -->
@@ -24,7 +24,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_person"
             app:tint="@color/blue_app" />
@@ -34,7 +34,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_home"
             app:tint="@color/blue_app" />
@@ -44,7 +44,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_handshake"
             app:tint="@color/blue_app" />
@@ -53,7 +53,7 @@
             android:id="@+id/btnLoginTop"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_group"
             app:tint="@color/blue_app" />
@@ -97,7 +97,7 @@
             android:background="@drawable/white_rounded_background"
             android:padding="12dp"
             android:src="@android:drawable/ic_menu_view"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
     </LinearLayout>
 
     <!-- Lista de Versiones con Scroll -->
@@ -106,12 +106,13 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="16dp"
-        android:scrollbars="vertical"
         android:fadeScrollbars="false"
-        android:scrollbarThumbVertical="@color/cyan_recover"
         android:scrollbarSize="4dp"
+        android:scrollbarThumbVertical="@color/blue_app"
+        android:scrollbars="vertical"
         app:layout_constraintBottom_toTopOf="@id/bottomActions"
-        app:layout_constraintTop_toBottomOf="@id/headerContainer">
+        app:layout_constraintTop_toBottomOf="@id/headerContainer"
+        tools:layout_editor_absoluteX="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -152,7 +153,7 @@
                         android:background="@drawable/circle_black"
                         android:padding="8dp"
                         android:src="@drawable/ic_arrow_forward"
-                        app:tint="@color/cyan_recover" />
+                        app:tint="@color/blue_app" />
                 </LinearLayout>
 
                 <TextView
@@ -199,7 +200,7 @@
                         android:background="@drawable/circle_black"
                         android:padding="8dp"
                         android:src="@drawable/ic_arrow_forward"
-                        app:tint="@color/cyan_recover" />
+                        app:tint="@color/blue_app" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -235,7 +236,7 @@
                         android:background="@drawable/circle_black"
                         android:padding="8dp"
                         android:src="@drawable/ic_arrow_forward"
-                        app:tint="@color/cyan_recover" />
+                        app:tint="@color/blue_app" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -253,14 +254,25 @@
 
         <ImageView
             android:id="@+id/btnBack"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="99dp"
+            android:layout_height="98dp"
             android:src="@drawable/ic_arrow_back"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:tint="@color/cyan_recover" />
+            app:tint="@color/blue_app" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="210dp"
+        android:layout_height="265dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/spark_spying" />
+
+    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

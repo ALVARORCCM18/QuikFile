@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_black"
+    android:background="@color/black"
     tools:context=".AddUserActivity">
 
     <!-- Barra de Navegación Superior -->
@@ -24,7 +24,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_person"
             app:tint="@color/blue_app" />
@@ -34,7 +34,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_home"
             app:tint="@color/blue_app" />
@@ -44,7 +44,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_handshake"
             app:tint="@color/blue_app" />
@@ -53,7 +53,7 @@
             android:id="@+id/btnLoginTop"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_group"
             app:tint="@color/blue_app" />
@@ -118,7 +118,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@android:drawable/arrow_down_float"
-                app:tint="@color/cyan_recover" />
+                app:tint="@color/blue_app" />
         </LinearLayout>
 
         <!-- Opciones desplegables (Ocultas por defecto) -->
@@ -141,7 +141,7 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:src="@drawable/ic_person"
-                    app:tint="@color/cyan_recover" />
+                    app:tint="@color/blue_app" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -163,7 +163,7 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:src="@drawable/ic_person"
-                    app:tint="@color/cyan_recover" />
+                    app:tint="@color/blue_app" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -183,7 +183,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
-        android:backgroundTint="@color/cyan_recover"
+        android:backgroundTint="@color/blue_app"
         android:text="Añadir usuario"
         android:textAllCaps="false"
         android:textColor="@color/white"
@@ -201,6 +201,6 @@
         android:src="@android:drawable/ic_menu_revert"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:tint="@color/cyan_recover" />
+        app:tint="@color/blue_app" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

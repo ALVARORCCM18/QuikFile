@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_black"
+    android:background="@color/black"
     tools:context=".SharedSettingsActivity">
 
     <!-- Barra de Navegación Superior -->
@@ -25,7 +25,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_person"
             app:tint="@color/blue_app" />
@@ -35,7 +35,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_home"
             app:tint="@color/blue_app" />
@@ -45,7 +45,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_handshake"
             app:tint="@color/blue_app" />
@@ -54,7 +54,7 @@
             android:id="@+id/btnLoginTop"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:background="@color/icon_bg_white"
+            android:background="@color/white"
             android:padding="8dp"
             android:src="@drawable/ic_group"
             app:tint="@color/blue_app" />
@@ -134,7 +134,7 @@
                     android:layout_height="match_parent"
                     android:padding="10dp"
                     android:src="@drawable/ic_person"
-                    app:tint="@color/cyan_recover" />
+                    app:tint="@color/blue_app" />
             </FrameLayout>
 
             <TextView
@@ -167,7 +167,7 @@
                     android:layout_height="match_parent"
                     android:padding="18dp"
                     android:src="@android:drawable/ic_input_add"
-                    app:tint="@color/cyan_recover" />
+                    app:tint="@color/blue_app" />
             </FrameLayout>
 
             <TextView
@@ -191,7 +191,7 @@
         android:src="@android:drawable/ic_menu_revert"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:tint="@color/cyan_recover" />
+        app:tint="@color/blue_app" />
 
     <!-- Botones de Acción (Ubicados un poco más arriba del botón de atrás) -->
     <Button
@@ -216,7 +216,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="8dp"
-        android:backgroundTint="@color/cyan_recover"
+        android:backgroundTint="@color/blue_app"
         android:text="Salir del entorno"
         android:textAllCaps="false"
         android:textColor="@color/white"
