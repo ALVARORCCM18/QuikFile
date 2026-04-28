@@ -187,7 +187,7 @@ public class FileDetailActivity extends AppCompatActivity {
         animatorSet.addListener(new Animator.AnimatorListener() {
             @Override public void onAnimationStart(Animator animation) {}
             @Override public void onAnimationEnd(Animator animation) {
-                // Al terminar escondo todo bien y vuelvo a poner el boton principal
+                // Al terminar escondo y vuelvo a poner el boton principal
                 for (View item : items) item.setVisibility(View.INVISIBLE);
                 btnMenu.setVisibility(View.VISIBLE);
                 btnCloseMenu.setVisibility(View.GONE);

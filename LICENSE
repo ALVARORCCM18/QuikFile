@@ -1,0 +1,112 @@
+GNU GENERAL PUBLIC LICENSE
+Version 3, 29 June 2007
+
+Copyright (C) 2007 Free Software Foundation, Inc.
+51 Franklin Street, Fifth Floor
+Boston, MA 02110-1301, USA
+
+Everyone is permitted to copy and distribute verbatim copies
+of this license document, but changing it is not allowed.
+
+
+                    Preamble
+
+The GNU General Public License is a free, copyleft license for software
+and other kinds of works.
+
+This version of the GNU GPL is intended to guarantee your freedom to
+share and change free software—to make sure the software is free for all
+its users. This General Public License applies to most of the Free Software
+Foundation's software and to any other program whose authors commit to
+it using this license.
+
+The licenses for most software are designed to take away your freedom to
+share and change it. By contrast, our General Public Licenses are
+intended to guarantee your freedom to share and change all versions of a
+program—to make sure it remains free software for all its users.
+
+
+                    TERMS AND CONDITIONS
+
+ 1.  You may copy and distribute verbatim copies of the Program's source code
+    as you receive it, in any medium, provided that you conspicuously and
+appropriately publish on each copy an appropriate copyright notice and
+disclaimer of warranty; keep intact all the notices that refer to this
+License and to the absence of any warranty; and give any other recipients
+of the Program a copy of this License along with the Program.
+
+    You may charge a fee for the physical act of transferring a copy, and
+you may at your option offer warranty protection in exchange for a fee.
+
+ 2.  You may modify your copy or copies of the Program or any portion of it,
+thus forming a work based on the Program, and copy and distribute such
+modifications or work under the terms of Section 1 above, provided that
+you also meet all of these conditions:
+
+    a)  You must cause the modified files to carry prominent notices
+stating that you changed the files and the date of any change.
+
+    b)  You must cause the whole of the work to be licensed at no charge to
+all third parties under the terms of this License.
+
+    c)  If a portion of the modified version is derived from a particular version
+of the Program, you must keep intact the copyright notice and
+other notices from the original version.
+
+ 3.  You may copy and distribute the Program (or modifications thereof)
+under the terms of Section 1, provided that you do not remove or alter
+the copyright notices and other notices of ownership, and that you do not
+change this License.
+
+ 4.  You may place your own copyright statement on your modifications and
+if you do, you may specify that you want to grant permission to use your
+modifications under different terms than those of this License, provided
+that you include in all copies of the Program that you distribute an
+appropriate notice about your modifications.
+
+ 5.  You are not required to accept this License, since you have not signed it.
+However, nothing else grants you permission to modify or distribute the
+Program or its derivative works.  These actions are prohibited by law if you do not accept this License.
+Therefore, by modifying or distributing the Program (or any work based on the Program), you indicate your acceptance of this License to do so, and all its terms and conditions for copying, distributing or modifying the Program or works based on it.
+
+ 6.  Each time you redistribute the Program (or any work based on the Program), the recipient automatically receives a license from the original licensor to copy, distribute or modify the Program subject to these terms and conditions.
+
+    You may not impose any further restrictions on the recipients' exercise of the rights granted herein.
+    You are not responsible for enforcing compliance by third parties to this License.
+
+ 7.  If the Program is indeed a proprietary program, you may not redistribute
+it without also complying with the terms of this License.
+
+ 8.  If you modify the Program, and you distribute it or provide it to others,
+you must include in any appropriate documentation a prominent statement
+that the Program has been modified and the date of modification.
+
+ 9.  This License does not grant you permission to use the trade names,
+trademarks, service marks, or other product identifiers of the licensor,
+except as required for reasonable and customary use in describing the
+origin of the Program and/or to comply with the requirements of Section 4.
+
+10.  This License is effective immediately upon your acceptance of these terms
+and conditions and shall continue in effect unless terminated.
+
+
+                    NO WARRANTY
+
+11. DISCLAIMER OF WARRANTY. EXCEPT AS EXPRESSLY SET FORTH IN THIS LICENSE, THE
+    PROGRAM IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTY OF ANY KIND, EITHER
+    EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
+    THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.
+    SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY
+    SERVICING, REPAIR, OR CORRECTION.
+
+
+                    LIMITATION OF LIABILITY
+
+12. IN NO EVENT SHALL ANY COPYRIGHT HOLDER BE LIABLE TO YOU FOR DAMAGES,
+    INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES
+    ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT
+    NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES
+    SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE
+    WITH ANY OTHER PROGRAMS), EVEN IF SUCH HOLDER HAS BEEN ADVISED OF THE
+    POSSIBILITY OF SUCH DAMAGES.

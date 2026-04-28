@@ -44,7 +44,7 @@ public class AddActivity extends AppCompatActivity {
         findViewById(R.id.btnNewFolder).setOnClickListener(v -> {
             Intent resultIntent = new Intent();
             resultIntent.putExtra("type", "FOLDER"); // Avisamos que es una carpeta
-            setResult(RESULT_OK, resultIntent); // Todo ha ido bien
+            setResult(RESULT_OK, resultIntent);
             finish(); // Cerramos esta pantalla y volvemos a la anterior
         });
 
