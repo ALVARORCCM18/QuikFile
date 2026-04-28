@@ -2,5 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.QuikFile" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
+        <item name="fontFamily">@font/jetbrains_mono</item>
+        <item name="android:fontFamily">@font/jetbrains_mono</item>
     </style>
 </resources>
