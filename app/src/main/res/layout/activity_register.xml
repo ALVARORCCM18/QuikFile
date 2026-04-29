@@ -29,7 +29,8 @@
         android:hint="Nombre de usuario"
         android:inputType="textPersonName"
         android:textColor="@color/black"
-        android:textColorHint="@color/blue_app"
+        android:textColorHint="#666666"
+        android:autofillHints="username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/logoCircle" />
@@ -46,7 +47,8 @@
         android:hint="Correo electrónico"
         android:inputType="textEmailAddress"
         android:textColor="@color/black"
-        android:textColorHint="@color/blue_app"
+        android:textColorHint="#666666"
+        android:autofillHints="emailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etUsername" />
@@ -63,7 +65,8 @@
         android:hint="Contraseña"
         android:inputType="textPassword"
         android:textColor="@color/black"
-        android:textColorHint="@color/blue_app"
+        android:textColorHint="#666666"
+        android:autofillHints="password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etEmail" />
@@ -80,7 +83,8 @@
         android:hint="Repite la contraseña"
         android:inputType="textPassword"
         android:textColor="@color/black"
-        android:textColorHint="@color/blue_app"
+        android:textColorHint="#666666"
+        android:autofillHints="password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etPassword" />

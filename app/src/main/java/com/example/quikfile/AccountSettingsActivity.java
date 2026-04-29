@@ -2,6 +2,7 @@ package com.example.quikfile;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +12,9 @@ public class AccountSettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_settings);
+
+        EditText etPassword = findViewById(R.id.etPassword);
+        EditText etEmail = findViewById(R.id.etEmail);
 
         // --- Navegación Barra Superior ---
         findViewById(R.id.btnSettingsTop).setOnClickListener(v -> {
@@ -33,11 +37,25 @@ public class AccountSettingsActivity extends AppCompatActivity {
         });
 
         // --- Opciones de Ajustes ---
-        findViewById(R.id.btnChangePassword).setOnClickListener(v -> 
-            Toast.makeText(this, "Redirigiendo a cambiar contraseña...", Toast.LENGTH_SHORT).show());
+        findViewById(R.id.btnUpdatePassword).setOnClickListener(v -> {
+            String newPass = etPassword.getText().toString();
+            if (!newPass.isEmpty()) {
+                Toast.makeText(this, "Contraseña actualizada a: " + newPass, Toast.LENGTH_SHORT).show();
+                etPassword.setText(""); // Limpiar campo
+            } else {
+                Toast.makeText(this, "Por favor, escribe una nueva contraseña", Toast.LENGTH_SHORT).show();
+            }
+        });
 
-        findViewById(R.id.btnChangeEmail).setOnClickListener(v -> 
-            Toast.makeText(this, "Redirigiendo a cambiar correo...", Toast.LENGTH_SHORT).show());
+        findViewById(R.id.btnUpdateEmail).setOnClickListener(v -> {
+            String newEmail = etEmail.getText().toString();
+            if (!newEmail.isEmpty()) {
+                Toast.makeText(this, "Correo actualizado a: " + newEmail, Toast.LENGTH_SHORT).show();
+                etEmail.setText(""); // Limpiar campo
+            } else {
+                Toast.makeText(this, "Por favor, escribe un nuevo correo", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         findViewById(R.id.btnDeleteAccount).setOnClickListener(v -> 
             Toast.makeText(this, "Eliminar cuenta (Requiere confirmación)", Toast.LENGTH_SHORT).show());
