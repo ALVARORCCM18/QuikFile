@@ -2,6 +2,7 @@ package com.example.quikfile;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class PaymentPlanActivity extends AppCompatActivity {
@@ -10,6 +11,11 @@ public class PaymentPlanActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_plan);
+
+        // --- Ayuda de Spark ---
+        findViewById(R.id.ivSparkMascot).setOnClickListener(v -> {
+            Toast.makeText(this, "Elige una opción para gestionar tu suscripción: ver planes, renovar el actual o cancelar el servicio.", Toast.LENGTH_LONG).show();
+        });
 
         // --- Navegación Barra Superior ---
         findViewById(R.id.btnSettingsTop).setOnClickListener(v -> {

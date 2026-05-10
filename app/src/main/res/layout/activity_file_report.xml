@@ -7,7 +7,7 @@
     android:background="@color/black"
     tools:context=".FileReportActivity">
 
-    <!-- Barra de Navegación Superior -->
+    <!-- Barra de Navegación Superior (Estandarizada) -->
     <LinearLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
@@ -15,6 +15,7 @@
         android:background="@color/blue_app"
         android:gravity="center_vertical"
         android:orientation="horizontal"
+        android:elevation="4dp"
         app:layout_constraintTop_toTopOf="parent">
 
         <FrameLayout
@@ -141,7 +142,9 @@
             android:textColorHint="@color/black"
             android:textColor="@color/black"
             android:textSize="18sp"
-            android:gravity="center" />
+            android:gravity="center"
+            android:importantForAutofill="no"
+            android:inputType="text" />
     </LinearLayout>
 
     <!-- Caja de Texto del Reporte -->
@@ -165,7 +168,9 @@
             android:textColorHint="@color/blue_app"
             android:padding="12dp"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine" />
     </FrameLayout>
 
     <!-- Botones Inferiores -->

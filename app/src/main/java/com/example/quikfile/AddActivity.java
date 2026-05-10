@@ -13,6 +13,11 @@ public class AddActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
 
+        // --- Ayuda de Spark ---
+        findViewById(R.id.ivSparkSpying).setOnClickListener(v -> {
+            Toast.makeText(this, "Elige si quieres crear una nueva carpeta para organizar tus archivos o subir un nuevo fichero directamente.", Toast.LENGTH_LONG).show();
+        });
+
         // --- LOS BOTONES DE ARRIBA (MENU RAPIDO) ---
         
         // Ir a los ajustes

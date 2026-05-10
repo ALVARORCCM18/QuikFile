@@ -12,6 +12,11 @@ public class CancellationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cancellation);
 
+        // --- Mascot Help ---
+        findViewById(R.id.ivSparkMascot).setOnClickListener(v -> {
+            Toast.makeText(this, "¿Seguro que quieres irte? Pulsa la flecha derecha para confirmar o la izquierda para quedarte.", Toast.LENGTH_LONG).show();
+        });
+
         // --- Navegación Barra Superior ---
         findViewById(R.id.btnSettingsTop).setOnClickListener(v -> {
             startActivity(new Intent(this, SettingsActivity.class));

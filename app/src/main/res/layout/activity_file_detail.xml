@@ -7,7 +7,7 @@
     android:background="@color/black"
     tools:context=".FileDetailActivity">
 
-    <!-- Barra de Navegación Superior -->
+    <!-- Barra de Navegación Superior (Estandarizada) -->
     <LinearLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
@@ -15,6 +15,7 @@
         android:background="@color/blue_app"
         android:gravity="center_vertical"
         android:orientation="horizontal"
+        android:elevation="4dp"
         app:layout_constraintTop_toTopOf="parent">
 
         <FrameLayout
@@ -116,7 +117,9 @@
                 android:text="Fichero"
                 android:textColor="@color/white"
                 android:textSize="22sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:importantForAutofill="no"
+                android:inputType="text" />
 
             <ImageView
                 android:id="@+id/btnEditName"
@@ -209,7 +212,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:tint="@color/blue_app" />
 
-        <!-- Iconos del Menú Circular (Inicialmente en el centro) -->
+        <!-- Iconos del Menú Circular -->
         <ImageView
             android:id="@+id/btnDownload"
             android:layout_width="60dp"

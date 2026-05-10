@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
+    tools:theme="@style/Base.Theme.QuikFile"
     tools:context=".AddActivity">
 
     <!-- Barra de Navegación Superior -->
@@ -15,6 +16,7 @@
         android:background="@color/blue_app"
         android:gravity="center_vertical"
         android:orientation="horizontal"
+        android:elevation="4dp"
         app:layout_constraintTop_toTopOf="parent">
 
         <FrameLayout
@@ -29,7 +31,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_person"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="Settings" />
         </FrameLayout>
 
         <FrameLayout
@@ -44,7 +47,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_home"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="Home" />
         </FrameLayout>
 
         <FrameLayout
@@ -59,7 +63,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_handshake"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="Shared" />
         </FrameLayout>
 
         <FrameLayout
@@ -74,7 +79,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_group"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="Profile" />
         </FrameLayout>
     </LinearLayout>
 
@@ -92,6 +98,7 @@
         app:layout_constraintTop_toBottomOf="@id/topBar" />
 
     <LinearLayout
+        android:id="@+id/optionsContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -107,13 +114,16 @@
             android:layout_marginEnd="16dp"
             android:background="#1A1108"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true">
 
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:src="@drawable/ic_folder"
-                app:tint="@color/white" />
+                app:tint="@color/white"
+                android:contentDescription="New Folder" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -131,13 +141,16 @@
             android:layout_height="180dp"
             android:background="#1A1108"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true">
 
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:src="@android:drawable/ic_menu_edit"
-                app:tint="@color/white" />
+                app:tint="@color/white"
+                android:contentDescription="New File" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -148,6 +161,18 @@
                 android:textSize="20sp" />
         </LinearLayout>
     </LinearLayout>
+
+    <!-- Personaje Spark Spying (Asomado a la derecha) -->
+    <ImageView
+        android:id="@+id/ivSparkSpying"
+        android:layout_width="211dp"
+        android:layout_height="157dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="Spark Spying"
+        android:scaleType="centerInside"
+        android:src="@drawable/spark_spying"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/optionsContainer" />
 
     <!-- Botón Volver -->
     <ImageView
@@ -161,6 +186,7 @@
         android:src="@android:drawable/ic_menu_revert"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:tint="@color/blue_app" />
+        app:tint="@color/blue_app"
+        android:contentDescription="Go Back" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

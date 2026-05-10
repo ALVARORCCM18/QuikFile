@@ -2,6 +2,7 @@ package com.example.quikfile;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -18,10 +19,13 @@ import androidx.core.content.ContextCompat;
 
 public class SharedSettingsActivity extends AppCompatActivity {
 
+    private static final String TAG = "SharedSettingsActivity";
     private LinearLayout containerActions;
+    
     private final ActivityResultLauncher<Intent> addUserLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
+                Log.d(TAG, "Regreso de AddUserActivity con código: " + result.getResultCode());
                 if (result.getResultCode() == RESULT_OK) {
                     addNewUserIcon();
                 }
@@ -35,7 +39,7 @@ public class SharedSettingsActivity extends AppCompatActivity {
 
         containerActions = findViewById(R.id.containerActions);
 
-        // --- Navegación Barra Superior ---
+        // --- Navegación ---
         findViewById(R.id.btnSettingsTop).setOnClickListener(v -> {
             startActivity(new Intent(this, SettingsActivity.class));
             finish();
@@ -55,38 +59,43 @@ public class SharedSettingsActivity extends AppCompatActivity {
             startActivity(new Intent(this, LoginActivity.class));
         });
 
-        // --- Editar Nombre del Entorno ---
+        // --- Editar Nombre ---
         EditText etEnvName = findViewById(R.id.etEnvName);
         findViewById(R.id.btnEditEnvName).setOnClickListener(v -> {
             etEnvName.requestFocus();
             InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-            if (imm != null) {
-                imm.showSoftInput(etEnvName, InputMethodManager.SHOW_IMPLICIT);
-            }
+            if (imm != null) imm.showSoftInput(etEnvName, InputMethodManager.SHOW_IMPLICIT);
         });
 
-        // --- Acciones de Miembros ---
+        // --- BOTÓN AÑADIR (CORREGIDO) ---
+        View btnAddMember = findViewById(R.id.btnEnvAddMember);
+        if (btnAddMember != null) {
+            btnAddMember.setOnClickListener(v -> {
+                Log.d(TAG, "Botón Añadir presionado");
+                Toast.makeText(this, "Abriendo añadir usuario...", Toast.LENGTH_SHORT).show();
+                try {
+                    Intent intent = new Intent(this, AddUserActivity.class);
+                    addUserLauncher.launch(intent);
+                } catch (Exception e) {
+                    Log.e(TAG, "Error al lanzar la actividad", e);
+                    Toast.makeText(this, "Error al abrir la pantalla", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
         findViewById(R.id.btnEnvUsers).setOnClickListener(v -> 
-            Toast.makeText(this, "gestionar usuario", Toast.LENGTH_SHORT).show());
+            Toast.makeText(this, "Gestionar usuario", Toast.LENGTH_SHORT).show());
 
-        findViewById(R.id.btnEnvAddMember).setOnClickListener(v -> {
-            Intent intent = new Intent(this, AddUserActivity.class);
-            addUserLauncher.launch(intent);
-        });
-
-        // --- Botones de Acción ---
         findViewById(R.id.btnExitEnv).setOnClickListener(v -> 
-            Toast.makeText(this, "Saliendo del entorno compartido...", Toast.LENGTH_SHORT).show());
+            Toast.makeText(this, "Saliendo...", Toast.LENGTH_SHORT).show());
 
         findViewById(R.id.btnDeleteEnv).setOnClickListener(v -> 
-            Toast.makeText(this, "Borrando entorno (Requiere confirmación)...", Toast.LENGTH_SHORT).show());
+            Toast.makeText(this, "Borrando...", Toast.LENGTH_SHORT).show());
 
-        // --- Botón Atrás ---
         findViewById(R.id.btnBack).setOnClickListener(v -> finish());
     }
 
     private void addNewUserIcon() {
-        // Creamos el nuevo contenedor de usuario
         LinearLayout newUserLayout = new LinearLayout(this);
         newUserLayout.setLayoutParams(new LinearLayout.LayoutParams(
                 (int) (80 * getResources().getDisplayMetrics().density),
@@ -94,15 +103,13 @@ public class SharedSettingsActivity extends AppCompatActivity {
         newUserLayout.setGravity(Gravity.CENTER);
         newUserLayout.setOrientation(LinearLayout.VERTICAL);
 
-        // FrameLayout para el icono
         FrameLayout frame = new FrameLayout(this);
         frame.setLayoutParams(new FrameLayout.LayoutParams(
                 (int) (80 * getResources().getDisplayMetrics().density),
                 (int) (80 * getResources().getDisplayMetrics().density)));
 
         View bg = new View(this);
-        bg.setBackground(ContextCompat.getDrawable(this, R.drawable.circle_blue));
-        bg.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.white));
+        bg.setBackground(ContextCompat.getDrawable(this, R.drawable.circle_white));
         frame.addView(bg);
 
         ImageView icon = new ImageView(this);
@@ -124,13 +131,9 @@ public class SharedSettingsActivity extends AppCompatActivity {
         text.setLayoutParams(textParams);
         newUserLayout.addView(text);
 
-        // Insertar antes del botón Añadir (que es el último hijo)
         int index = containerActions.getChildCount() - 1;
-        containerActions.addView(newUserLayout, index, new LinearLayout.LayoutParams(
-                (int) (80 * getResources().getDisplayMetrics().density),
-                LinearLayout.LayoutParams.WRAP_CONTENT));
+        containerActions.addView(newUserLayout, index);
         
-        // Añadir margen al nuevo usuario para separarlo del anterior
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) newUserLayout.getLayoutParams();
         layoutParams.setMarginStart((int) (8 * getResources().getDisplayMetrics().density));
         newUserLayout.setLayoutParams(layoutParams);

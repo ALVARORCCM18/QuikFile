@@ -7,7 +7,7 @@
     android:background="@color/black"
     tools:context=".FilePreviewActivity">
 
-    <!-- Barra de Navegación Superior -->
+    <!-- Barra de Navegación Superior (Estandarizada) -->
     <LinearLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
@@ -15,6 +15,7 @@
         android:background="@color/blue_app"
         android:gravity="center_vertical"
         android:orientation="horizontal"
+        android:elevation="4dp"
         app:layout_constraintTop_toTopOf="parent">
 
         <FrameLayout
@@ -78,7 +79,6 @@
         </FrameLayout>
     </LinearLayout>
 
-    <!-- Cabecera de Previsualización -->
     <LinearLayout
         android:id="@+id/headerContainer"
         android:layout_width="match_parent"
@@ -119,7 +119,6 @@
             app:tint="@color/blue_app" />
     </LinearLayout>
 
-    <!-- Contenido del Fichero (Solo Lectura) -->
     <ScrollView
         android:id="@+id/previewScroll"
         android:layout_width="match_parent"
@@ -128,7 +127,6 @@
         android:scrollbars="vertical"
         android:fadeScrollbars="false"
         android:scrollbarThumbVertical="@color/blue_app"
-        android:scrollbarSize="4dp"
         app:layout_constraintBottom_toTopOf="@id/bottomActions"
         app:layout_constraintTop_toBottomOf="@id/headerContainer">
 
@@ -136,13 +134,12 @@
             android:id="@+id/tvFileContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Este es un texto de prueba extenso para verificar la función de scroll en la previsualización del fichero.\n\nLínea 1: TextoTextoTextoTextoTextoTextoTexto\nLínea 2: TextoTextoTextoTextoTextoTextoTexto\nLínea 3: TextoTextoTextoTextoTextoTextoTexto\nLínea 4: TextoTextoTextoTextoTextoTextoTexto\nLínea 5: TextoTextoTextoTextoTextoTextoTexto\nLínea 6: TextoTextoTextoTextoTextoTextoTexto\nLínea 7: TextoTextoTextoTextoTextoTextoTexto\nLínea 8: TextoTextoTextoTextoTextoTextoTexto\nLínea 9: TextoTextoTextoTextoTextoTextoTexto\nLínea 10: TextoTextoTextoTextoTextoTextoTexto\nLínea 11: TextoTextoTextoTextoTextoTextoTexto\nLínea 12: TextoTextoTextoTextoTextoTextoTexto\nLínea 13: TextoTextoTextoTextoTextoTextoTexto\nLínea 14: TextoTextoTextoTextoTextoTextoTexto\nLínea 15: TextoTextoTextoTextoTextoTextoTexto\nLínea 16: TextoTextoTextoTextoTextoTextoTexto\nLínea 17: TextoTextoTextoTextoTextoTextoTexto\nLínea 18: TextoTextoTextoTextoTextoTextoTexto\nLínea 19: TextoTextoTextoTextoTextoTextoTexto\nLínea 20: TextoTextoTextoTextoTextoTextoTexto\nLínea 21: TextoTextoTextoTextoTextoTextoTexto\nLínea 22: TextoTextoTextoTextoTextoTextoTexto\nLínea 23: TextoTextoTextoTextoTextoTextoTexto\nLínea 24: TextoTextoTextoTextoTextoTextoTexto\nLínea 25: TextoTextoTextoTextoTextoTextoTexto\nLínea 26: TextoTextoTextoTextoTextoTextoTexto\nLínea 27: TextoTextoTextoTextoTextoTextoTexto\nLínea 28: TextoTextoTextoTextoTextoTextoTexto\nLínea 29: TextoTextoTextoTextoTextoTextoTexto\nLínea 30: TextoTextoTextoTextoTextoTextoTexto\nLínea 31: TextoTextoTextoTextoTextoTextoTexto\nLínea 32: TextoTextoTextoTextoTextoTextoTexto\nLínea 33: TextoTextoTextoTextoTextoTextoTexto\nLínea 34: TextoTextoTextoTextoTextoTextoTexto\nLínea 35: TextoTextoTextoTextoTextoTextoTexto\nLínea 36: TextoTextoTextoTextoTextoTextoTexto\nLínea 37: TextoTextoTextoTextoTextoTextoTexto\nLínea 38: TextoTextoTextoTextoTextoTextoTexto\nLínea 39: TextoTextoTextoTextoTextoTextoTexto\nLínea 40: Fin del documento de prueba."
+            android:text="Este es un texto de prueba extenso para verificar la función de scroll en la previsualización del fichero.\n\nLínea 1: Contenido del archivo.\nLínea 2: Más texto de ejemplo.\n..."
             android:textColor="@color/white"
             android:textSize="20sp"
             android:lineSpacingExtra="4dp" />
     </ScrollView>
 
-    <!-- Botones Inferiores -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottomActions"
         android:layout_width="match_parent"

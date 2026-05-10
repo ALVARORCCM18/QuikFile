@@ -16,6 +16,11 @@ public class AccountSettingsActivity extends AppCompatActivity {
         EditText etPassword = findViewById(R.id.etPassword);
         EditText etEmail = findViewById(R.id.etEmail);
 
+        // --- Ayuda de Spark ---
+        findViewById(R.id.ivSparkSitting).setOnClickListener(v -> {
+            Toast.makeText(this, "Aquí puedes actualizar tu contraseña, cambiar tu correo electrónico o eliminar tu cuenta si lo deseas.", Toast.LENGTH_LONG).show();
+        });
+
         // --- Navegación Barra Superior ---
         findViewById(R.id.btnSettingsTop).setOnClickListener(v -> {
             startActivity(new Intent(this, SettingsActivity.class));

@@ -2,6 +2,7 @@ package com.example.quikfile;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SubscriptionActivity extends AppCompatActivity {
@@ -10,6 +11,11 @@ public class SubscriptionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subscription);
+
+        // --- Ayuda de Spark ---
+        findViewById(R.id.ivSparkMascot).setOnClickListener(v -> {
+            Toast.makeText(this, "¡Consigue el plan premium para desbloquear funciones exclusivas como el entorno compartido!", Toast.LENGTH_LONG).show();
+        });
 
         // --- Navegación Barra Superior ---
         findViewById(R.id.btnSettingsTop).setOnClickListener(v -> {

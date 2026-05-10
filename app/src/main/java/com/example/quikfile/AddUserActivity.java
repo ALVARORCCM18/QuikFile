@@ -2,6 +2,7 @@ package com.example.quikfile;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -9,9 +10,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-// Esta pantalla sirve para meter a nuevos usuarios en un grupo o entorno
 public class AddUserActivity extends AppCompatActivity {
-
+    private static final String TAG = "AddUserActivity";
     private boolean isOptionsVisible = false;
     private String selectedType = "";
 
@@ -20,60 +20,65 @@ public class AddUserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_user);
 
-        LinearLayout optionsLayout = findViewById(R.id.optionsLayout);
-        TextView tvSelectedType = findViewById(R.id.tvSelectedType);
-        ImageView ivArrow = findViewById(R.id.ivArrow);
+        // --- Ayuda de Spark ---
+        // Corregido: ivSparkMascot es el ID real en el XML
+        View mascot = findViewById(R.id.ivSparkMascot);
+        if (mascot != null) {
+            mascot.setOnClickListener(v -> Toast.makeText(this, "Selecciona un rol para el usuario", Toast.LENGTH_SHORT).show());
+        }
 
-        // --- MANEJO DEL SELECTOR DE ROL ---
-        
-        // Cuando pulsas el selector, abrimos o cerramos las opciones
-        findViewById(R.id.selectorHeader).setOnClickListener(v -> {
-            isOptionsVisible = !isOptionsVisible;
-            optionsLayout.setVisibility(isOptionsVisible ? View.VISIBLE : View.GONE);
-            // Cambio la flecha de arriba/abajo segun este abierto o no
-            ivArrow.setImageResource(isOptionsVisible ? android.R.drawable.arrow_up_float : android.R.drawable.arrow_down_float);
-        });
+        // --- Selector de Rol ---
+        View header = findViewById(R.id.selectorHeader);
+        LinearLayout options = findViewById(R.id.optionsLayout);
+        ImageView arrow = findViewById(R.id.ivArrow);
+        TextView typeText = findViewById(R.id.tvSelectedType);
 
-        // Si eligen Administrador
-        findViewById(R.id.optionAdmin).setOnClickListener(v -> {
-            selectedType = "Administrador";
-            tvSelectedType.setText(selectedType);
-            optionsLayout.setVisibility(View.GONE);
-            isOptionsVisible = false;
-        });
+        if (header != null && options != null) {
+            header.setOnClickListener(v -> {
+                isOptionsVisible = !isOptionsVisible;
+                options.setVisibility(isOptionsVisible ? View.VISIBLE : View.GONE);
+                if (arrow != null) arrow.setImageResource(isOptionsVisible ? android.R.drawable.arrow_up_float : android.R.drawable.arrow_down_float);
+            });
+        }
 
-        // Si eligen Miembro
-        findViewById(R.id.optionMember).setOnClickListener(v -> {
-            selectedType = "Miembro";
-            tvSelectedType.setText(selectedType);
-            optionsLayout.setVisibility(View.GONE);
-            isOptionsVisible = false;
-        });
+        // --- Opciones ---
+        View optAdmin = findViewById(R.id.optionAdmin);
+        if (optAdmin != null) {
+            optAdmin.setOnClickListener(v -> {
+                selectedType = "Administrador";
+                if (typeText != null) typeText.setText(selectedType);
+                options.setVisibility(View.GONE);
+                isOptionsVisible = false;
+            });
+        }
 
-        // --- BOTON DE CONFIRMAR ---
-        
-        findViewById(R.id.btnAddUserConfirm).setOnClickListener(v -> {
-            if (selectedType.isEmpty()) {
-                Toast.makeText(this, "Selecciona un tipo de usuario", Toast.LENGTH_SHORT).show();
-                return;
-            }
-            
-            // Si ha elegido rol, guardamos (simulado)
-            Toast.makeText(this, "Usuario añadido correctamente", Toast.LENGTH_SHORT).show();
+        View optMember = findViewById(R.id.optionMember);
+        if (optMember != null) {
+            optMember.setOnClickListener(v -> {
+                selectedType = "Miembro";
+                if (typeText != null) typeText.setText(selectedType);
+                options.setVisibility(View.GONE);
+                isOptionsVisible = false;
+            });
+        }
 
-            Intent resultIntent = new Intent();
-            resultIntent.putExtra("user_added", true);
-            setResult(RESULT_OK, resultIntent);
-            finish();
-        });
+        // --- Confirmar ---
+        View confirm = findViewById(R.id.btnAddUserConfirm);
+        if (confirm != null) {
+            confirm.setOnClickListener(v -> {
+                if (selectedType.isEmpty()) {
+                    Toast.makeText(this, "Elige un tipo de usuario", Toast.LENGTH_SHORT).show();
+                } else {
+                    Intent result = new Intent();
+                    result.putExtra("user_added", true);
+                    setResult(RESULT_OK, result);
+                    finish();
+                }
+            });
+        }
 
-        // --- NAVEGACION ---
-
-        findViewById(R.id.btnHomeTop).setOnClickListener(v -> {
-            startActivity(new Intent(this, MainActivity.class));
-            finish();
-        });
-
-        findViewById(R.id.btnBack).setOnClickListener(v -> finish());
+        // --- Navegación ---
+        View btnBack = findViewById(R.id.btnBack);
+        if (btnBack != null) btnBack.setOnClickListener(v -> finish());
     }
 }
