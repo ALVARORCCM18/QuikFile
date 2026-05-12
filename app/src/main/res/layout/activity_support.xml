@@ -79,149 +79,16 @@
         </FrameLayout>
     </LinearLayout>
 
-    <!-- Perfil de Usuario -->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/profileContainer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topBar">
-
-        <View
-            android:id="@+id/profileBg"
-            android:layout_width="160dp"
-            android:layout_height="160dp"
-            android:background="@drawable/circle_blue"
-            android:backgroundTint="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/ivUserPhoto"
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:src="@drawable/ic_person"
-            app:layout_constraintBottom_toBottomOf="@id/profileBg"
-            app:layout_constraintEnd_toEndOf="@id/profileBg"
-            app:layout_constraintStart_toStartOf="@id/profileBg"
-            app:layout_constraintTop_toTopOf="@id/profileBg"
-            app:tint="@color/blue_app" />
-
-        <ImageView
-            android:id="@+id/btnEditPhoto"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:background="@drawable/circle_blue"
-            android:backgroundTint="@color/white"
-            android:elevation="4dp"
-            android:padding="8dp"
-            android:src="@android:drawable/ic_menu_edit"
-            app:layout_constraintEnd_toEndOf="@id/profileBg"
-            app:layout_constraintTop_toTopOf="@id/profileBg"
-            app:tint="@color/blue_app" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <!-- Opciones de Ajustes -->
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/profileContainer">
+        app:layout_constraintTop_toBottomOf="@+id/topBar">
 
         <LinearLayout
-            android:id="@+id/btnEditName"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/search_bar_background"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp">
-
-            <EditText
-                android:id="@+id/etName"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:hint="Nombre"
-                android:inputType="textPersonName"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:importantForAutofill="no" />
-
-            <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:src="@android:drawable/ic_menu_edit"
-                app:tint="@color/blue_app" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/btnAccountSettings"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/search_bar_background"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp">
-
-            <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_marginEnd="12dp"
-                android:src="@android:drawable/ic_menu_manage"
-                app:tint="@color/blue_app" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ajustes de cuenta"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/btnChangePlan"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/search_bar_background"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp">
-
-            <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_marginEnd="12dp"
-                android:src="@android:drawable/ic_menu_send"
-                app:tint="@color/blue_app" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cambiar Plan de Pago"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/btnAppReports"
+            android:id="@+id/btnAppFAQs"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginBottom="12dp"
@@ -244,13 +111,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Reportes de aplicación"
+                android:text="Preguntas Frecuentes"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/btnAppSupport"
+            android:id="@+id/btnAppManual"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginBottom="12dp"
@@ -273,13 +140,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Soporte al usuario"
+                android:text="Manual de uso"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/btnAppIdiom"
+            android:id="@+id/btnAppContact"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginBottom="12dp"
@@ -302,10 +169,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Idioma"
+                android:text="Contactanos"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
         </LinearLayout>
+
 
     </LinearLayout>
 

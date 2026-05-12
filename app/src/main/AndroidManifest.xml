@@ -11,104 +11,87 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.QuikFile">
-
+        <activity
+            android:name=".SupportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LanguageActivity"
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-
         <activity
             android:name=".TrashActivity"
             android:exported="false" />
-
         <activity
             android:name=".SharedActivity"
             android:exported="false" />
-
         <activity
             android:name=".AddActivity"
             android:exported="false" />
-
         <activity
             android:name=".SettingsActivity"
             android:exported="false" />
-
         <activity
             android:name=".SharedSettingsActivity"
             android:exported="false" />
-
         <activity
             android:name=".AddUserActivity"
             android:exported="false" />
-
         <activity
             android:name=".AccountSettingsActivity"
             android:exported="false" />
-
         <activity
             android:name=".AppReportsActivity"
             android:exported="false" />
-
         <activity
             android:name=".PaymentPlanActivity"
             android:exported="false" />
-
         <activity
             android:name=".SubscriptionActivity"
             android:exported="false" />
-
         <activity
             android:name=".PaymentInfoActivity"
             android:exported="false" />
-
         <activity
             android:name=".SubscriptionSuccessActivity"
             android:exported="false" />
-
         <activity
             android:name=".RenewalActivity"
             android:exported="false" />
-
         <activity
             android:name=".CancellationActivity"
             android:exported="false" />
-
         <activity
             android:name=".FolderContentActivity"
             android:exported="false" />
-
         <activity
             android:name=".FileDetailActivity"
             android:exported="false" />
-
         <activity
             android:name=".FileReportActivity"
             android:exported="false" />
-
         <activity
             android:name=".FileShareActivity"
             android:exported="false" />
-
         <activity
             android:name=".FilePreviewActivity"
             android:exported="false" />
-
         <activity
             android:name=".FileVersionHistoryActivity"
             android:exported="false" />
-
     </application>
 
 </manifest>
