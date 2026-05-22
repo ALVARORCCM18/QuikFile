@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    android:fitsSystemWindows="true"
     tools:context=".SharedActivity">
 
     <!-- Barra de Navegación Superior (Estandarizada) -->
@@ -31,7 +30,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_person"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/settings_title" />
         </FrameLayout>
 
         <FrameLayout
@@ -46,7 +46,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_home"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/already_at_home" />
         </FrameLayout>
 
         <FrameLayout
@@ -61,7 +62,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_handshake"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/shared_env_title" />
         </FrameLayout>
 
         <FrameLayout
@@ -76,11 +78,11 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_group"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/login_button" />
         </FrameLayout>
     </LinearLayout>
 
-    <!-- Barra lateral izquierda (Blanca) -->
     <LinearLayout
         android:id="@+id/leftSidebar"
         android:layout_width="70dp"
@@ -94,23 +96,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/topBar">
 
-        <!-- Contenedor para los iconos de usuario -->
         <LinearLayout
             android:id="@+id/userIconsContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center_horizontal">
-
             <ImageView
                 android:id="@+id/btnUserLeft"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
                 android:src="@drawable/ic_shared_spaces"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@null" />
         </LinearLayout>
 
-        <!-- Espaciador para empujar los iconos hacia abajo -->
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -124,7 +124,8 @@
             android:background="@drawable/circle_blue"
             android:padding="12dp"
             android:src="@android:drawable/ic_input_add"
-            app:tint="@color/white" />
+            app:tint="@color/white"
+            android:contentDescription="@string/add" />
 
         <ImageView
             android:id="@+id/btnSettingsLeft"
@@ -134,7 +135,8 @@
             android:background="@drawable/circle_blue"
             android:padding="12dp"
             android:src="@android:drawable/ic_menu_manage"
-            app:tint="@color/white" />
+            app:tint="@color/white"
+            android:contentDescription="@string/settings_title" />
 
         <ImageView
             android:id="@+id/btnTrashLeft"
@@ -143,10 +145,10 @@
             android:background="@color/white"
             android:padding="8dp"
             android:src="@android:drawable/ic_menu_delete"
-            app:tint="@color/blue_app" />
+            app:tint="@color/blue_app"
+            android:contentDescription="@string/trash" />
     </LinearLayout>
 
-    <!-- Barra de Búsqueda -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/searchBar"
         android:layout_width="0dp"
@@ -161,7 +163,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:background="@android:color/transparent"
-            android:hint="Buscar..."
+            android:hint="@string/search_hint"
             android:paddingStart="16dp"
             android:textColor="@color/black"
             android:textColorHint="@color/blue_app"
@@ -180,24 +182,23 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/blue_app" />
+            app:tint="@color/blue_app"
+            android:contentDescription="@null" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- Nombre del Entorno (Alineado a la izquierda) -->
     <TextView
         android:id="@+id/tvEnvironmentName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="Entorno compartido"
+        android:text="@string/shared_env_title"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/leftSidebar"
         app:layout_constraintTop_toBottomOf="@id/searchBar" />
 
-    <!-- Área de Scroll para las Carpetas: termina antes del botón -->
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -218,7 +219,6 @@
             android:paddingEnd="8dp"
             android:paddingBottom="8dp">
 
-            <!-- Carpeta 1 (Alineada a la izquierda/start) -->
             <LinearLayout
                 android:id="@+id/itemFolder"
                 android:layout_width="0dp"
@@ -229,20 +229,21 @@
                 android:paddingStart="24dp"
                 android:paddingTop="16dp"
                 android:paddingEnd="16dp"
-                android:paddingBottom="16dp">
-
+                android:paddingBottom="16dp"
+                android:clickable="true"
+                android:focusable="true">
                 <ImageView
                     android:layout_width="90dp"
                     android:layout_height="90dp"
                     android:src="@drawable/ic_folder"
-                    app:tint="@color/white" />
-
+                    app:tint="@color/white"
+                    android:contentDescription="@null" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:layout_marginStart="12dp"
-                    android:text="Carpeta"
+                    android:text="@string/folder"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -253,11 +254,9 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_columnWeight="1" />
-
         </GridLayout>
     </ScrollView>
 
-    <!-- Botón Añadir (Fijo abajo) -->
     <ImageView
         android:id="@+id/btnAdd"
         android:layout_width="100dp"
@@ -270,6 +269,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/leftSidebar"
-        app:tint="@color/white" />
+        app:tint="@color/white"
+        android:contentDescription="@string/add" />
+
+    <!-- Mascota Spark -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

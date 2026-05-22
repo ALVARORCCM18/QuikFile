@@ -31,13 +31,13 @@ public class RegisterActivity extends AppCompatActivity {
 
             if (!user.isEmpty() && !email.isEmpty() && !pass.isEmpty() && !repeatPass.isEmpty()) {
                 if (pass.equals(repeatPass)) {
-                    Toast.makeText(this, "Registro completado con éxito", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.registration_success, Toast.LENGTH_SHORT).show();
                     finish(); // Vuelve al Login
                 } else {
-                    Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.passwords_do_not_match, Toast.LENGTH_SHORT).show();
                 }
             } else {
-                Toast.makeText(this, "Por favor, rellena todos los campos", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.fill_all_fields, Toast.LENGTH_SHORT).show();
             }
         });
 

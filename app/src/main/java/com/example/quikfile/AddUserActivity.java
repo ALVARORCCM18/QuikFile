@@ -2,7 +2,6 @@ package com.example.quikfile;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -11,7 +10,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AddUserActivity extends AppCompatActivity {
-    private static final String TAG = "AddUserActivity";
     private boolean isOptionsVisible = false;
     private String selectedType = "";
 
@@ -20,14 +18,12 @@ public class AddUserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_user);
 
-        // --- Ayuda de Spark ---
-        // Corregido: ivSparkMascot es el ID real en el XML
+        // --- Spark Traducido ---
         View mascot = findViewById(R.id.ivSparkMascot);
         if (mascot != null) {
-            mascot.setOnClickListener(v -> Toast.makeText(this, "Selecciona un rol para el usuario", Toast.LENGTH_SHORT).show());
+            mascot.setOnClickListener(v -> Toast.makeText(this, R.string.spark_msg_add_user, Toast.LENGTH_SHORT).show());
         }
 
-        // --- Selector de Rol ---
         View header = findViewById(R.id.selectorHeader);
         LinearLayout options = findViewById(R.id.optionsLayout);
         ImageView arrow = findViewById(R.id.ivArrow);
@@ -41,11 +37,10 @@ public class AddUserActivity extends AppCompatActivity {
             });
         }
 
-        // --- Opciones ---
         View optAdmin = findViewById(R.id.optionAdmin);
         if (optAdmin != null) {
             optAdmin.setOnClickListener(v -> {
-                selectedType = "Administrador";
+                selectedType = getString(R.string.administrator);
                 if (typeText != null) typeText.setText(selectedType);
                 options.setVisibility(View.GONE);
                 isOptionsVisible = false;
@@ -55,20 +50,20 @@ public class AddUserActivity extends AppCompatActivity {
         View optMember = findViewById(R.id.optionMember);
         if (optMember != null) {
             optMember.setOnClickListener(v -> {
-                selectedType = "Miembro";
+                selectedType = getString(R.string.member);
                 if (typeText != null) typeText.setText(selectedType);
                 options.setVisibility(View.GONE);
                 isOptionsVisible = false;
             });
         }
 
-        // --- Confirmar ---
         View confirm = findViewById(R.id.btnAddUserConfirm);
         if (confirm != null) {
             confirm.setOnClickListener(v -> {
                 if (selectedType.isEmpty()) {
-                    Toast.makeText(this, "Elige un tipo de usuario", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.select_type_hint, Toast.LENGTH_SHORT).show();
                 } else {
+                    Toast.makeText(this, R.string.user_added_success, Toast.LENGTH_SHORT).show();
                     Intent result = new Intent();
                     result.putExtra("user_added", true);
                     setResult(RESULT_OK, result);
@@ -77,7 +72,6 @@ public class AddUserActivity extends AppCompatActivity {
             });
         }
 
-        // --- Navegación ---
         View btnBack = findViewById(R.id.btnBack);
         if (btnBack != null) btnBack.setOnClickListener(v -> finish());
     }

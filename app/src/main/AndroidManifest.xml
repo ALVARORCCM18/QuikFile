@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QuikFile">
         <activity
+            android:name=".UserManualActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ContactActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FaqActivity"
+            android:exported="false" />
+        <activity
             android:name=".SupportActivity"
             android:exported="false" />
         <activity

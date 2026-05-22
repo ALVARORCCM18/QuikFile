@@ -2,36 +2,28 @@ package com.example.quikfile;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class FilePreviewActivity extends AppCompatActivity {
-
-    private TextView tvFileName, tvFileContent;
+public class ContactActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_file_preview);
+        setContentView(R.layout.activity_contact);
 
-        tvFileName = findViewById(R.id.tvFileName);
-        tvFileContent = findViewById(R.id.tvFileContent);
-
-        String fileName = getIntent().getStringExtra("fileName");
-        String versionDate = getIntent().getStringExtra("versionDate");
-
-        if (fileName != null) {
-            tvFileName.setText(fileName);
-        }
-
-        if (versionDate != null) {
-            String contentPrefix = getString(R.string.version_history) + ": " + versionDate + "\n\n";
-            tvFileContent.setText(contentPrefix + tvFileContent.getText());
+        // --- Spark Mascot ---
+        View spark = findViewById(R.id.ivSparkMascot);
+        if (spark != null) {
+            spark.setOnClickListener(v -> 
+                Toast.makeText(this, R.string.spark_msg_contact, Toast.LENGTH_SHORT).show());
         }
 
         // --- Navegación Barra Superior ---
         findViewById(R.id.btnSettingsTop).setOnClickListener(v -> {
             startActivity(new Intent(this, SettingsActivity.class));
+            finish();
         });
 
         findViewById(R.id.btnHomeTop).setOnClickListener(v -> {
@@ -43,19 +35,14 @@ public class FilePreviewActivity extends AppCompatActivity {
 
         findViewById(R.id.btnSharedTop).setOnClickListener(v -> {
             startActivity(new Intent(this, SharedActivity.class));
+            finish();
         });
 
         findViewById(R.id.btnLoginTop).setOnClickListener(v -> {
             startActivity(new Intent(this, LoginActivity.class));
         });
 
-        // --- Botones Inferiores ---
+        // --- Botón Atrás ---
         findViewById(R.id.btnBack).setOnClickListener(v -> finish());
-
-        findViewById(R.id.btnHistory).setOnClickListener(v -> {
-            Intent intent = new Intent(this, FileVersionHistoryActivity.class);
-            intent.putExtra("fileName", tvFileName.getText().toString());
-            startActivity(intent);
-        });
     }
 }

@@ -14,12 +14,20 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        // --- Navegación Barra Superior (Funcionalidad Index) ---
+        // --- Spark Mascot ---
+        if (findViewById(R.id.ivSparkMascot) != null) {
+            findViewById(R.id.ivSparkMascot).setOnClickListener(v -> 
+                Toast.makeText(this, R.string.spark_msg_settings, Toast.LENGTH_SHORT).show());
+        }
+
+        // --- Navegación Barra Superior ---
         findViewById(R.id.btnSettingsTop).setOnClickListener(v -> 
-            Toast.makeText(this, "Ya estás en Ajustes", Toast.LENGTH_SHORT).show());
+            Toast.makeText(this, R.string.already_at_settings, Toast.LENGTH_SHORT).show());
 
         findViewById(R.id.btnHomeTop).setOnClickListener(v -> {
-            startActivity(new Intent(this, MainActivity.class));
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
             finish();
         });
 
@@ -28,38 +36,24 @@ public class SettingsActivity extends AppCompatActivity {
             finish();
         });
 
-        findViewById(R.id.btnLoginTop).setOnClickListener(v -> {
-            startActivity(new Intent(this, LoginActivity.class));
-        });
+        findViewById(R.id.btnLoginTop).setOnClickListener(v -> startActivity(new Intent(this, LoginActivity.class)));
 
-        // --- Campo Nombre (Permitir escribir) ---
+        // --- Campo Nombre ---
         EditText etName = findViewById(R.id.etName);
         findViewById(R.id.btnEditName).setOnClickListener(v -> {
             etName.requestFocus();
             InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-            if (imm != null) {
-                imm.showSoftInput(etName, InputMethodManager.SHOW_IMPLICIT);
-            }
+            if (imm != null) imm.showSoftInput(etName, InputMethodManager.SHOW_IMPLICIT);
         });
 
-        // --- Opciones con Navegación/Mensajes ---
-        findViewById(R.id.btnAccountSettings).setOnClickListener(v -> {
-            startActivity(new Intent(this, AccountSettingsActivity.class));
-        });
+        // --- Opciones ---
+        findViewById(R.id.btnAccountSettings).setOnClickListener(v -> startActivity(new Intent(this, AccountSettingsActivity.class)));
+        findViewById(R.id.btnChangePlan).setOnClickListener(v -> startActivity(new Intent(this, PaymentPlanActivity.class)));
+        findViewById(R.id.btnAppReports).setOnClickListener(v -> startActivity(new Intent(this, AppReportsActivity.class)));
+        findViewById(R.id.btnAppSupport).setOnClickListener(v -> startActivity(new Intent(this, SupportActivity.class)));
+        findViewById(R.id.btnAppIdiom).setOnClickListener(v -> startActivity(new Intent(this, LanguageActivity.class)));
 
-        findViewById(R.id.btnChangePlan).setOnClickListener(v -> {
-            startActivity(new Intent(this, PaymentPlanActivity.class));
-        });
-
-        findViewById(R.id.btnAppReports).setOnClickListener(v -> {
-            startActivity(new Intent(this, AppReportsActivity.class));
-        });
-
-        // --- Botón Atrás ---
         findViewById(R.id.btnBack).setOnClickListener(v -> finish());
-
-        // --- Otras funcionalidades ---
-        findViewById(R.id.btnEditPhoto).setOnClickListener(v -> 
-            Toast.makeText(this, "Cambiar foto de perfil", Toast.LENGTH_SHORT).show());
+        findViewById(R.id.btnEditPhoto).setOnClickListener(v -> Toast.makeText(this, R.string.change_profile_photo, Toast.LENGTH_SHORT).show());
     }
 }

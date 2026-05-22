@@ -7,7 +7,7 @@
     android:background="@color/black"
     tools:context=".SharedSettingsActivity">
 
-    <!-- Barra de Navegación Superior (Estandarizada a 100dp) -->
+    <!-- Barra de Navegación Superior (Estandarizada) -->
     <LinearLayout
         android:id="@+id/topBar"
         android:layout_width="0dp"
@@ -110,10 +110,10 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@android:color/transparent"
-            android:hint="Nombre del entorno"
+            android:hint="@string/env_name_hint"
             android:inputType="text"
             android:paddingStart="12dp"
-            android:text="\&quot;Entorno compartido\&quot;"
+            android:text="@string/shared_env_title"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:importantForAutofill="no" />
@@ -169,7 +169,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Usuario"
+                android:text="@string/user_label"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -205,13 +205,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Añadir"
+                android:text="@string/add"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Botón Atrás -->
+    <!-- Botones de Acción -->
     <ImageView
         android:id="@+id/btnBack"
         android:layout_width="80dp"
@@ -222,7 +222,8 @@
         android:src="@android:drawable/ic_menu_revert"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:tint="@color/blue_app" />
+        app:tint="@color/blue_app"
+        android:contentDescription="@string/back" />
 
     <Button
         android:id="@+id/btnDeleteEnv"
@@ -232,7 +233,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="@color/red_delete"
-        android:text="Borrar entorno"
+        android:text="@string/delete_env"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -249,7 +250,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="@color/blue_app"
-        android:text="Salir del entorno"
+        android:text="@string/exit_env"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="18sp"

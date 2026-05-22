@@ -3,14 +3,13 @@
     <style name="Base.Theme.QuikFile" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/blue_app</item>
-        <!-- Use a safer font reference for the layout editor -->
+        <!-- Fixed: Set a solid window background to prevent black screen flashes -->
+        <item name="android:windowBackground">@color/black</item>
         <item name="fontFamily">sans-serif</item>
         <item name="android:fontFamily">sans-serif</item>
     </style>
 
     <style name="Theme.QuikFile" parent="Base.Theme.QuikFile">
-        <!-- Application-wide font -->
-        <!-- Fixed: Changed default font to sans-serif to avoid rendering issues with Downloadable Fonts in Layout Editor. -->
         <item name="fontFamily">sans-serif</item>
         <item name="android:fontFamily">sans-serif</item>
     </style>

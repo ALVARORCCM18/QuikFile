@@ -16,12 +16,13 @@ public class AccountSettingsActivity extends AppCompatActivity {
         EditText etPassword = findViewById(R.id.etPassword);
         EditText etEmail = findViewById(R.id.etEmail);
 
-        // --- Ayuda de Spark ---
-        findViewById(R.id.ivSparkSitting).setOnClickListener(v -> {
-            Toast.makeText(this, "Aquí puedes actualizar tu contraseña, cambiar tu correo electrónico o eliminar tu cuenta si lo deseas.", Toast.LENGTH_LONG).show();
-        });
+        // --- Spark Traducido ---
+        if (findViewById(R.id.ivSparkSitting) != null) {
+            findViewById(R.id.ivSparkSitting).setOnClickListener(v -> 
+                Toast.makeText(this, R.string.spark_msg_account, Toast.LENGTH_LONG).show());
+        }
 
-        // --- Navegación Barra Superior ---
+        // --- Navegación ---
         findViewById(R.id.btnSettingsTop).setOnClickListener(v -> {
             startActivity(new Intent(this, SettingsActivity.class));
             finish();
@@ -37,35 +38,28 @@ public class AccountSettingsActivity extends AppCompatActivity {
             finish();
         });
 
-        findViewById(R.id.btnLoginTop).setOnClickListener(v -> {
-            startActivity(new Intent(this, LoginActivity.class));
-        });
+        findViewById(R.id.btnLoginTop).setOnClickListener(v -> startActivity(new Intent(this, LoginActivity.class)));
 
-        // --- Opciones de Ajustes ---
+        // --- Lógica de Botones ---
         findViewById(R.id.btnUpdatePassword).setOnClickListener(v -> {
             String newPass = etPassword.getText().toString();
             if (!newPass.isEmpty()) {
-                Toast.makeText(this, "Contraseña actualizada a: " + newPass, Toast.LENGTH_SHORT).show();
-                etPassword.setText(""); // Limpiar campo
-            } else {
-                Toast.makeText(this, "Por favor, escribe una nueva contraseña", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.password_updated, Toast.LENGTH_SHORT).show();
+                etPassword.setText("");
             }
         });
 
         findViewById(R.id.btnUpdateEmail).setOnClickListener(v -> {
             String newEmail = etEmail.getText().toString();
             if (!newEmail.isEmpty()) {
-                Toast.makeText(this, "Correo actualizado a: " + newEmail, Toast.LENGTH_SHORT).show();
-                etEmail.setText(""); // Limpiar campo
-            } else {
-                Toast.makeText(this, "Por favor, escribe un nuevo correo", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.email_updated, Toast.LENGTH_SHORT).show();
+                etEmail.setText("");
             }
         });
 
         findViewById(R.id.btnDeleteAccount).setOnClickListener(v -> 
-            Toast.makeText(this, "Eliminar cuenta (Requiere confirmación)", Toast.LENGTH_SHORT).show());
+            Toast.makeText(this, R.string.delete_account_confirm, Toast.LENGTH_SHORT).show());
 
-        // --- Botón Atrás ---
         findViewById(R.id.btnBack).setOnClickListener(v -> finish());
     }
 }

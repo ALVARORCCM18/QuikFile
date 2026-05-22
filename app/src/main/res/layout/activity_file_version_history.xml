@@ -30,7 +30,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_person"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/settings_title" />
         </FrameLayout>
 
         <FrameLayout
@@ -45,7 +46,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_home"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/already_at_home" />
         </FrameLayout>
 
         <FrameLayout
@@ -60,7 +62,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_handshake"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/shared_env_title" />
         </FrameLayout>
 
         <FrameLayout
@@ -75,7 +78,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_group"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/login_button" />
         </FrameLayout>
     </LinearLayout>
 
@@ -94,7 +98,8 @@
             android:layout_width="70dp"
             android:layout_height="80dp"
             android:src="@drawable/ic_file"
-            app:tint="@color/white" />
+            app:tint="@color/white"
+            android:contentDescription="@null" />
 
         <TextView
             android:id="@+id/tvFileName"
@@ -104,7 +109,7 @@
             android:background="@drawable/cancellation_box_border"
             android:paddingHorizontal="24dp"
             android:paddingVertical="12dp"
-            android:text="Fichero"
+            android:text="@string/file"
             android:textColor="@color/white"
             android:textSize="22sp"
             android:textStyle="bold" />
@@ -116,7 +121,8 @@
             android:background="@drawable/white_rounded_background"
             android:padding="12dp"
             android:src="@android:drawable/ic_menu_view"
-            app:tint="@color/blue_app" />
+            app:tint="@color/blue_app"
+            android:contentDescription="@string/version_history" />
     </LinearLayout>
 
     <ScrollView
@@ -169,7 +175,8 @@
                         android:background="@drawable/circle_black"
                         android:padding="8dp"
                         android:src="@drawable/ic_arrow_forward"
-                        app:tint="@color/blue_app" />
+                        app:tint="@color/blue_app"
+                        android:contentDescription="@null" />
                 </LinearLayout>
 
                 <TextView
@@ -178,7 +185,7 @@
                     android:background="@drawable/cyan_rounded_bottom"
                     android:gravity="center"
                     android:padding="4dp"
-                    android:text="version actual"
+                    android:text="@string/current_version"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -215,7 +222,8 @@
                         android:background="@drawable/circle_black"
                         android:padding="8dp"
                         android:src="@drawable/ic_arrow_forward"
-                        app:tint="@color/blue_app" />
+                        app:tint="@color/blue_app"
+                        android:contentDescription="@null" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -250,7 +258,8 @@
                         android:background="@drawable/circle_black"
                         android:padding="8dp"
                         android:src="@drawable/ic_arrow_forward"
-                        app:tint="@color/blue_app" />
+                        app:tint="@color/blue_app"
+                        android:contentDescription="@null" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -273,16 +282,18 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/blue_app" />
+            app:tint="@color/blue_app"
+            android:contentDescription="@string/back" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/ivSparkMascot"
         android:layout_width="210dp"
         android:layout_height="265dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/spark_spying" />
+        android:src="@drawable/spark_spying"
+        android:contentDescription="@null" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

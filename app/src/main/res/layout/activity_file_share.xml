@@ -30,7 +30,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_person"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/settings_title" />
         </FrameLayout>
 
         <FrameLayout
@@ -45,7 +46,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_home"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/already_at_home" />
         </FrameLayout>
 
         <FrameLayout
@@ -60,7 +62,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_handshake"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/shared_env_title" />
         </FrameLayout>
 
         <FrameLayout
@@ -75,7 +78,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_group"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/login_button" />
         </FrameLayout>
     </LinearLayout>
 
@@ -96,7 +100,7 @@
             android:background="@drawable/white_rounded_background"
             android:gravity="center"
             android:padding="12dp"
-            android:text="Compartiendo:"
+            android:text="@string/sharing_label"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -107,7 +111,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:paddingStart="12dp"
-            android:text="\&quot;Fichero\&quot;"
+            android:text="@string/file"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
@@ -116,7 +120,8 @@
             android:layout_height="45dp"
             android:layout_marginEnd="8dp"
             android:src="@android:drawable/ic_menu_send"
-            app:tint="@color/blue_app" />
+            app:tint="@color/blue_app"
+            android:contentDescription="@null" />
     </LinearLayout>
 
     <LinearLayout
@@ -134,7 +139,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/white_rounded_background"
-            android:hint="Introduce correo electrónico"
+            android:hint="@string/enter_email_hint"
             android:textColorHint="#888888"
             android:padding="12dp"
             android:textColor="@color/black"
@@ -148,7 +153,8 @@
             android:layout_marginStart="4dp"
             android:padding="8dp"
             android:src="@android:drawable/ic_menu_search"
-            app:tint="@color/blue_app" />
+            app:tint="@color/blue_app"
+            android:contentDescription="@null" />
     </LinearLayout>
 
     <LinearLayout
@@ -174,7 +180,8 @@
                 android:background="@drawable/white_rounded_background"
                 android:padding="12dp"
                 android:src="@android:drawable/ic_menu_manage"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@null" />
 
             <View
                 android:layout_width="1dp"
@@ -189,7 +196,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:paddingStart="16dp"
-                android:text="Seleccionar"
+                android:text="@string/select_permission"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
 
@@ -199,7 +206,8 @@
                 android:layout_height="40dp"
                 android:layout_marginEnd="8dp"
                 android:src="@android:drawable/arrow_down_float"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@null" />
         </LinearLayout>
 
         <LinearLayout
@@ -226,13 +234,14 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/ic_edit"
-                    app:tint="@color/black" />
+                    app:tint="@color/black"
+                    android:contentDescription="@null" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="Editar"
+                    android:text="@string/permission_edit"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -250,13 +259,14 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@android:drawable/ic_menu_view"
-                    app:tint="@color/blue_app" />
+                    app:tint="@color/blue_app"
+                    android:contentDescription="@null" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="Leer"
+                    android:text="@string/permission_read"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -279,7 +289,8 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:src="@drawable/ic_arrow_back"
-            app:tint="@color/blue_app" />
+            app:tint="@color/blue_app"
+            android:contentDescription="@string/back" />
 
         <View
             android:layout_width="0dp"
@@ -291,7 +302,7 @@
             android:layout_width="wrap_content"
             android:layout_height="70dp"
             android:backgroundTint="@color/blue_app"
-            android:text="COMPARTIR"
+            android:text="@string/share_action"
             android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold" />

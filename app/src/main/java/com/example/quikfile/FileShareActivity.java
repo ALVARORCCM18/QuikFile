@@ -37,8 +37,8 @@ public class FileShareActivity extends AppCompatActivity {
         // --- Lógica del Selector de Permisos ---
         findViewById(R.id.btnPermissionsToggle).setOnClickListener(v -> toggleOptions());
 
-        findViewById(R.id.optionEdit).setOnClickListener(v -> selectPermission("Editar"));
-        findViewById(R.id.optionRead).setOnClickListener(v -> selectPermission("Leer"));
+        findViewById(R.id.optionEdit).setOnClickListener(v -> selectPermission(getString(R.string.permission_edit)));
+        findViewById(R.id.optionRead).setOnClickListener(v -> selectPermission(getString(R.string.permission_read)));
 
         // --- Navegación Barra Superior ---
         findViewById(R.id.btnSettingsTop).setOnClickListener(v -> {
@@ -49,12 +49,11 @@ public class FileShareActivity extends AppCompatActivity {
             Intent intent = new Intent(this, MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
+            finish();
         });
 
         findViewById(R.id.btnSharedTop).setOnClickListener(v -> {
-            Intent intent = new Intent(this, SharedActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
+            startActivity(new Intent(this, SharedActivity.class));
         });
 
         findViewById(R.id.btnLoginTop).setOnClickListener(v -> {
@@ -66,12 +65,10 @@ public class FileShareActivity extends AppCompatActivity {
             String email = etEmail.getText().toString().trim();
             String permission = tvCurrentPermission.getText().toString();
 
-            if (email.isEmpty()) {
-                Toast.makeText(this, "Por favor, introduce un correo electrónico", Toast.LENGTH_SHORT).show();
-            } else if (permission.equals("Seleccionar")) {
-                Toast.makeText(this, "Por favor, selecciona los permisos", Toast.LENGTH_SHORT).show();
+            if (email.isEmpty() || permission.equals(getString(R.string.select_permission))) {
+                Toast.makeText(this, R.string.fill_share_fields, Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(this, "Fichero compartido con " + email + " correctamente", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.share_success, Toast.LENGTH_SHORT).show();
                 finish();
             }
         });

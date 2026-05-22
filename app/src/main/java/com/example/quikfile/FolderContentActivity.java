@@ -9,28 +9,25 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-// Esta pantalla es la que se abre cuando entras en una carpeta para ver sus ficheros y subcarpetas
 public class FolderContentActivity extends AppCompatActivity {
 
     private GridLayout contentGrid;
     private TextView tvFolderName;
 
-    // Escuchador para cuando volvemos de la pantalla de añadir un nuevo elemento
     private final ActivityResultLauncher<Intent> addActivityLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
                 if (result.getResultCode() == RESULT_OK && result.getData() != null) {
                     String type = result.getData().getStringExtra("type");
                     if ("FILE".equals(type)) {
-                        addNewFile("Nuevo Fichero");
+                        addNewFile(getString(R.string.new_file));
                     } else if ("FOLDER".equals(type)) {
-                        addNewFolder("Nueva Subcarpeta");
+                        addNewFolder(getString(R.string.new_folder));
                     }
                 }
             }
@@ -44,67 +41,62 @@ public class FolderContentActivity extends AppCompatActivity {
         contentGrid = findViewById(R.id.contentGrid);
         tvFolderName = findViewById(R.id.tvFolderName);
 
-        // Pongo el nombre de la carpeta que me han pasado al abrir esta pantalla
+        int resId = getIntent().getIntExtra("folderResId", 0);
         String folderName = getIntent().getStringExtra("folderName");
-        if (folderName != null) {
-            tvFolderName.setText(folderName);
+        if (resId != 0) tvFolderName.setText(getString(resId));
+        else if (folderName != null) tvFolderName.setText(folderName);
+
+        // --- Spark ---
+        View spark = findViewById(R.id.ivSparkMascot);
+        if (spark != null) {
+            spark.setOnClickListener(v -> Toast.makeText(this, R.string.spark_msg_main, Toast.LENGTH_SHORT).show());
         }
 
-        // --- BOTONES DE NAVEGACIÓN ---
-
-        // Boton para volver atras
         findViewById(R.id.btnBack).setOnClickListener(v -> finish());
+        findViewById(R.id.btnAdd).setOnClickListener(v -> addActivityLauncher.launch(new Intent(this, AddActivity.class)));
 
-        // Boton para añadir un nuevo fichero o carpeta a esta ubicacion
-        findViewById(R.id.btnAdd).setOnClickListener(v -> {
-            Intent intent = new Intent(this, AddActivity.class);
-            addActivityLauncher.launch(intent);
-        });
-
-        // Configuro los items que ya estan puestos en el diseño XML para que se puedan pulsar
+        // Configuración de clics para items estáticos
         for (int i = 0; i < contentGrid.getChildCount(); i++) {
             View child = contentGrid.getChildAt(i);
             if (child instanceof LinearLayout) {
-                LinearLayout item = (LinearLayout) child;
-                // Cojo el texto del item para saber como se llama el fichero
-                TextView text = (TextView) item.getChildAt(1);
-                String name = text.getText().toString();
-                // Por defecto los que estan en el XML los tratamos como ficheros
-                item.setOnClickListener(v -> openFileDetail(name));
+                View textChild = ((LinearLayout) child).getChildAt(1);
+                if (textChild instanceof TextView) {
+                    final String name = ((TextView) textChild).getText().toString();
+                    child.setOnClickListener(v -> openFileDetail(name));
+                }
             }
         }
 
-        // Botones de la barra de arriba (Home y Compartido)
+        // --- NAVEGACIÓN BARRA SUPERIOR ---
+        findViewById(R.id.btnSettingsTop).setOnClickListener(v -> {
+            startActivity(new Intent(this, SettingsActivity.class));
+        });
+
         findViewById(R.id.btnHomeTop).setOnClickListener(v -> {
             Intent intent = new Intent(this, MainActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // Limpio el historial para volver al inicio
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
+            finish();
         });
 
         findViewById(R.id.btnSharedTop).setOnClickListener(v -> {
-            Intent intent = new Intent(this, SharedActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
+            startActivity(new Intent(this, SharedActivity.class));
+        });
+
+        findViewById(R.id.btnLoginTop).setOnClickListener(v -> {
+            startActivity(new Intent(this, LoginActivity.class));
         });
     }
 
-    // Metodo para ir a la pantalla de detalles de un fichero
     private void openFileDetail(String name) {
         Intent intent = new Intent(this, FileDetailActivity.class);
         intent.putExtra("fileName", name);
         startActivity(intent);
     }
 
-    // Funciones rapidas para añadir ficheros o carpetas
-    private void addNewFile(String name) {
-        addItemToGrid(name, R.drawable.ic_file);
-    }
+    private void addNewFile(String name) { addItemToGrid(name, R.drawable.ic_file); }
+    private void addNewFolder(String name) { addItemToGrid(name, R.drawable.ic_folder); }
 
-    private void addNewFolder(String name) {
-        addItemToGrid(name, R.drawable.ic_folder);
-    }
-
-    // Metodo que crea el diseño visual del nuevo elemento y lo mete en el grid
     private void addItemToGrid(String name, int iconRes) {
         LinearLayout newItem = new LinearLayout(this);
         GridLayout.LayoutParams params = new GridLayout.LayoutParams();
@@ -114,47 +106,35 @@ public class FolderContentActivity extends AppCompatActivity {
         newItem.setLayoutParams(params);
         newItem.setOrientation(LinearLayout.VERTICAL);
         newItem.setGravity(Gravity.CENTER);
-        newItem.setPadding(32, 32, 32, 32);
+        newItem.setPadding(16, 16, 16, 16);
+        newItem.setClickable(true);
+        newItem.setFocusable(true);
+        newItem.setBackgroundResource(android.R.drawable.list_selector_background);
 
-        // El dibujito del archivo o la carpeta
         ImageView icon = new ImageView(this);
-        LinearLayout.LayoutParams iconParams = new LinearLayout.LayoutParams(
-                (int) (80 * getResources().getDisplayMetrics().density),
-                (int) (80 * getResources().getDisplayMetrics().density)
-        );
-        icon.setLayoutParams(iconParams);
+        icon.setLayoutParams(new LinearLayout.LayoutParams((int)(90*getResources().getDisplayMetrics().density), (int)(90*getResources().getDisplayMetrics().density)));
         icon.setImageResource(iconRes);
         icon.setColorFilter(ContextCompat.getColor(this, R.color.white));
         newItem.addView(icon);
 
-        // El texto con el nombre debajo
         TextView text = new TextView(this);
+        text.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
         text.setText(name);
         text.setTextColor(ContextCompat.getColor(this, R.color.white));
         text.setTextSize(18);
         text.setGravity(Gravity.CENTER);
-        LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-        );
-        textParams.topMargin = 16;
-        text.setLayoutParams(textParams);
         newItem.addView(text);
 
-        // Configuro que pasa al hacer click segun sea carpeta o fichero
         newItem.setOnClickListener(v -> {
             if (iconRes == R.drawable.ic_folder) {
-                // Si es carpeta, abro otra vez esta actividad pero con el nuevo nombre
                 Intent intent = new Intent(this, FolderContentActivity.class);
                 intent.putExtra("folderName", name);
                 startActivity(intent);
             } else {
-                // Si es fichero, voy a ver sus detalles
                 openFileDetail(name);
             }
         });
 
-        // Lo añado al grid antes del espacio vacio para que quede bien colocado
         int index = contentGrid.indexOfChild(findViewById(R.id.gridSpacer));
         contentGrid.addView(newItem, index);
     }

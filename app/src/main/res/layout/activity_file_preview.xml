@@ -30,7 +30,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_person"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/settings_title" />
         </FrameLayout>
 
         <FrameLayout
@@ -45,7 +46,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_home"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/already_at_home" />
         </FrameLayout>
 
         <FrameLayout
@@ -60,7 +62,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_handshake"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/shared_env_title" />
         </FrameLayout>
 
         <FrameLayout
@@ -75,7 +78,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_group"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/login_button" />
         </FrameLayout>
     </LinearLayout>
 
@@ -94,7 +98,8 @@
             android:layout_width="70dp"
             android:layout_height="80dp"
             android:src="@drawable/ic_file"
-            app:tint="@color/white" />
+            app:tint="@color/white"
+            android:contentDescription="@null" />
 
         <TextView
             android:id="@+id/tvFileName"
@@ -104,7 +109,7 @@
             android:background="@drawable/cancellation_box_border"
             android:paddingHorizontal="24dp"
             android:paddingVertical="12dp"
-            android:text="Fichero"
+            android:text="@string/file"
             android:textColor="@color/white"
             android:textSize="22sp"
             android:textStyle="bold" />
@@ -116,7 +121,8 @@
             android:background="@drawable/white_rounded_background"
             android:padding="12dp"
             android:src="@android:drawable/ic_menu_view"
-            app:tint="@color/blue_app" />
+            app:tint="@color/blue_app"
+            android:contentDescription="@string/preview" />
     </LinearLayout>
 
     <ScrollView
@@ -134,7 +140,7 @@
             android:id="@+id/tvFileContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Este es un texto de prueba extenso para verificar la función de scroll en la previsualización del fichero.\n\nLínea 1: Contenido del archivo.\nLínea 2: Más texto de ejemplo.\n..."
+            android:text="..."
             android:textColor="@color/white"
             android:textSize="20sp"
             android:lineSpacingExtra="4dp" />
@@ -156,7 +162,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:tint="@color/blue_app" />
+            app:tint="@color/blue_app"
+            android:contentDescription="@string/back" />
 
         <ImageView
             android:id="@+id/btnHistory"
@@ -169,7 +176,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:tint="@color/white" />
+            app:tint="@color/white"
+            android:contentDescription="@string/version_history" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

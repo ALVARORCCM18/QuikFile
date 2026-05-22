@@ -30,7 +30,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_person"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/settings_title" />
         </FrameLayout>
 
         <FrameLayout
@@ -45,7 +46,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_home"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/already_at_home" />
         </FrameLayout>
 
         <FrameLayout
@@ -60,7 +62,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_handshake"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/shared_env_title" />
         </FrameLayout>
 
         <FrameLayout
@@ -75,7 +78,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_group"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/login_button" />
         </FrameLayout>
     </LinearLayout>
 
@@ -84,7 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="GRACIAS"
+        android:text="@string/thanks"
         android:textColor="@color/white"
         android:textSize="48sp"
         android:textStyle="bold"
@@ -96,7 +100,7 @@
         android:id="@+id/tvSubGracias"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="POR CONFIAR EN NOSOTROS"
+        android:text="@string/trust_us"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -119,14 +123,16 @@
             android:layout_height="160dp"
             android:layout_gravity="bottom|center_horizontal"
             android:src="@drawable/ic_person"
-            app:tint="@color/blue_app" />
+            app:tint="@color/blue_app"
+            android:contentDescription="@null" />
 
         <ImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="top|center_horizontal"
             android:src="@drawable/ic_crown"
-            app:tint="@color/white" />
+            app:tint="@color/white"
+            android:contentDescription="@null" />
     </FrameLayout>
 
     <!-- Caja Blanca Usuario -->
@@ -139,7 +145,7 @@
         android:backgroundTint="@color/white"
         android:gravity="center"
         android:padding="12dp"
-        android:text="Usuario"
+        android:text="@string/user_label"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -151,7 +157,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Ahora eres un cliente premium"
+        android:text="@string/now_premium"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -169,6 +175,7 @@
         android:src="@drawable/ic_arrow_back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:tint="@color/blue_app" />
+        app:tint="@color/blue_app"
+        android:contentDescription="@string/back" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

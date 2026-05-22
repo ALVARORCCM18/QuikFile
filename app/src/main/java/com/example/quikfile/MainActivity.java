@@ -10,31 +10,25 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-// Esta es la pantalla principal, lo primero que ves al entrar (si ya estas logueado)
 public class MainActivity extends AppCompatActivity {
 
     private GridLayout folderGrid;
 
-    // Con esto manejo lo que vuelve de la pantalla de añadir (si fue carpeta o fichero)
     private final ActivityResultLauncher<Intent> addActivityLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
                 if (result.getResultCode() == RESULT_OK && result.getData() != null) {
                     String type = result.getData().getStringExtra("type");
                     if ("FOLDER".equals(type)) {
-                        addNewItem("Nueva Carpeta", R.drawable.ic_folder);
+                        addNewItem(getString(R.string.new_folder), R.drawable.ic_folder);
                     } else if ("FILE".equals(type)) {
-                        addNewItem("Nuevo Fichero", R.drawable.ic_file);
+                        addNewItem(getString(R.string.new_file), R.drawable.ic_file);
                     }
                 }
             }
@@ -43,93 +37,62 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         
-        // Ajusto los margenes para que no se pegue a los bordes de la pantalla (status bar, etc)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-
         folderGrid = findViewById(R.id.folderGrid);
 
-        // --- BOTONES DE LA PANTALLA ---
+        // --- Spark Mascot Traducido ---
+        View spark = findViewById(R.id.ivSparkMascot);
+        if (spark != null) {
+            spark.setOnClickListener(v -> 
+                Toast.makeText(this, R.string.spark_msg_main, Toast.LENGTH_SHORT).show());
+        }
 
-        // Ir a la papelera
-        findViewById(R.id.itemTrash).setOnClickListener(v -> {
-            startActivity(new Intent(MainActivity.this, TrashActivity.class));
-        });
+        // --- NAVEGACIÓN ---
+        findViewById(R.id.itemTrash).setOnClickListener(v -> startActivity(new Intent(this, TrashActivity.class)));
+        findViewById(R.id.btnShared).setOnClickListener(v -> startActivity(new Intent(this, SharedActivity.class)));
+        findViewById(R.id.btnLogin).setOnClickListener(v -> startActivity(new Intent(this, LoginActivity.class)));
+        findViewById(R.id.btnAdd).setOnClickListener(v -> addActivityLauncher.launch(new Intent(this, AddActivity.class)));
+        findViewById(R.id.btnSettings).setOnClickListener(v -> startActivity(new Intent(this, SettingsActivity.class)));
+        findViewById(R.id.btnHome).setOnClickListener(v -> Toast.makeText(this, R.string.already_at_home, Toast.LENGTH_SHORT).show());
 
-        // Ver lo que tengo compartido con otros
-        findViewById(R.id.btnShared).setOnClickListener(v -> {
-            startActivity(new Intent(MainActivity.this, SharedActivity.class));
-        });
-
-        // Ir al login (por si quiero cambiar de usuario)
-        findViewById(R.id.btnLogin).setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-            startActivity(intent);
-        });
-
-        // Abrir la pantalla para crear algo nuevo
-        findViewById(R.id.btnAdd).setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, AddActivity.class);
-            addActivityLauncher.launch(intent);
-        });
-
-        // Ajustes de la app
-        findViewById(R.id.btnSettings).setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
-            startActivity(intent);
-        });
-
-        // Avisar que ya estas aqui si pulsas home
-        findViewById(R.id.btnHome).setOnClickListener(v -> 
-            Toast.makeText(this, "Ya estás en Inicio", Toast.LENGTH_SHORT).show());
-
-        // Configuro la carpeta que viene por defecto para que funcione
         View itemFolder = findViewById(R.id.itemFolder);
         if (itemFolder != null) {
-            itemFolder.setOnClickListener(v -> openFolder("Carpeta Personal"));
-            setupItemLongClick(itemFolder, "Carpeta Personal", R.drawable.ic_folder);
+            String personalFolder = getString(R.string.folder_personal);
+            itemFolder.setOnClickListener(v -> openFolder(personalFolder, R.string.folder_personal));
+            setupItemLongClick(itemFolder, personalFolder, R.drawable.ic_folder);
         }
     }
 
-    // Metodo para entrar en una carpeta
-    private void openFolder(String name) {
+    private void openFolder(String name, int resId) {
         Intent intent = new Intent(this, FolderContentActivity.class);
         intent.putExtra("folderName", name);
+        intent.putExtra("folderResId", resId);
         startActivity(intent);
     }
 
-    // Metodo para ver los detalles de un archivo
     private void openFileDetail(String name) {
         Intent intent = new Intent(this, FileDetailActivity.class);
         intent.putExtra("fileName", name);
         startActivity(intent);
     }
 
-    // Esto es para borrar cosas cuando dejas pulsado el dedo
     private void setupItemLongClick(View view, String name, int iconRes) {
         view.setOnLongClickListener(v -> {
             new AlertDialog.Builder(this)
-                    .setTitle("Eliminar elemento")
-                    .setMessage("¿Quieres enviar \"" + name + "\" a la papelera?")
-                    .setPositiveButton("Eliminar", (dialog, which) -> {
-                        // Lo mando al manager de la papelera y lo quito de la vista
+                    .setTitle(R.string.delete_item_title)
+                    .setMessage(getString(R.string.move_to_trash_confirm, name))
+                    .setPositiveButton(R.string.delete, (dialog, which) -> {
                         TrashManager.getInstance().addItem(name, iconRes);
                         folderGrid.removeView(view);
-                        Toast.makeText(this, name + " movido a la papelera", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, getString(R.string.moved_to_trash, name), Toast.LENGTH_SHORT).show();
                     })
-                    .setNegativeButton("Cancelar", null)
+                    .setNegativeButton(R.string.cancel, null)
                     .show();
             return true;
         });
     }
 
-    // Metodo para crear visualmente una carpeta o archivo nuevo en el grid
     private void addNewItem(String name, int iconRes) {
         LinearLayout newItem = new LinearLayout(this);
         GridLayout.LayoutParams params = new GridLayout.LayoutParams();
@@ -141,48 +104,39 @@ public class MainActivity extends AppCompatActivity {
         newItem.setGravity(Gravity.CENTER);
         int padding = (int) (16 * getResources().getDisplayMetrics().density);
         newItem.setPadding(padding, padding, padding, padding);
+        newItem.setClickable(true);
+        newItem.setFocusable(true);
+        newItem.setBackgroundResource(android.R.drawable.list_selector_background);
 
-        // El icono (fichero o carpeta)
         ImageView icon = new ImageView(this);
-        LinearLayout.LayoutParams iconParams = new LinearLayout.LayoutParams(
+        icon.setLayoutParams(new LinearLayout.LayoutParams(
                 (int) (90 * getResources().getDisplayMetrics().density),
                 (int) (90 * getResources().getDisplayMetrics().density)
-        );
-        icon.setLayoutParams(iconParams);
+        ));
         icon.setImageResource(iconRes);
         icon.setColorFilter(ContextCompat.getColor(this, R.color.white));
         newItem.addView(icon);
 
-        // El nombre debajo del icono
         TextView text = new TextView(this);
+        text.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        ));
         text.setText(name);
         text.setTextColor(ContextCompat.getColor(this, R.color.white));
         text.setTextSize(20);
+        text.setGravity(Gravity.CENTER);
         text.setTypeface(null, android.graphics.Typeface.BOLD);
-        LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-        );
-        textParams.topMargin = (int) (8 * getResources().getDisplayMetrics().density);
-        text.setLayoutParams(textParams);
         newItem.addView(text);
 
-        // Si es carpeta abro contenido, si es fichero abro detalles
         newItem.setOnClickListener(v -> {
-            if (iconRes == R.drawable.ic_folder) {
-                openFolder(name);
-            } else {
-                openFileDetail(name);
-            }
+            if (iconRes == R.drawable.ic_folder) openFolder(name, 0);
+            else openFileDetail(name);
         });
         
-        // Tambien que se pueda borrar al dejar pulsado
         setupItemLongClick(newItem, name, iconRes);
-
-        // Lo meto en el grid antes del spacer para que quede bien ordenado
         int index = folderGrid.indexOfChild(findViewById(R.id.gridSpacer));
         folderGrid.addView(newItem, index);
-        
-        Toast.makeText(this, name + " añadida", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getString(R.string.item_added, name), Toast.LENGTH_SHORT).show();
     }
 }

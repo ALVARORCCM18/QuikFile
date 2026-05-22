@@ -89,7 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
-        android:text="¿Qué quieres añadir?"
+        android:text="@string/add_choice_title"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -129,7 +129,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Carpeta"
+                android:text="@string/folder"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
         </LinearLayout>
@@ -156,13 +156,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Fichero"
+                android:text="@string/file"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Personaje Spark Spying (Asomado a la derecha) -->
+    <!-- Personaje Spark Spying -->
     <ImageView
         android:id="@+id/ivSparkSpying"
         android:layout_width="211dp"
@@ -187,6 +187,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:tint="@color/blue_app"
-        android:contentDescription="Go Back" />
+        android:contentDescription="@string/back" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

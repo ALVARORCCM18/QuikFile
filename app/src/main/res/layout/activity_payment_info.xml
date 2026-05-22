@@ -30,7 +30,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_person"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/settings_title" />
         </FrameLayout>
 
         <FrameLayout
@@ -45,7 +46,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_home"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/already_at_home" />
         </FrameLayout>
 
         <FrameLayout
@@ -60,7 +62,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_handshake"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/shared_env_title" />
         </FrameLayout>
 
         <FrameLayout
@@ -75,13 +78,15 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_group"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/login_button" />
         </FrameLayout>
     </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:fillViewport="true"
         app:layout_constraintTop_toBottomOf="@id/topBar"
         app:layout_constraintBottom_toTopOf="@id/bottomNavigation">
 
@@ -104,7 +109,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="8dp"
-                    android:text="Número de tarjeta"
+                    android:text="@string/card_number_label"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -115,7 +120,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/search_bar_background"
                     android:backgroundTint="@color/white"
-                    android:hint="Ingrese los 16 dígitos"
+                    android:hint="@string/card_number_hint"
                     android:inputType="number"
                     android:padding="12dp"
                     android:textColor="@color/black"
@@ -135,7 +140,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="8dp"
-                    android:text="Nombre del titular"
+                    android:text="@string/card_holder_label"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -146,7 +151,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/search_bar_background"
                     android:backgroundTint="@color/white"
-                    android:hint="Nombre completo"
+                    android:hint="@string/card_holder_hint"
                     android:inputType="textPersonName"
                     android:padding="12dp"
                     android:textColor="@color/black"
@@ -172,7 +177,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:padding="8dp"
-                        android:text="CVV"
+                        android:text="@string/cvv_label"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -204,7 +209,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:padding="8dp"
-                        android:text="Fecha caducidad"
+                        android:text="@string/expiry_date_label"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -215,7 +220,7 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/search_bar_background"
                         android:backgroundTint="@color/white"
-                        android:hint="MM/AA"
+                        android:hint="@string/expiry_date_hint"
                         android:inputType="date"
                         android:padding="12dp"
                         android:textColor="@color/black"
@@ -242,7 +247,8 @@
             android:layout_marginEnd="40dp"
             android:padding="12dp"
             android:src="@drawable/ic_arrow_back"
-            app:tint="@color/blue_app" />
+            app:tint="@color/blue_app"
+            android:contentDescription="@string/back" />
 
         <ImageView
             android:id="@+id/btnForward"
@@ -250,7 +256,8 @@
             android:layout_height="120dp"
             android:padding="12dp"
             android:src="@drawable/ic_arrow_forward"
-            app:tint="@color/blue_app" />
+            app:tint="@color/blue_app"
+            android:contentDescription="@string/confirm" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

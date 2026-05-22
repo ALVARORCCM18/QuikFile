@@ -52,7 +52,7 @@ public class FileDetailActivity extends AppCompatActivity {
         findViewById(R.id.btnEditName).setOnClickListener(v -> {
             etFileName.requestFocus();
             etFileName.setSelection(etFileName.getText().length());
-            Toast.makeText(this, "Editando nombre...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.file_renamed_success, Toast.LENGTH_SHORT).show();
         });
 
         // Abrir y cerrar el menu circular
@@ -64,19 +64,19 @@ public class FileDetailActivity extends AppCompatActivity {
 
         // --- ACCIONES DE LOS BOTONES DEL MENU ---
 
-        btnDownload.setOnClickListener(v -> { toggleMenu(); Toast.makeText(this, "Descargando...", Toast.LENGTH_SHORT).show(); });
+        btnDownload.setOnClickListener(v -> { toggleMenu(); Toast.makeText(this, R.string.downloading, Toast.LENGTH_SHORT).show(); });
         
         btnDelete.setOnClickListener(v -> {
             toggleMenu();
             // Pido confirmacion antes de cargarme el archivo
             new AlertDialog.Builder(this)
-                    .setTitle("Eliminar archivo")
-                    .setMessage("¿Estás seguro de que deseas eliminar este archivo?")
-                    .setPositiveButton("Eliminar", (dialog, which) -> {
-                        Toast.makeText(this, "Archivo eliminado correctamente", Toast.LENGTH_SHORT).show();
+                    .setTitle(R.string.delete_item_title)
+                    .setMessage(getString(R.string.move_to_trash_confirm, etFileName.getText().toString()))
+                    .setPositiveButton(R.string.delete, (dialog, which) -> {
+                        Toast.makeText(this, R.string.file_deleted, Toast.LENGTH_SHORT).show();
                         finish(); // Me vuelvo atras al borrar
                     })
-                    .setNegativeButton("Cancelar", null)
+                    .setNegativeButton(R.string.cancel, null)
                     .show();
         });
 
@@ -104,11 +104,24 @@ public class FileDetailActivity extends AppCompatActivity {
             startActivity(intent);
         });
         
-        // Icono de casa en la barra de arriba
+        // --- NAVEGACIÓN BARRA SUPERIOR ---
+        findViewById(R.id.btnSettingsTop).setOnClickListener(v -> {
+            startActivity(new Intent(this, SettingsActivity.class));
+        });
+
         findViewById(R.id.btnHomeTop).setOnClickListener(v -> {
             Intent intent = new Intent(this, MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
+            finish();
+        });
+
+        findViewById(R.id.btnSharedTop).setOnClickListener(v -> {
+            startActivity(new Intent(this, SharedActivity.class));
+        });
+
+        findViewById(R.id.btnLoginTop).setOnClickListener(v -> {
+            startActivity(new Intent(this, LoginActivity.class));
         });
     }
 

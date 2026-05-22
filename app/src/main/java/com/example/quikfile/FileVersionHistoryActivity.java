@@ -31,12 +31,11 @@ public class FileVersionHistoryActivity extends AppCompatActivity {
             Intent intent = new Intent(this, MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
+            finish();
         });
 
         findViewById(R.id.btnSharedTop).setOnClickListener(v -> {
-            Intent intent = new Intent(this, SharedActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
+            startActivity(new Intent(this, SharedActivity.class));
         });
 
         findViewById(R.id.btnLoginTop).setOnClickListener(v -> {
@@ -57,6 +56,6 @@ public class FileVersionHistoryActivity extends AppCompatActivity {
         intent.putExtra("fileName", tvFileName.getText().toString());
         intent.putExtra("versionDate", date);
         startActivity(intent);
-        Toast.makeText(this, "Abriendo versión de " + date, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getString(R.string.version_changed_success), Toast.LENGTH_SHORT).show();
     }
 }

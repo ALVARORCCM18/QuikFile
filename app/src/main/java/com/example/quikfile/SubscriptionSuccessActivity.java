@@ -18,25 +18,25 @@ public class SubscriptionSuccessActivity extends AppCompatActivity {
         String flowType = getIntent().getStringExtra("flow_type");
         
         if ("renewal".equals(flowType)) {
-            tvSuccessMessage.setText("Tu plan ha sido renovado correctamente");
+            tvSuccessMessage.setText(R.string.plan_renewed_success);
         } else {
-            tvSuccessMessage.setText("Ahora eres un cliente premium");
+            tvSuccessMessage.setText(R.string.now_premium);
         }
 
         // --- Navegación Barra Superior ---
         findViewById(R.id.btnSettingsTop).setOnClickListener(v -> {
             startActivity(new Intent(this, SettingsActivity.class));
-            finish();
         });
 
         findViewById(R.id.btnHomeTop).setOnClickListener(v -> {
-            startActivity(new Intent(this, MainActivity.class));
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
             finish();
         });
 
         findViewById(R.id.btnSharedTop).setOnClickListener(v -> {
             startActivity(new Intent(this, SharedActivity.class));
-            finish();
         });
 
         findViewById(R.id.btnLoginTop).setOnClickListener(v -> {

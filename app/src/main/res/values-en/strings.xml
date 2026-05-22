@@ -1,4 +1,247 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">QuikFile</string>
+
+    <!-- Navigation and Common -->
+    <string name="search_hint">Search...</string>
+    <string name="back">Back</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="accept">Accept</string>
+    <string name="report">Report</string>
+    <string name="confirm">Confirm</string>
+    <string name="add">Add</string>
+    <string name="edit">Edit</string>
+    <string name="save">Save</string>
+    <string name="select_all">Select all</string>
+    <string name="recover">Recover</string>
+    <string name="share">Share</string>
+    <string name="download">Download</string>
+    <string name="preview">Preview</string>
+
+    <!-- MainActivity / AddActivity -->
+    <string name="folder">Folder</string>
+    <string name="folder_personal">Personal Folder</string>
+    <string name="file">File</string>
+    <string name="trash">Trash</string>
+    <string name="add_choice_title">What do you want to add?</string>
+    <string name="already_at_home">You are already at Home</string>
+    <string name="delete_item_title">Delete element</string>
+    <string name="move_to_trash_confirm">Do you want to send \"%1$s\" to the trash?</string>
+    <string name="moved_to_trash">%1$s moved to trash</string>
+    <string name="new_folder">New Folder</string>
+    <string name="new_subfolder">New Subfolder</string>
+    <string name="new_file">New File</string>
+    <string name="item_added">%1$s added</string>
+
+    <!-- Login and Register -->
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button">Log In</string>
+    <string name="no_account">Don\'t have an account?</string>
+    <string name="register_link">Register</string>
+    <string name="support_link">User Support</string>
+    <string name="fill_all_fields">Please fill all fields</string>
+    <string name="email_hint">Email</string>
+    <string name="repeat_password_hint">Repeat password</string>
+    <string name="register_button">Sign Up</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="login_link">Log In</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="already_at_settings">You are already in Settings</string>
+    <string name="change_profile_photo">Change profile photo</string>
+    <string name="name_hint">Name</string>
+    <string name="account_settings">Account Settings</string>
+    <string name="change_payment_plan">Change Payment Plan</string>
+    <string name="app_reports">App Reports</string>
+    <string name="user_support">User Support</string>
+    <string name="language">Language</string>
+
+    <!-- Support -->
+    <string name="support_title">Support</string>
+    <string name="faqs">FAQs</string>
+    <string name="user_manual">User Manual</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="opening_faqs">Opening FAQs...</string>
+    <string name="manual_not_available">User manual: Coming soon</string>
+    <string name="connecting_agent">Connecting with an agent...</string>
+    <string name="forgot_password_title">Forgot your password?</string>
+    <string name="forgot_password_button">Recover password</string>
+    <string name="forgot_password_toast">A password recovery email has been sent</string>
+
+    <!-- Language -->
+    <string name="language_title">Select Language</string>
+    <string name="spanish">Spanish</string>
+    <string name="english">English</string>
+    <string name="lang_changed_es">Language changed to Spanish</string>
+    <string name="lang_changed_en">Language changed to English</string>
+
+    <!-- Account Settings -->
+    <string name="new_password_hint">New password</string>
+    <string name="new_email_hint">New email address</string>
+    <string name="delete_account">Delete account</string>
+    <string name="account_help">Here you can update your password, change your email or delete your account if you wish.</string>
+    <string name="password_updated">Password updated</string>
+    <string name="email_updated">Email updated</string>
+    <string name="delete_account_confirm">Delete account (Requires confirmation)</string>
+
+    <!-- Reports -->
+    <string name="report_title">App Report</string>
+    <string name="report_subject_hint">Enter the reason for the report</string>
+    <string name="report_body_hint">Enter the description of the problem</string>
+    <string name="reporting_label">Reporting:</string>
+    <string name="detailed_report_hint">Detailed description of the report...</string>
+    <string name="submit_report">REPORT</string>
+
+    <!-- Compartir -->
+    <string name="sharing_label">Sharing:</string>
+    <string name="enter_email_hint">Enter email address</string>
+    <string name="select_permission">Select</string>
+    <string name="permission_read">Read</string>
+    <string name="permission_edit">Edit</string>
+    <string name="share_action">SHARE</string>
+
+    <!-- Plans and Subscription -->
+    <string name="subscription_title">SUBSCRIPTION</string>
+    <string name="subscription">Subscription</string>
+    <string name="renewal">Renewal</string>
+    <string name="cancellation">Cancellation</string>
+    <string name="thanks">THANK YOU</string>
+    <string name="trust_us">FOR TRUSTING US</string>
+    <string name="now_premium">You are now a premium client</string>
+    <string name="monthly_label">MONTHLY</string>
+    <string name="monthly_subscription">Monthly Subscription</string>
+    <string name="premium_benefits">Premium plan gives you access to:</string>
+    <string name="benefit_shared">Shared environment</string>
+    <string name="benefit_space">More space</string>
+    <string name="benefit_versions">Version history</string>
+    <string name="price_prefix">FOR ONLY</string>
+    <string name="price_value">£3.99 A MONTH</string>
+    <string name="price_info">FOR ONLY £3.99 A MONTH</string>
+    <string name="cancel_prefix">Are you sure you want to</string>
+    <string name="cancel_action_big">CANCEL</string>
+    <string name="cancel_suffix">your quota?</string>
+    <string name="lose_benefits">You will lose your premium benefits</string>
+    <string name="how_long_subscribe">How long do you want to subscribe?</string>
+    <string name="indefinitely">Indefinitely</string>
+    <string name="for_years">For years</string>
+    <string name="for_months">For months</string>
+    <string name="years_hint">Enter the number of years</string>
+    <string name="months_hint">Enter the number of months</string>
+
+    <!-- Payment -->
+    <string name="card_number_label">Card number</string>
+    <string name="card_number_hint">Enter the 16 digits</string>
+    <string name="card_holder_label">Cardholder name</string>
+    <string name="card_holder_hint">Full name</string>
+    <string name="cvv_label">CVV</string>
+    <string name="expiry_date_label">Expiry date</string>
+    <string name="expiry_date_hint">MM/YY</string>
+
+    <!-- Shared Environment / Add User -->
+    <string name="shared_env_title">Shared environment</string>
+    <string name="administrator">Administrator</string>
+    <string name="member">Member</string>
+    <string name="user_role_toast">Select the role for the new user</string>
+    <string name="user_added_success">User added successfully</string>
+    <string name="env_name_hint">Environment name</string>
+    <string name="user_label">User</string>
+    <string name="select_type_hint">Select type...</string>
+    <string name="add_user_button">Add user</string>
+
+    <!-- Details -->
+    <string name="file_details">File details</string>
+    <string name="size_label">Size:</string>
+    <string name="format_label">Format:</string>
+    <string name="extension_label">Extension:</string>
+    <string name="description_label">Description:</string>
+    <string name="downloading">Downloading...</string>
+    <string name="file_deleted">File deleted successfully</string>
+    <string name="current_version">Current version</string>
+    <string name="version_history">Version history</string>
+
+    <!-- FAQs -->
+    <string name="faq_title">FAQs</string>
+    <string name="faq_q1">How do I share files with others?</string>
+    <string name="faq_a1">To share a file, press and hold on it or enter its details and select the \"Share\" option. You can enter the recipient\'s email.</string>
+    <string name="faq_q2">Can I recover deleted files?</string>
+    <string name="faq_a2">Yes, all deleted files go to the \"Trash\". You can enter it from the main menu and select the files you want to restore.</string>
+    <string name="faq_q3">What advantages does the Premium plan have?</string>
+    <string name="faq_a3">The Premium plan includes access to shared environments, version history of your files, and unlimited storage without advertising.</string>
+    <string name="faq_q4">How do I change the application language?</string>
+    <string name="faq_a4">Go to Settings -> Language and select between Spanish or English. The application will automatically restart with the new language.</string>
+
+    <string name="faq_q5">Can I create a shared environment that only one of the users can modify?</string>
+    <string name="faq_a5">Yes, when you add users you can assign them the role of administrator or member. Administrators are the only users capable of modifying the shared environment.</string>
+    <string name="faq_q6">Can I access my files without an internet connection?</string>
+    <string name="faq_a6">If you do not have an internet connection, you will only be able to access those files that you have previously downloaded. To download a file you must enter it. Press the options button (the button at the bottom of the screen) and then select the download option.</string>
+    <string name="faq_q7">Is there a size limit for individual files?</string>
+    <string name="faq_a7">No, as long as it fits in the remaining space of your account, it can be uploaded to the cloud.</string>
+    <string name="faq_q8">If I cancel the subscription, will I still have the premium functions until the paid period ends?</string>
+    <string name="faq_a8">Yes, premium functions will only be deactivated once the time you have paid for the premium version has ended.</string>
+    <string name="faq_q9">Can I change my payment method after selecting one?</string>
+    <string name="faq_a9">No, but you can activate an option that allows you to pay for a plan automatically after the previous one ends. To activate this option you must enter the user menu, select change payment plan and click on the renewal option. Once this is done, you will be able to select if you want your subscription to be renewed indefinitely, for the number of years you select or for the number of months you select. This option can be canceled at any time.</string>
+    <string name="faq_q10">What payment methods are accepted?</string>
+    <string name="faq_a10">We accept card and online payment.</string>
+    <string name="faq_q11">I have forgotten my password, how can I recover the account?</string>
+    <string name="faq_a11">If you have forgotten your password, when it asks for it when logging in, click on the option \"Have you forgotten your password?\". This will send an email to the account you registered with where you can change the password.</string>
+    <string name="faq_q12">Are my payment details safe?</string>
+    <string name="faq_a12">Yes, at QuickFile we guarantee that your payment data is protected.</string>
+    <string name="faq_q13">Who can see my files?</string>
+    <string name="faq_a13">No one, your data will be protected according to the corresponding data protection law.</string>
+    <string name="faq_q14">What happens if I run out of space?</string>
+    <string name="faq_a14">You will not be able to upload any files unless you pay for the premium version or make space by deleting a file from your account.</string>
+
+    <!-- User Manual -->
+    <string name="manual_main_title">User Manual</string>
+    <string name="manual_section_1_title">1. Registration</string>
+    <string name="manual_section_1_body">To register an account, you must fill in the fields indicated on the screen: the username you wish to be identified by in the application, the email address associated with the account, the password for your QuickFile account, and the same password as entered in the previous field.</string>
+    <string name="manual_section_2_title">2. Log In</string>
+    <string name="manual_section_2_body">To log in, you must first have a registered account in QuickFile. If you already have an account, you must fill in the fields indicated on the screen: the account username and password. If you have forgotten your password or have any other questions, you can access the support menu.</string>
+    <string name="manual_section_3_title">3. Create object</string>
+    <string name="manual_section_3_1_title">3.1. Create file</string>
+    <string name="manual_section_3_1_body">To create a file, you must press the \"+\" symbol at the bottom of the screen, and then choose the file option.</string>
+    <string name="manual_section_3_2_title">3.2. Create folder</string>
+    <string name="manual_section_3_2_body">To create a folder, you must press the \"+\" symbol at the bottom of the screen, and then choose the folder option.</string>
+    <string name="manual_section_4_title">4. Entering the trash</string>
+    <string name="manual_section_4_body">You can access the trash from the main menu. Here you will find all the items you have temporarily deleted. You have the option to recover files if you made a mistake or delete them permanently to free up space in your account.</string>
+    <string name="manual_section_5_title">5. Open folder</string>
+    <string name="manual_section_5_body">To navigate through your files, simply tap on any folder in the list. This will allow you to enter it and view the subfolders and files it contains, keeping your files organized.</string>
+    <string name="manual_section_6_title">6. Open file</string>
+    <string name="manual_section_6_body">By tapping on a file, you will access the details view. From here you can see relevant information such as the size, format, and extension of the file, as well as access its specific options.</string>
+    <string name="manual_section_6_1_title">6.1. File options</string>
+    <string name="manual_section_6_1_body">Within the file details, you have several actions available: \n\n• Preview file: View content without downloading it.\n• Share: Send the file to other users with read or edit permissions.\n• Download: Save a copy on your device.\n• Delete: Send the file to the trash.\n• Report: Report an error or problem with the file.</string>
+    <string name="manual_section_7_title">7. User options</string>
+    <string name="manual_section_7_body">In the profile icon of the top bar, you will find your personal menu. From here you can:\n\n• Change user data (name and photo).\n• Account settings (email and password).\n• Change payment plan: Manage your subscription, automatic renewal, or cancellation.\n• App reports: Report general failures.\n• User support: FAQs, Manual, Contact, and Password recovery.\n• Language change: Toggle between Spanish and English.</string>
+    <string name="manual_section_8_title">8. Shared environment</string>
+    <string name="manual_section_8_body">Access via the handshake icon to collaborate with others. You can add new environments, switch between them, and manage their settings. If you are an administrator, you can add users by email, change their permissions, or even leave the environment or delete it entirely.</string>
+
+    <!-- Spark Messages -->
+    <string name="spark_msg_main">Hello! Here are your files. Press the central button to add new content.</string>
+    <string name="spark_msg_settings">From here you can customize your experience and manage your account.</string>
+    <string name="spark_msg_shared">These are the files that other people have shared with you.</string>
+    <string name="spark_msg_trash">Watch out! Files here will be permanently deleted if you empty the trash.</string>
+    <string name="spark_msg_add">What\'s on your mind today? A new folder or a file?</string>
+    <string name="spark_msg_account">Keep your data safe and updated in this section.</string>
+    <string name="spark_msg_support">Do you have any questions? I\'m here to help!</string>
+    <string name="spark_msg_faq">I\'ve compiled the most common questions so you can find the solution quickly.</string>
+    <string name="spark_msg_cancellation">We\'re sorry to see you go. Are you sure you want to cancel your subscription?</string>
+    <string name="spark_msg_language">Prefer another language? Change it here in a second.</string>
+    <string name="spark_msg_contact">Here are our contact methods. We are available for whatever you need!</string>
+    <string name="spark_msg_add_user">Great! Add a new member to your team to collaborate together.</string>
+    <string name="spark_msg_shared_settings">Welcome to the shared environment! Here you can manage members and settings.</string>
+    <string name="spark_msg_forgot_password">Enter your email and we will help you recover your account.</string>
+    <string name="spark_msg_manual">Here you have all the information you need to master QuickFile.</string>
+
+    <!-- Contact -->
+    <string name="contact_title">Contact Us</string>
+    <string name="contact_email_label">Email</string>
+    <string name="contact_email_value">QuikFileSupport@gmail.com</string>
+    <string name="contact_phone_label">Phone</string>
+    <string name="contact_phone_value">+34 900 123 456</string>
+    <string name="contact_social_label">Social Media</string>
+    <string name="contact_social_value">@QuikFile_App</string>
+    <string name="contact_hours_label">Business Hours</string>
+    <string name="contact_hours_value">Monday to Friday: 09:00 - 18:00</string>
 </resources>

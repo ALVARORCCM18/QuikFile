@@ -14,12 +14,14 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Eliminamos EdgeToEdge para evitar parpadeos negros durante recreación de idioma
         setContentView(R.layout.activity_login);
 
         EditText etUsername = findViewById(R.id.etUsername);
         EditText etPassword = findViewById(R.id.etPassword);
         Button btnLoginAction = findViewById(R.id.btnLoginAction);
         TextView btnGoToRegister = findViewById(R.id.btnGoToRegister);
+        Button btnGoToSupport = findViewById(R.id.btnGoToSupport);
 
         // Cuando el usuario le da a entrar
         btnLoginAction.setOnClickListener(v -> {
@@ -33,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish(); // Quito el login del historial para que no vuelva atras al salir
             } else {
-                Toast.makeText(this, "Por favor, rellena todos los campos", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.fill_all_fields, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -42,5 +44,13 @@ public class LoginActivity extends AppCompatActivity {
             Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
             startActivity(intent);
         });
+
+        // Botón de soporte para usuarios no logueados
+        if (btnGoToSupport != null) {
+            btnGoToSupport.setOnClickListener(v -> {
+                Intent intent = new Intent(LoginActivity.this, SupportActivity.class);
+                startActivity(intent);
+            });
+        }
     }
 }

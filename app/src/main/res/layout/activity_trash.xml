@@ -8,7 +8,7 @@
     android:fitsSystemWindows="true"
     tools:context=".TrashActivity">
 
-    <!-- Barra de Navegación Superior (Estandarizada) -->
+    <!-- Barra de Navegación Superior -->
     <LinearLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
@@ -31,7 +31,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_person"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/settings_title" />
         </FrameLayout>
 
         <FrameLayout
@@ -46,7 +47,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_home"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/already_at_home" />
         </FrameLayout>
 
         <FrameLayout
@@ -61,7 +63,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_handshake"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/shared_env_title" />
         </FrameLayout>
 
         <FrameLayout
@@ -76,11 +79,11 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_group"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/login_button" />
         </FrameLayout>
     </LinearLayout>
 
-    <!-- ScrollView que termina antes de los botones de acción -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -115,7 +118,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="Seleccionar todo"
+                    android:text="@string/select_all"
                     android:textColor="@color/blue_app"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -143,7 +146,6 @@
                     android:textColor="@color/white"
                     android:textSize="18sp" />
             </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
 
@@ -158,7 +160,8 @@
         android:src="@drawable/ic_arrow_back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:tint="@color/blue_app" />
+        app:tint="@color/blue_app"
+        android:contentDescription="@string/back" />
 
     <LinearLayout
         android:id="@+id/actionButtons"
@@ -176,7 +179,7 @@
             android:layout_height="60dp"
             android:layout_marginBottom="16dp"
             android:backgroundTint="@color/red_delete"
-            android:text="Eliminar"
+            android:text="@string/delete"
             android:textAllCaps="false"
             android:textSize="18sp" />
 
@@ -185,10 +188,12 @@
             android:layout_width="140dp"
             android:layout_height="60dp"
             android:backgroundTint="@color/blue_app"
-            android:text="Recuperar"
+            android:text="@string/recover"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="18sp" />
     </LinearLayout>
+
+    <!-- Mascota Spark en Papelera -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

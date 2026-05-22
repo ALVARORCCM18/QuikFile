@@ -114,7 +114,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:text="Fichero"
+                android:text="@string/file"
                 android:textColor="@color/white"
                 android:textSize="22sp"
                 android:textStyle="bold"
@@ -154,7 +154,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tamaño: 2.5 MB"
+                android:text="@string/size_label"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
@@ -162,7 +162,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Formato: PDF"
+                android:text="@string/format_label"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
@@ -170,7 +170,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Extensión: .pdf"
+                android:text="@string/extension_label"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
@@ -178,7 +178,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Descripción:"
+                android:text="@string/description_label"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -187,7 +187,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Documento de prueba extenso para verificar la funcionalidad de scroll en esta vista de detalles. Se pueden añadir más comentarios aquí.\n\nLínea extra 1\nLínea extra 2\nLínea extra 3\nLínea extra 4\nLínea extra 5\nLínea extra 6\nÚltima línea de prueba."
+                android:text="..."
                 android:textColor="@color/white"
                 android:textSize="18sp" />
         </LinearLayout>
@@ -200,7 +200,6 @@
         android:layout_height="300dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <!-- Botón Atrás -->
         <ImageView
             android:id="@+id/btnBack"
             android:layout_width="100dp"
@@ -210,9 +209,9 @@
             android:src="@drawable/ic_arrow_back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:tint="@color/blue_app" />
+            app:tint="@color/blue_app"
+            android:contentDescription="@string/back" />
 
-        <!-- Iconos del Menú Circular -->
         <ImageView
             android:id="@+id/btnDownload"
             android:layout_width="60dp"
@@ -227,7 +226,8 @@
             app:layout_constraintEnd_toEndOf="@id/btnMenu"
             app:layout_constraintStart_toStartOf="@id/btnMenu"
             app:layout_constraintTop_toTopOf="@id/btnMenu"
-            app:tint="@color/blue_app" />
+            app:tint="@color/blue_app"
+            android:contentDescription="@string/download" />
 
         <ImageView
             android:id="@+id/btnDelete"
@@ -243,7 +243,8 @@
             app:layout_constraintEnd_toEndOf="@id/btnMenu"
             app:layout_constraintStart_toStartOf="@id/btnMenu"
             app:layout_constraintTop_toTopOf="@id/btnMenu"
-            app:tint="@color/blue_app" />
+            app:tint="@color/blue_app"
+            android:contentDescription="@string/delete" />
 
         <ImageView
             android:id="@+id/btnReport"
@@ -259,7 +260,8 @@
             app:layout_constraintEnd_toEndOf="@id/btnMenu"
             app:layout_constraintStart_toStartOf="@id/btnMenu"
             app:layout_constraintTop_toTopOf="@id/btnMenu"
-            app:tint="@color/blue_app" />
+            app:tint="@color/blue_app"
+            android:contentDescription="@string/report" />
 
         <ImageView
             android:id="@+id/btnPreview"
@@ -275,7 +277,8 @@
             app:layout_constraintEnd_toEndOf="@id/btnMenu"
             app:layout_constraintStart_toStartOf="@id/btnMenu"
             app:layout_constraintTop_toTopOf="@id/btnMenu"
-            app:tint="@color/blue_app" />
+            app:tint="@color/blue_app"
+            android:contentDescription="@string/preview" />
 
         <ImageView
             android:id="@+id/btnShare"
@@ -291,9 +294,9 @@
             app:layout_constraintEnd_toEndOf="@id/btnMenu"
             app:layout_constraintStart_toStartOf="@id/btnMenu"
             app:layout_constraintTop_toTopOf="@id/btnMenu"
-            app:tint="@color/blue_app" />
+            app:tint="@color/blue_app"
+            android:contentDescription="@string/share" />
 
-        <!-- Botón Central (3 rallas) -->
         <ImageView
             android:id="@+id/btnMenu"
             android:layout_width="120dp"
@@ -308,7 +311,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:tint="@color/white" />
 
-        <!-- Botón Cerrar (X) -->
         <ImageView
             android:id="@+id/btnCloseMenu"
             android:layout_width="60dp"

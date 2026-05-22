@@ -30,7 +30,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_person"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/settings_title" />
         </FrameLayout>
 
         <FrameLayout
@@ -45,7 +46,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_home"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/already_at_home" />
         </FrameLayout>
 
         <FrameLayout
@@ -60,7 +62,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_handshake"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/shared_env_title" />
         </FrameLayout>
 
         <FrameLayout
@@ -75,7 +78,8 @@
                 android:background="@color/white"
                 android:padding="8dp"
                 android:src="@drawable/ic_group"
-                app:tint="@color/blue_app" />
+                app:tint="@color/blue_app"
+                android:contentDescription="@string/login_button" />
         </FrameLayout>
     </LinearLayout>
 
@@ -92,7 +96,7 @@
             android:id="@+id/tvQuestion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¿Seguro que quieres"
+            android:text="@string/cancel_prefix"
             android:textColor="@color/white"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -102,7 +106,7 @@
             android:id="@+id/tvCancelBig"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CANCELAR"
+            android:text="@string/cancel_action_big"
             android:textColor="@color/white"
             android:textSize="48sp"
             android:textStyle="bold"
@@ -113,7 +117,7 @@
             android:id="@+id/tvYourQuota"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="tu cuota?"
+            android:text="@string/cancel_suffix"
             android:textColor="@color/white"
             android:textSize="32sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -123,7 +127,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Perderás tus beneficios premium"
+            android:text="@string/lose_benefits"
             android:textColor="@color/blue_app"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -138,7 +142,7 @@
             android:src="@drawable/spark_sad"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:contentDescription="Spark Mascot" />
+            android:contentDescription="@null" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -159,7 +163,7 @@
             android:padding="12dp"
             android:src="@drawable/ic_arrow_back"
             app:tint="@color/blue_app"
-            android:contentDescription="Back" />
+            android:contentDescription="@string/back" />
 
         <ImageView
             android:id="@+id/btnConfirmCancel"
@@ -168,7 +172,7 @@
             android:padding="12dp"
             android:src="@drawable/ic_arrow_forward"
             app:tint="@color/blue_app"
-            android:contentDescription="Confirm" />
+            android:contentDescription="@string/confirm" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

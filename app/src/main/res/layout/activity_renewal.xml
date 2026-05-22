@@ -7,7 +7,7 @@
     android:background="@color/black"
     tools:context=".RenewalActivity">
 
-    <!-- Barra de Navegación Superior (Estandarizada) -->
+    <!-- Barra de Navegación Superior -->
     <LinearLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
@@ -84,7 +84,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="¿Cuánto tiempo desea subscribirse?"
+        android:text="@string/how_long_subscribe"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -122,7 +122,7 @@
                 android:background="@drawable/search_bar_background"
                 android:backgroundTint="@color/white"
                 android:padding="12dp"
-                android:text="Indefinidamente"
+                android:text="@string/indefinitely"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
         </LinearLayout>
@@ -153,7 +153,7 @@
                     android:background="@drawable/search_bar_background"
                     android:backgroundTint="@color/white"
                     android:padding="12dp"
-                    android:text="Durante años"
+                    android:text="@string/for_years"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -165,7 +165,7 @@
                 android:layout_marginStart="52dp"
                 android:layout_marginTop="-4dp"
                 android:background="@drawable/payment_field_background"
-                android:hint="Introduce el número de años"
+                android:hint="@string/years_hint"
                 android:inputType="number"
                 android:padding="12dp"
                 android:textColor="@color/black"
@@ -200,7 +200,7 @@
                     android:background="@drawable/search_bar_background"
                     android:backgroundTint="@color/white"
                     android:padding="12dp"
-                    android:text="Durante meses"
+                    android:text="@string/for_months"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -212,7 +212,7 @@
                 android:layout_marginStart="52dp"
                 android:layout_marginTop="-4dp"
                 android:background="@drawable/payment_field_background"
-                android:hint="Introduce el número de meses"
+                android:hint="@string/months_hint"
                 android:inputType="number"
                 android:padding="12dp"
                 android:textColor="@color/black"

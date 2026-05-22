@@ -87,7 +87,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/search_bar_background"
-        android:hint="Introduce correo electronico"
+        android:hint="@string/enter_email_hint"
         android:inputType="textEmailAddress"
         android:paddingStart="16dp"
         android:textColor="@color/black"
@@ -120,7 +120,7 @@
                 android:layout_height="40dp"
                 android:src="@android:drawable/ic_menu_agenda"
                 app:tint="@color/blue_app"
-                android:contentDescription="Type Icon" />
+                android:contentDescription="@null" />
 
             <TextView
                 android:id="@+id/tvSelectedType"
@@ -128,7 +128,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:paddingStart="12dp"
-                android:text="Selecciona tipo..."
+                android:text="@string/select_type_hint"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
@@ -138,7 +138,7 @@
                 android:layout_height="40dp"
                 android:src="@android:drawable/arrow_down_float"
                 app:tint="@color/blue_app"
-                android:contentDescription="Dropdown Arrow" />
+                android:contentDescription="@null" />
         </LinearLayout>
 
         <LinearLayout
@@ -160,12 +160,13 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:src="@drawable/ic_person"
-                    app:tint="@color/blue_app" />
+                    app:tint="@color/blue_app"
+                    android:contentDescription="@null" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="12dp"
-                    android:text="Administrador"
+                    android:text="@string/administrator"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -182,12 +183,13 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:src="@drawable/ic_person"
-                    app:tint="@color/blue_app" />
+                    app:tint="@color/blue_app"
+                    android:contentDescription="@null" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="12dp"
-                    android:text="Miembro"
+                    android:text="@string/member"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -202,7 +204,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
         android:backgroundTint="@color/blue_app"
-        android:text="Añadir usuario"
+        android:text="@string/add_user_button"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="20sp"
@@ -218,7 +220,8 @@
         android:src="@android:drawable/ic_menu_revert"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:tint="@color/blue_app" />
+        app:tint="@color/blue_app"
+        android:contentDescription="@string/back" />
 
     <ImageView
         android:id="@+id/ivSparkMascot"
@@ -228,6 +231,7 @@
         android:layout_marginBottom="16dp"
         android:src="@drawable/spark_interested"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@null" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

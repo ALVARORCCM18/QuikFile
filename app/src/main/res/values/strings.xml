@@ -1,3 +1,264 @@
 <resources>
     <string name="app_name">QuikFile</string>
+
+    <!-- Navegación y Comunes -->
+    <string name="search_hint">Buscar...</string>
+    <string name="back">Atrás</string>
+    <string name="cancel">Cancelar</string>
+    <string name="delete">Eliminar</string>
+    <string name="accept">Aceptar</string>
+    <string name="report">Reportar</string>
+    <string name="confirm">Confirmar</string>
+    <string name="add">Añadir</string>
+    <string name="edit">Editar</string>
+    <string name="save">Guardar</string>
+    <string name="select_all">Seleccionar todo</string>
+    <string name="recover">Recuperar</string>
+    <string name="share">Compartir</string>
+    <string name="download">Descargar</string>
+    <string name="preview">Previsualizar</string>
+
+    <!-- MainActivity / AddActivity -->
+    <string name="folder">Carpeta</string>
+    <string name="folder_personal">Carpeta Personal</string>
+    <string name="file">Fichero</string>
+    <string name="trash">Papelera</string>
+    <string name="add_choice_title">¿Qué quieres añadir?</string>
+    <string name="already_at_home">Ya estás en Inicio</string>
+    <string name="delete_item_title">Eliminar elemento</string>
+    <string name="move_to_trash_confirm">¿Quieres enviar \"%1$s\" a la papelera?</string>
+    <string name="moved_to_trash">%1$s movido a la papelera</string>
+    <string name="new_folder">Nueva Carpeta</string>
+    <string name="new_subfolder">Nueva Subcarpeta</string>
+    <string name="new_file">Nuevo Fichero</string>
+    <string name="item_added">%1$s añadida</string>
+
+    <!-- Login y Registro -->
+    <string name="username_hint">Nombre de usuario</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="login_button">Iniciar sesión</string>
+    <string name="no_account">¿No tienes cuenta?</string>
+    <string name="register_link">Regístrate</string>
+    <string name="support_link">Soporte al usuario</string>
+    <string name="fill_all_fields">Por favor, rellena todos los campos</string>
+    <string name="email_hint">Correo electrónico</string>
+    <string name="repeat_password_hint">Repite la contraseña</string>
+    <string name="register_button">Registrate</string>
+    <string name="already_have_account">¿Ya tienes cuenta?</string>
+    <string name="login_link">Iniciar sesion</string>
+    <string name="passwords_do_not_match">Las contraseñas no coinciden</string>
+    <string name="registration_success">Usuario registrado correctamente</string>
+
+    <!-- Ajustes (Settings) -->
+    <string name="settings_title">Ajustes</string>
+    <string name="already_at_settings">Ya estás en Ajustes</string>
+    <string name="change_profile_photo">Cambiar foto de perfil</string>
+    <string name="name_hint">Nombre</string>
+    <string name="account_settings">Ajustes de cuenta</string>
+    <string name="change_payment_plan">Cambiar Plan de Pago</string>
+    <string name="app_reports">Reportes de aplicación</string>
+    <string name="user_support">Soporte al usuario</string>
+    <string name="language">Idioma</string>
+
+    <!-- Soporte (Support) -->
+    <string name="support_title">Soporte</string>
+    <string name="faqs">Preguntas Frecuentes</string>
+    <string name="user_manual">Manual de uso</string>
+    <string name="contact_us">Contáctanos</string>
+    <string name="opening_faqs">Abriendo Preguntas Frecuentes...</string>
+    <string name="manual_not_available">Manual de usuario: Próximamente disponible</string>
+    <string name="connecting_agent">Conectando con un agente...</string>
+    <string name="forgot_password_title">¿Has olvidado la contraseña?</string>
+    <string name="forgot_password_button">Recuperar contraseña</string>
+    <string name="forgot_password_toast">Se ha enviado un correo de recuperación de contraseña</string>
+
+    <!-- Idioma (Language) -->
+    <string name="language_title">Seleccionar Idioma</string>
+    <string name="spanish">Español</string>
+    <string name="english">Inglés</string>
+    <string name="lang_changed_es">Idioma cambiado a Español</string>
+    <string name="lang_changed_en">Language changed to English</string>
+
+    <!-- Ajustes de Cuenta (Account Settings) -->
+    <string name="new_password_hint">Nueva contraseña</string>
+    <string name="new_email_hint">Nuevo correo electrónico</string>
+    <string name="delete_account">Eliminar cuenta</string>
+    <string name="account_help">Aquí puedes actualizar tu contraseña, cambiar tu correo electrónico o eliminar tu cuenta si lo deseas.</string>
+    <string name="password_updated">Contraseña actualizada</string>
+    <string name="email_updated">Correo actualizado</string>
+    <string name="delete_account_confirm">Eliminar cuenta (Requiere confirmación)</string>
+
+    <!-- Reportes -->
+    <string name="report_title">Reporte de aplicación</string>
+    <string name="report_subject_hint">Introduce el motivo del reporte</string>
+    <string name="report_body_hint">Introduce la descripción del problema</string>
+    <string name="reporting_label">Reportando:</string>
+    <string name="detailed_report_hint">Descripción detallada del reporte...</string>
+    <string name="indicate_report_reason">Por favor, indique el motivo del reporte</string>
+    <string name="report_sent_success">Reporte enviado correctamente</string>
+
+    <!-- Compartir -->
+    <string name="sharing_label">Compartiendo:</string>
+    <string name="enter_email_hint">Introduce correo electrónico</string>
+    <string name="select_permission">Seleccionar</string>
+    <string name="permission_read">Leer</string>
+    <string name="permission_edit">Editar</string>
+    <string name="share_action">COMPARTIR</string>
+    <string name="fill_share_fields">Por favor, rellena el email y el permiso</string>
+    <string name="share_success">Fichero compartido correctamente</string>
+
+    <!-- Planes y Suscripción -->
+    <string name="subscription_title">SUBSCRIPCIÓN</string>
+    <string name="subscription">Subscripción</string>
+    <string name="renewal">Renovación</string>
+    <string name="cancellation">Cancelación</string>
+    <string name="thanks">GRACIAS</string>
+    <string name="trust_us">POR CONFIAR EN NOSOTROS</string>
+    <string name="now_premium">Ahora eres un cliente premium</string>
+    <string name="monthly_label">MENSUAL</string>
+    <string name="monthly_subscription">Suscripción Mensual</string>
+    <string name="premium_benefits">El plan premium te da acceso a:</string>
+    <string name="benefit_shared">El entorno compartido</string>
+    <string name="benefit_space">Más espacio</string>
+    <string name="benefit_versions">El historial de versiones</string>
+    <string name="price_prefix">POR SOLO</string>
+    <string name="price_value">3.99€ AL MES</string>
+    <string name="price_info">POR SOLO 3.99€ AL MES</string>
+    <string name="cancel_prefix">¿Seguro que quieres</string>
+    <string name="cancel_action_big">CANCELAR</string>
+    <string name="cancel_suffix">tu cuota?</string>
+    <string name="lose_benefits">Perderás tus beneficios premium</string>
+    <string name="how_long_subscribe">¿Cuánto tiempo desea subscribirse?</string>
+    <string name="indefinitely">Indefinidamente</string>
+    <string name="for_years">Durante años</string>
+    <string name="for_months">Durante meses</string>
+    <string name="years_hint">Introduce el número de años</string>
+    <string name="months_hint">Introduce el número de meses</string>
+    <string name="plan_renewed_success">Tu plan ha sido renovado correctamente</string>
+    <string name="select_renewal_option">Por favor, selecciona una opción de renovación</string>
+
+    <!-- Pago -->
+    <string name="card_number_label">Número de tarjeta</string>
+    <string name="card_number_hint">Ingrese los 16 dígitos</string>
+    <string name="card_holder_label">Nombre del titular</string>
+    <string name="card_holder_hint">Nombre completo</string>
+    <string name="cvv_label">CVV</string>
+    <string name="expiry_date_label">Fecha caducidad</string>
+    <string name="expiry_date_hint">MM/AA</string>
+
+    <!-- Entorno Compartido / Añadir Usuario -->
+    <string name="shared_env_title">Entorno compartido</string>
+    <string name="manage_user">Gestionar usuario</string>
+    <string name="exit_env">Salir del entorno</string>
+    <string name="delete_env">Borrar entorno</string>
+    <string name="add_member">Añadir miembro</string>
+    <string name="add_user_button">Añadir usuario</string>
+    <string name="select_type_hint">Selecciona tipo...</string>
+    <string name="administrator">Administrador</string>
+    <string name="member">Miembro</string>
+    <string name="user_role_toast">Selecciona el rol del nuevo usuario</string>
+    <string name="user_added_success">Usuario añadido correctamente</string>
+    <string name="env_name_hint">Nombre del entorno</string>
+    <string name="user_label">Usuario</string>
+    <string name="exit_env_confirm">¿Seguro que quieres salir del entorno?</string>
+    <string name="delete_env_confirm">¿Seguro que quieres borrar el entorno? Esta acción no se puede deshacer.</string>
+
+    <!-- Detalles de Fichero -->
+    <string name="file_details">Detalles del fichero</string>
+    <string name="size_label">Tamaño:</string>
+    <string name="format_label">Formato:</string>
+    <string name="extension_label">Extensión:</string>
+    <string name="description_label">Descripción:</string>
+    <string name="downloading">Descargando...</string>
+    <string name="file_deleted">Archivo eliminado correctamente</string>
+    <string name="current_version">Versión actual</string>
+    <string name="version_history">Historial de versiones</string>
+    <string name="file_renamed_success">Nombre editado correctamente</string>
+    <string name="version_changed_success">Versión cambiada correctamente</string>
+
+    <!-- FAQs -->
+    <string name="faq_title">Preguntas Frecuentes</string>
+    <string name="faq_q1">¿Cómo comparto archivos con otros?</string>
+    <string name="faq_a1">Para compartir un archivo, mantén pulsado sobre él o entra en sus detalles y selecciona la opción \"Compartir\". Podrás introducir el correo del destinatario.</string>
+    <string name="faq_q2">¿Puedo recuperar archivos borrados?</string>
+    <string name="faq_a2">Sí, todos los archivos borrados van a la \"Papelera\". Puedes entrar en ella desde el menú principal y seleccionar los archivos que quieras restaurar.</string>
+    <string name="faq_q3">¿Qué ventajas tiene el plan Premium?</string>
+    <string name="faq_a3">El plan Premium incluye acceso a entornos compartidos, historial de versiones de tus ficheros y almacenamiento ilimitado sin publicidad.</string>
+    <string name="faq_q4">¿Cómo cambio el idioma de la aplicación?</string>
+    <string name="faq_a4">Ve a Ajustes -> Idioma y selecciona entre Español o Inglés. La aplicación se reiniciará automáticamente con el nuevo idioma.</string>
+
+    <string name="faq_q5">¿Puedo crear un entorno compartido que sólo pueda modificar uno de los usuarios?</string>
+    <string name="faq_a5">Sí, cuando añades usuarios les puedes asignar el rol de administrador o de miembro. Los administradores son los únicos usuarios capaces de modificar el entorno compartido.</string>
+    <string name="faq_q6">¿Puedo acceder a mis archivos sin conexión a internet?</string>
+    <string name="faq_a6">Si no tienes conexión a internet sólo podrás acceder a aquellos archivos que hayas descargado previamente. Para descargar un archivo debes entrar dentro de él. Darle al botón de opciones (el botón en la parte inferior de la pantalla) y después seleccionar la opción de descarga.</string>
+    <string name="faq_q7">¿Existe un límite de tamaño para archivos individuales?</string>
+    <string name="faq_a7">No, mientras que quepa en el espacio restante de tu cuenta se podrá subir a la nube.</string>
+    <string name="faq_q8">Si cancelo la subscripción ¿podré seguir teniendo las funciones premium hasta que acabe el periodo pagado?</string>
+    <string name="faq_a8">Sí, las funciones premium sólo se desactivarán una vez haya terminado el tiempo que hayas pagado por tener la versión premium.</string>
+    <string name="faq_q9">¿Puedo cambiar mi forma de pago después de haber seleccionado uno?</string>
+    <string name="faq_a9">No, pero puedes activar una opción que permite pagar por un plan automáticamente después de que se acabe el anterior. Para activar esta opción debes entrar al menú de usuario, seleccionar cambiar plan de pago y darle a la opción de renovación. Una vez hecho esto podrás seleccionar si quieres que se renueve tu subscripción indefinidamente, durante la cantidad de años que selecciones o durante la cantidad de meses que selecciones. Esta opción se puede cancelar en cualquier momento.</string>
+    <string name="faq_q10">¿Qué métodos de pago se aceptan?</string>
+    <string name="faq_a10">Aceptamos pago con tarjeta y online.</string>
+    <string name="faq_q11">He olvidado mi contraseña, ¿cómo puedo recuperar la cuenta?</string>
+    <string name="faq_a11">Si se te ha olvidado tu contraseña, cuando te la pida a la hora de iniciar sesión dale a la opción “¿Se te ha olvidado tu contraseña?”. Esto te mandará un correo a la cuenta con la que te registraste donde puedes cambiar la contraseña.</string>
+    <string name="faq_q12">¿Están seguros mis datos de pago?</string>
+    <string name="faq_a12">Si, en QuickFile te garantizamos que tus datos de pago están protegidos.</string>
+    <string name="faq_q13">¿Quién puede ver mis archivos?</string>
+    <string name="faq_a13">Nadie, tus datos serán protegidos según la ley de protección de datos correspondiente.</string>
+    <string name="faq_q14">¿Qué sucede si me quedo sin espacio?</string>
+    <string name="faq_a14">No podrás subir ningún archivo a no ser que pagues por la versión premium o hagas espacio borrando algún archivo de tu cuenta.</string>
+
+    <string name="submit_report">REPORTAR</string>
+
+    <!-- Manual de Usuario -->
+    <string name="manual_main_title">Manual de Usuario</string>
+    <string name="manual_section_1_title">1. Registrarse</string>
+    <string name="manual_section_1_body">Para registrar una cuenta debe rellenar los campos indicados en la pantalla: el nombre de usuario por el que desee identificarse en la aplicación, el correo electrónico asociado a la cuenta, la contraseña de su cuenta de QuickFile, y la misma contraseña que la insertada en el campo anterior.</string>
+    <string name="manual_section_2_title">2. Iniciar Sesión</string>
+    <string name="manual_section_2_body">Para iniciar sesión debe primero tener una cuenta registrada en QuickFile. Si ya tiene una cuenta deberá rellenar los campos indicados en la pantalla: el nombre de usuario y la contraseña de la cuenta. Si has olvidado la contraseña o tienes alguna otra duda puedes acceder al menú de soporte.</string>
+    <string name="manual_section_3_title">3. Crear objeto</string>
+    <string name="manual_section_3_1_title">3.1. Crear archivo</string>
+    <string name="manual_section_3_1_body">Para crear un archivo deberá presionar el símbolo de “+” en la parte inferior de la pantalla, y luego elegir la opción archivo.</string>
+    <string name="manual_section_3_2_title">3.2. Crear carpeta</string>
+    <string name="manual_section_3_2_body">Para crear una carpeta deberá presionar el símbolo de “+” en la parte inferior de la pantalla, y luego elegir la opción carpeta.</string>
+    <string name="manual_section_4_title">4. Entrar en la papelera</string>
+    <string name="manual_section_4_body">Puedes acceder a la papelera desde el menú principal (icono de papelera). Aquí encontrarás todos los elementos que hayas eliminado temporalmente. Tienes la opción de recuperar archivos si te has equivocado o borrarlos definitivamente para liberar espacio de tu cuenta.</string>
+    <string name="manual_section_5_title">5. Abrir carpeta</string>
+    <string name="manual_section_5_body">Para navegar por tus archivos, simplemente pulsa sobre cualquier carpeta de la lista. Esto te permitirá entrar en ella y visualizar las subcarpetas y ficheros que contiene, manteniendo tus archivos organizados.</string>
+    <string name="manual_section_6_title">6. Abrir fichero</string>
+    <string name="manual_section_6_body">Al pulsar sobre un fichero, accederás a la vista de detalles. Desde aquí podrás ver información relevante como el tamaño, formato y extensión del archivo, además de acceder a sus opciones específicas.</string>
+    <string name="manual_section_6_1_title">6.1. Opciones del fichero</string>
+    <string name="manual_section_6_1_body">Dentro de los detalles del fichero, dispones de varias acciones: \n\n• Previsualizar archivo: Ver el contenido sin descargarlo.\n• Compartir: Enviar el archivo a otros usuarios con permisos de lectura o edición.\n• Descargar: Guardar una copia en tu dispositivo.\n• Eliminar: Enviar el archivo a la papelera.\n• Reportar: Informar de un error o problema con el archivo.</string>
+    <string name="manual_section_7_title">7. Opciones de usuario</string>
+    <string name="manual_section_7_body">En el icono de perfil de la barra superior encontrarás tu menú personal. Desde aquí puedes:\n\n• Cambiar datos de usuario: Actualizar tu nombre o foto de perfil.\n• Ajustes de cuenta: Cambiar tu email o contraseña.\n• Cambiar plan de pago: Gestionar tu subscripción mensual, activar la renovación automática o proceder a la cancelación.\n• Reportes de aplicación: Informar sobre fallos generales del sistema.\n• Soporte al usuario: Acceder a las FAQs, este Manual, el formulario de Contacto o la Recuperación de contraseña.\n• Cambio de idioma: Alternar instantáneamente entre español e inglés.</string>
+    <string name="manual_section_8_title">8. Entorno compartido</string>
+    <string name="manual_section_8_body">Accede mediante el icono del apretón de manos en la barra superior. Los entornos compartidos te permiten colaborar con otros en tiempo real. Puedes añadir nuevos entornos, cambiar entre ellos y gestionar sus ajustes. Si eres administrador, podrás añadir usuarios por email, cambiar sus permisos, o incluso salir del entorno o borrarlo por completo.</string>
+
+    <!-- Mensajes de Spark -->
+    <string name="spark_msg_main">¡Hola! Aquí tienes tus archivos. Pulsa el botón central para añadir contenido nuevo.</string>
+    <string name="spark_msg_settings">Desde aquí puedes personalizar tu experiencia y gestionar tu cuenta.</string>
+    <string name="spark_msg_shared">Estos son los archivos que otras personas han compartido contigo.</string>
+    <string name="spark_msg_trash">¡Cuidado! Los archivos aquí se borrarán permanentemente si vacías la papelera.</string>
+    <string name="spark_msg_add">¿Qué tienes en mente hoy? ¿Una nueva carpeta o un archivo?</string>
+    <string name="spark_msg_account">Mantén tus datos seguros y actualizados en esta sección.</string>
+    <string name="spark_msg_support">¿Tienes alguna duda? ¡Estoy aquí para ayudarte!</string>
+    <string name="spark_msg_faq">He recopilado las preguntas más comunes para que encuentres la solución rápido.</string>
+    <string name="spark_msg_cancellation">Lamentamos que te vayas. ¿Estás seguro de cancelar tu suscripción?</string>
+    <string name="spark_msg_language">¿Prefieres otro idioma? Cámbialo aquí en un segundo.</string>
+    <string name="spark_msg_contact">Aquí tienes nuestras vías de contacto. ¡Estamos disponibles para lo que necesites!</string>
+    <string name="spark_msg_add_user">¡Genial! Añade un nuevo miembro a tu equipo para colaborar juntos.</string>
+    <string name="spark_msg_shared_settings">¡Bienvenido al entorno compartido! Aquí puedes gestionar los miembros y la configuración.</string>
+    <string name="spark_msg_forgot_password">Introduce tu correo y te ayudaremos a recuperar tu cuenta.</string>
+    <string name="spark_msg_manual">Aquí tienes toda la información que necesitas para dominar QuickFile.</string>
+
+    <!-- Contacto -->
+    <string name="contact_title">Contáctanos</string>
+    <string name="contact_email_label">Correo electrónico</string>
+    <string name="contact_email_value">QuikFileSupport@gmail.com</string>
+    <string name="contact_phone_label">Teléfono</string>
+    <string name="contact_phone_value">+34 900 123 456</string>
+    <string name="contact_social_label">Redes Sociales</string>
+    <string name="contact_social_value">@QuikFile_App</string>
+    <string name="contact_hours_label">Horario de atención</string>
+    <string name="contact_hours_value">Lunes a Viernes: 09:00 - 18:00</string>
 </resources>

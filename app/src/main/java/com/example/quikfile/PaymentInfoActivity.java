@@ -3,6 +3,7 @@ package com.example.quikfile;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class PaymentInfoActivity extends AppCompatActivity {
@@ -26,17 +27,17 @@ public class PaymentInfoActivity extends AppCompatActivity {
         // --- Navegación Barra Superior ---
         findViewById(R.id.btnSettingsTop).setOnClickListener(v -> {
             startActivity(new Intent(this, SettingsActivity.class));
-            finish();
         });
 
         findViewById(R.id.btnHomeTop).setOnClickListener(v -> {
-            startActivity(new Intent(this, MainActivity.class));
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
             finish();
         });
 
         findViewById(R.id.btnSharedTop).setOnClickListener(v -> {
             startActivity(new Intent(this, SharedActivity.class));
-            finish();
         });
 
         findViewById(R.id.btnLoginTop).setOnClickListener(v -> {
@@ -61,19 +62,19 @@ public class PaymentInfoActivity extends AppCompatActivity {
 
     private boolean validateFields() {
         if (etCardNumber.getText().toString().length() < 16) {
-            etCardNumber.setError("Número de tarjeta inválido");
+            Toast.makeText(this, R.string.fill_all_fields, Toast.LENGTH_SHORT).show();
             return false;
         }
         if (etCardHolder.getText().toString().isEmpty()) {
-            etCardHolder.setError("Nombre requerido");
+            Toast.makeText(this, R.string.fill_all_fields, Toast.LENGTH_SHORT).show();
             return false;
         }
         if (etCVV.getText().toString().length() < 3) {
-            etCVV.setError("CVV inválido");
+            Toast.makeText(this, R.string.fill_all_fields, Toast.LENGTH_SHORT).show();
             return false;
         }
         if (etExpiryDate.getText().toString().isEmpty()) {
-            etExpiryDate.setError("Fecha requerida");
+            Toast.makeText(this, R.string.fill_all_fields, Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;

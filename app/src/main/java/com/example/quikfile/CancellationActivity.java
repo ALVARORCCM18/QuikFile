@@ -13,9 +13,11 @@ public class CancellationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cancellation);
 
         // --- Mascot Help ---
-        findViewById(R.id.ivSparkMascot).setOnClickListener(v -> {
-            Toast.makeText(this, "¿Seguro que quieres irte? Pulsa la flecha derecha para confirmar o la izquierda para quedarte.", Toast.LENGTH_LONG).show();
-        });
+        if (findViewById(R.id.ivSparkMascot) != null) {
+            findViewById(R.id.ivSparkMascot).setOnClickListener(v -> {
+                Toast.makeText(this, R.string.spark_msg_cancellation, Toast.LENGTH_LONG).show();
+            });
+        }
 
         // --- Navegación Barra Superior ---
         findViewById(R.id.btnSettingsTop).setOnClickListener(v -> {
@@ -38,15 +40,10 @@ public class CancellationActivity extends AppCompatActivity {
         });
 
         // --- Botones de Acción Inferiores ---
-        
-        // Flecha izquierda: Volver a Payment Plan (Arrepentirse)
         findViewById(R.id.btnBack).setOnClickListener(v -> finish());
 
-        // Flecha derecha: Confirmar Cancelación
-        findViewById(R.id.btnConfirmCancel).setOnClickListener(v -> {
-            Toast.makeText(this, "Subscripción cancelada. Has vuelto al plan gratuito.", Toast.LENGTH_LONG).show();
-            
-            // Volver al Home limpiando la pila
+        findViewById(R.id.btnConfirmCancel) .setOnClickListener(v -> {
+            Toast.makeText(this, "Subscription cancelled", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
