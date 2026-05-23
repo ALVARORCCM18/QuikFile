@@ -44,7 +44,7 @@ Proyecto académico orientado a prototipar la experiencia de una app de almacena
 | SDK mínimo | API 33 (Android 13) |
 | SDK compilación / objetivo | API 36 |
 | UI | Android Views + XML |
-| Diseño | Material Design |
+| Diseño | Material Design 3 |
 | Build system | Gradle con Kotlin DSL |
 
 ### Dependencias principales
