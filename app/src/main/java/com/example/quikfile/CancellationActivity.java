@@ -22,17 +22,17 @@ public class CancellationActivity extends AppCompatActivity {
         // --- Navegación Barra Superior ---
         findViewById(R.id.btnSettingsTop).setOnClickListener(v -> {
             startActivity(new Intent(this, SettingsActivity.class));
-            finish();
         });
 
         findViewById(R.id.btnHomeTop).setOnClickListener(v -> {
-            startActivity(new Intent(this, MainActivity.class));
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
             finish();
         });
 
         findViewById(R.id.btnSharedTop).setOnClickListener(v -> {
             startActivity(new Intent(this, SharedActivity.class));
-            finish();
         });
 
         findViewById(R.id.btnLoginTop).setOnClickListener(v -> {
@@ -43,7 +43,7 @@ public class CancellationActivity extends AppCompatActivity {
         findViewById(R.id.btnBack).setOnClickListener(v -> finish());
 
         findViewById(R.id.btnConfirmCancel) .setOnClickListener(v -> {
-            Toast.makeText(this, "Subscription cancelled", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.subscription_cancelled, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);

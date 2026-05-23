@@ -1,6 +1,5 @@
 package com.example.quikfile;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -20,28 +19,6 @@ public class FaqActivity extends AppCompatActivity {
             spark.setOnClickListener(v -> 
                 Toast.makeText(this, R.string.spark_msg_faq, Toast.LENGTH_SHORT).show());
         }
-
-        // --- Navegación Barra Superior ---
-        findViewById(R.id.btnSettingsTop).setOnClickListener(v -> {
-            startActivity(new Intent(this, SettingsActivity.class));
-            finish();
-        });
-
-        findViewById(R.id.btnHomeTop).setOnClickListener(v -> {
-            Intent intent = new Intent(this, MainActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
-            finish();
-        });
-
-        findViewById(R.id.btnSharedTop).setOnClickListener(v -> {
-            startActivity(new Intent(this, SharedActivity.class));
-            finish();
-        });
-
-        findViewById(R.id.btnLoginTop).setOnClickListener(v -> {
-            startActivity(new Intent(this, LoginActivity.class));
-        });
 
         // --- Lógica de Desplegables ---
         setupFaq(R.id.header1, R.id.answer1, R.id.arrow1);
@@ -68,14 +45,16 @@ public class FaqActivity extends AppCompatActivity {
         final View answer = findViewById(answerId);
         final ImageView arrow = findViewById(arrowId);
 
-        header.setOnClickListener(v -> {
-            if (answer.getVisibility() == View.GONE) {
-                answer.setVisibility(View.VISIBLE);
-                arrow.setImageResource(android.R.drawable.arrow_up_float);
-            } else {
-                answer.setVisibility(View.GONE);
-                arrow.setImageResource(android.R.drawable.arrow_down_float);
-            }
-        });
+        if (header != null && answer != null && arrow != null) {
+            header.setOnClickListener(v -> {
+                if (answer.getVisibility() == View.GONE) {
+                    answer.setVisibility(View.VISIBLE);
+                    arrow.setImageResource(android.R.drawable.arrow_up_float);
+                } else {
+                    answer.setVisibility(View.GONE);
+                    arrow.setImageResource(android.R.drawable.arrow_down_float);
+                }
+            });
+        }
     }
 }

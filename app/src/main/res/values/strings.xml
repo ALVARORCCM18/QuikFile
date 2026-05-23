@@ -136,6 +136,9 @@
     <string name="months_hint">Introduce el número de meses</string>
     <string name="plan_renewed_success">Tu plan ha sido renovado correctamente</string>
     <string name="select_renewal_option">Por favor, selecciona una opción de renovación</string>
+    <string name="subscription_cancelled">Suscripción cancelada</string>
+    <string name="premium_info_msg">¡Consigue el plan premium para desbloquear funciones exclusivas!</string>
+    <string name="payment_plan_info">Elige una opción para gestionar tu suscripción: ver planes, renovar o cancelar.</string>
 
     <!-- Pago -->
     <string name="card_number_label">Número de tarjeta</string>
@@ -175,6 +178,9 @@
     <string name="version_history">Historial de versiones</string>
     <string name="file_renamed_success">Nombre editado correctamente</string>
     <string name="version_changed_success">Versión cambiada correctamente</string>
+    <string name="file_recovered">Archivo recuperado</string>
+    <string name="deleted_permanently">Eliminado permanentemente</string>
+    <string name="select_file_first">Selecciona un archivo primero</string>
 
     <!-- FAQs -->
     <string name="faq_title">Preguntas Frecuentes</string>
