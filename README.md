@@ -7,6 +7,7 @@
 ### 🔐 Autenticación
 - Inicio de sesión con usuario y contraseña.
 - Registro de nuevos usuarios con validación de campos y confirmación de contraseña.
+- Recuperación de contraseña desde la pantalla de acceso.
 
 ### 🏠 Gestión de archivos personales
 - Visualización de archivos y carpetas en formato de cuadrícula.
@@ -27,6 +28,13 @@
 - Cambio de foto de perfil.
 - Configuración de la cuenta y plan de pago.
 - Informes y analíticas de la aplicación.
+- Acceso a opciones de soporte y ayuda para el usuario.
+
+### 🆘 Soporte y ayuda
+- Centro de ayuda con preguntas frecuentes (FAQ).
+- Pantalla de contacto para soporte.
+- Manual de usuario accesible desde ajustes.
+- Gestión de cancelación del plan desde la app.
 
 ## 🛠️ Tecnologías
 
@@ -56,7 +64,12 @@ app/src/main/
 │   ├── SharedActivity.java         # Entorno de archivos compartidos
 │   ├── SharedSettingsActivity.java # Ajustes del entorno compartido
 │   ├── TrashActivity.java          # Papelera de archivos
-│   └── SettingsActivity.java       # Ajustes del usuario
+│   ├── SettingsActivity.java       # Ajustes del usuario
+│   ├── ForgotPasswordActivity.java # Recuperación de contraseña
+│   ├── FaqActivity.java            # Preguntas frecuentes (FAQ)
+│   ├── ContactActivity.java        # Contacto de soporte
+│   ├── UserManualActivity.java     # Manual de usuario
+│   └── CancellationActivity.java   # Cancelación del plan
 └── res/
     ├── layout/                     # Layouts XML de cada pantalla
     ├── drawable/                   # Iconos e imágenes vectoriales
