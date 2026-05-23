@@ -1,77 +1,113 @@
 # 📁 QuikFile
 
-**QuikFile** es una aplicación Android de gestión de archivos que permite a los usuarios organizar, compartir y administrar archivos y carpetas de forma sencilla e intuitiva.
+**QuikFile** es una aplicación Android nativa para organizar archivos personales, colaborar en entornos compartidos y gestionar opciones de cuenta desde una única interfaz.
 
-## ✨ Características
+## 📌 Estado del proyecto
 
-### 🔐 Autenticación
-- Inicio de sesión con usuario y contraseña.
-- Registro de nuevos usuarios con validación de campos y confirmación de contraseña.
+Proyecto académico orientado a prototipar la experiencia de una app de almacenamiento y gestión de archivos en Android.
 
-### 🏠 Gestión de archivos personales
-- Visualización de archivos y carpetas en formato de cuadrícula.
-- Creación de nuevas carpetas y archivos desde la pantalla principal.
+## ✨ Funcionalidades principales
 
-### 🤝 Entorno compartido
-- Espacio colaborativo para compartir archivos y carpetas con otros usuarios.
-- Gestión de miembros: añadir participantes al entorno compartido.
-- Configuración del entorno: cambiar nombre, salir o eliminar el espacio compartido.
+### Acceso y cuenta
+- Inicio de sesión, registro y recuperación de contraseña.
+- Ajustes de cuenta con cambio de nombre, correo y contraseña.
+- Cambio de idioma entre español e inglés.
 
-### 🗑️ Papelera
-- Los archivos eliminados se mueven a la papelera.
-- Selección individual o masiva de archivos.
-- Opciones para recuperar o eliminar permanentemente archivos.
+### Gestión de archivos
+- Vista principal de archivos y carpetas personales.
+- Creación de carpetas, subcarpetas y ficheros.
+- Consulta de detalles del archivo: tamaño, formato, extensión y versión actual.
+- Previsualización, descarga, renombrado y reporte de incidencias.
 
-### ⚙️ Ajustes
-- Edición del nombre del perfil.
-- Cambio de foto de perfil.
-- Configuración de la cuenta y plan de pago.
-- Informes y analíticas de la aplicación.
+### Colaboración
+- Entorno compartido para trabajar con otros usuarios.
+- Alta de miembros con roles de administrador o miembro.
+- Configuración del entorno compartido y gestión de permisos.
+- Pantallas dedicadas para compartir archivos y revisar historial de versiones.
 
-## 🛠️ Tecnologías
+### Soporte y suscripción
+- Centro de soporte con FAQs, manual de usuario y contacto.
+- Gestión de plan premium, renovación, cancelación y datos de pago.
+- Pantallas de reportes de aplicación y de archivo.
+
+### Papelera
+- Envío de elementos eliminados a la papelera.
+- Recuperación o eliminación permanente.
+- Gestión centralizada mediante `TrashActivity` y `TrashManager`.
+
+## 🛠️ Stack técnico
 
 | Tecnología | Detalle |
 |---|---|
-| **Lenguaje** | Java |
-| **SDK mínimo** | API 33 (Android 13) |
-| **SDK objetivo** | API 36 |
-| **Tema** | Material Design 3 (DayNight) |
-| **Build system** | Gradle (Kotlin DSL) |
+| Lenguaje | Java 11 |
+| Plataforma | Android |
+| SDK mínimo | API 33 (Android 13) |
+| SDK compilación / objetivo | API 36 |
+| UI | Android Views + XML |
+| Diseño | Material Design |
+| Build system | Gradle con Kotlin DSL |
 
 ### Dependencias principales
-- `androidx.appcompat` — Compatibilidad con versiones anteriores de Android.
-- `com.google.android.material` — Componentes de Material Design.
-- `androidx.activity` — API moderna para Activities.
-- `androidx.constraintlayout` — Layouts flexibles y responsivos.
+- `androidx.appcompat`
+- `com.google.android.material`
+- `androidx.activity`
+- `androidx.constraintlayout`
+- `junit`
+- `androidx.test.ext:junit`
+- `androidx.test.espresso:espresso-core`
 
-## 📂 Estructura del proyecto
+## 🧱 Estructura del proyecto
 
+```text
+QuikFile/
+├── app/
+│   ├── src/main/java/com/example/quikfile/
+│   │   ├── LoginActivity.java
+│   │   ├── RegisterActivity.java
+│   │   ├── MainActivity.java
+│   │   ├── SharedActivity.java
+│   │   ├── TrashActivity.java
+│   │   ├── SettingsActivity.java
+│   │   ├── SupportActivity.java
+│   │   ├── FileDetailActivity.java
+│   │   ├── FilePreviewActivity.java
+│   │   ├── FileShareActivity.java
+│   │   ├── FileVersionHistoryActivity.java
+│   │   └── ...
+│   ├── src/main/res/layout/          # Layouts XML de las pantallas
+│   ├── src/main/res/values/          # Strings, estilos y temas
+│   └── src/test/ y src/androidTest/  # Tests base del proyecto
+├── gradle/libs.versions.toml         # Catálogo de versiones
+├── build.gradle.kts                  # Configuración raíz
+└── settings.gradle.kts               # Módulos del proyecto
 ```
-app/src/main/
-├── java/com/example/quikfile/
-│   ├── LoginActivity.java          # Pantalla de inicio de sesión
-│   ├── RegisterActivity.java       # Pantalla de registro
-│   ├── MainActivity.java           # Pantalla principal (archivos personales)
-│   ├── AddActivity.java            # Diálogo para crear carpeta/archivo
-│   ├── SharedActivity.java         # Entorno de archivos compartidos
-│   ├── SharedSettingsActivity.java # Ajustes del entorno compartido
-│   ├── TrashActivity.java          # Papelera de archivos
-│   └── SettingsActivity.java       # Ajustes del usuario
-└── res/
-    ├── layout/                     # Layouts XML de cada pantalla
-    ├── drawable/                   # Iconos e imágenes vectoriales
-    └── values/                     # Strings, temas y estilos
-```
 
-## 🚀 Instalación
+## 🚀 Puesta en marcha
 
+### Requisitos
+- Android Studio con soporte para proyectos Android actuales.
+- JDK 11.
+- Android SDK Platform 36 y un emulador/dispositivo con Android 13 o superior.
+
+### Instalación
 1. Clona el repositorio:
    ```bash
    git clone https://github.com/ALVARORCCM18/QuikFile.git
+   cd QuikFile
    ```
 2. Abre el proyecto en **Android Studio**.
-3. Sincroniza las dependencias de Gradle.
-4. Ejecuta la aplicación en un emulador o dispositivo con **Android 13 (API 33)** o superior.
+3. Espera a que Gradle sincronice el módulo `app`.
+4. Ejecuta la aplicación en un emulador o dispositivo físico.
+
+## ✅ Comandos útiles
+
+Desde la raíz del repositorio:
+
+```bash
+./gradlew assembleDebug
+./gradlew testDebugUnitTest
+./gradlew lintDebug
+```
 
 ## 👥 Autores
 
